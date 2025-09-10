@@ -1,0 +1,716 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255; /* White text */
+  --background-start-rgb: 0, 0, 0; /* Black background */
+  --background-end-rgb: 0, 0, 0; /* Black background */
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-start-rgb)); /* Solid black background */
+  font-family: "Inter", sans-serif;
+}
+
+.modern-glow-text {
+  text-shadow: 0 0 10px rgba(34, 197, 94, 0.8), 0 0 20px rgba(34, 197, 94, 0.4); /* Green glow for dark background */
+  letter-spacing: 1px;
+}
+
+.shadow-glow {
+  box-shadow: 0 0 25px rgba(34, 197, 94, 0.5); /* Green glow adjusted for dark background */
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-100vh) translateX(30px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Animaciones de delay personalizadas */
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-3000 {
+  animation-delay: 3s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+.animation-delay-6000 {
+  animation-delay: 6s;
+}
+
+/* Animación de tilt para efectos hover */
+@keyframes tilt {
+  0%,
+  50%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(0.5deg);
+  }
+  75% {
+    transform: rotate(-0.5deg);
+  }
+}
+
+.animate-tilt {
+  animation: tilt 10s infinite linear;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 217 91% 60%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+  .dark {
+    /* Keeping dark theme variables for potential future use, but the default is now light */
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 217 91% 60%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Ocultar scrollbar pero mantener funcionalidad */
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+  }
+}
+
+/* Efectos de glassmorphism mejorados con colores */
+.glass-effect {
+  background: rgba(34, 197, 94, 0.1); /* Dark green transparent background */
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(34, 197, 94, 0.3); /* Green border for contrast */
+}
+
+/* Animaciones suaves para hover con efectos de color */
+.smooth-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.smooth-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(34, 197, 94, 0.4);
+}
+
+/* Efectos de gradiente animados */
+@keyframes gradient-shift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease infinite;
+}
+
+/* Animaciones para bordes de video */
+@keyframes border-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(34, 197, 94, 0.3), 0 0 40px rgba(251, 146, 60, 0.2), 0 0 60px rgba(59, 130, 246, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(34, 197, 94, 0.5), 0 0 60px rgba(251, 146, 60, 0.3), 0 0 90px rgba(59, 130, 246, 0.2);
+  }
+}
+
+@keyframes border-rotate {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes corner-glow {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.1);
+  }
+}
+
+.animate-border-glow {
+  animation: border-glow 2s ease-in-out infinite;
+}
+
+.animate-border-rotate {
+  background-size: 200% 200%;
+  animation: border-rotate 3s ease infinite;
+}
+
+.animate-corner-glow {
+  animation: corner-glow 2s ease-in-out infinite;
+}
+
+/* Delays para animaciones de partículas */
+.animation-delay-100 {
+  animation-delay: 0.1s;
+}
+
+.animation-delay-300 {
+  animation-delay: 0.3s;
+}
+
+.animation-delay-500 {
+  animation-delay: 0.5s;
+}
+
+/* Estilos del camión animado */
+.truck-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100px;
+}
+
+.truck {
+  --width: 220;
+}
+
+.truck * {
+  transition: all 0.25s ease;
+}
+
+.truck {
+  position: relative;
+  width: calc(var(--width) * 1px);
+  height: calc(var(--width) * 0.33px);
+}
+
+.truck:after {
+  content: "";
+  height: 5%;
+  width: 100%;
+  background: #000;
+  position: absolute;
+  left: 0;
+  bottom: 5%;
+  border-radius: 100%;
+  filter: blur(10px);
+}
+
+.truck__indicator {
+  height: 2%;
+  width: 3%;
+  position: absolute;
+  right: 1.5%;
+  background: #915d08;
+  top: 64%;
+  opacity: 0.45;
+  z-index: 10;
+}
+
+.truck__foglight {
+  height: 2%;
+  width: 1%;
+  position: absolute;
+  left: 2%;
+  background: #911308;
+  top: 58%;
+  opacity: 0.45;
+  z-index: 10;
+}
+
+.truck__taillight {
+  height: 2%;
+  width: 1%;
+  background: radial-gradient(circle at center, #ffebeb, #f00), #f00;
+  box-shadow: 0 0 30px 5px #f33;
+  position: absolute;
+  top: 25%;
+  z-index: 10;
+  left: 0;
+}
+
+.truck__taillight:after {
+  content: "";
+  height: 100%;
+  width: 800%;
+  background: #ff4d4d;
+  position: absolute;
+  right: 0;
+  top: 0;
+  border-radius: 25%;
+  filter: blur(8px);
+  box-shadow: 0 0 60px 5px #ff8080;
+}
+
+.truck__headlight {
+  height: 5%;
+  width: 4%;
+  position: absolute;
+  right: 0;
+  border-radius: 25%;
+  top: 42%;
+  z-index: 10;
+  transform: rotate(4deg);
+  background: #fff;
+  box-shadow: 0 0 40px 5px #9bf, 0 0 2px 2px #b3ccff inset;
+}
+
+.truck__wheel {
+  position: absolute;
+}
+
+.truck__wheel--front {
+  height: 57%;
+  width: 21%;
+  bottom: 0;
+  left: 75%;
+  z-index: 4;
+  transform: rotate(2deg);
+}
+
+.truck__wheel--rear {
+  height: 57%;
+  width: 21%;
+  bottom: 2%;
+  left: 10%;
+  z-index: 4;
+  transform: rotate(2deg);
+}
+
+.truck-wheel {
+  border-radius: 100%;
+  height: calc(var(--width) * 0.15px);
+  width: calc(var(--width) * 0.15px);
+  background: #242424;
+  border-top: 1px solid #ccc;
+  position: absolute;
+  bottom: 0;
+  left: 52%;
+  transform: translate(-50%, 0);
+}
+
+.truck-wheel__rim {
+  height: 60%;
+  width: 60%;
+  background: radial-gradient(circle at center, transparent, #666), #0d0d0d;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 100%;
+  animation: spin 0.35s infinite linear;
+}
+
+.truck-wheel__rim:after {
+  content: "";
+  height: 35%;
+  width: 35%;
+  background: radial-gradient(
+      circle at center,
+      #0d0d0d,
+      #0d0d0d 40%,
+      transparent 40%
+    ),
+    radial-gradient(circle at center, #262626, #262626 40%, transparent),
+    #8c8c8c;
+  border: 1px solid #1a1a1a;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 100%;
+  z-index: 2;
+}
+
+@keyframes spin {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.truck-wheel__spoke {
+  position: absolute;
+  height: 60%;
+  width: 20%;
+  background: linear-gradient(0deg, transparent, #1a1a1a 50%), #808080;
+  border-left: 1px solid #4d4d4d;
+  border-right: 1px solid #333;
+  border-radius: 0 0 25% 25%;
+  top: 50%;
+  left: 50%;
+  transform-origin: top center;
+  transform: translate(-50%, 0) rotate(calc(360 / 7 * var(--index) * 1deg));
+}
+
+.truck__wheel-arch {
+  background: #080808;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 1%;
+  height: 54%;
+  clip-path: polygon(0 100%, 23% 0, 81% 0%, 95% 60%, 95% 100%);
+}
+
+.truck__wheel-arch-trim {
+  position: absolute;
+}
+
+.truck__wheel-arch-trim--top {
+  top: 0;
+  left: 25%;
+  background: #8c8c8c;
+  height: 5%;
+  width: 53%;
+  z-index: 2;
+}
+
+.truck__wheel-arch-trim--left {
+  top: 0;
+  left: -20%;
+  background: linear-gradient(160deg, transparent, #666), #333;
+  height: 5%;
+  width: 44%;
+  transform-origin: top right;
+  transform: rotate(-60deg);
+}
+
+.truck__wheel-arch-trim--right {
+  top: 0;
+  left: 79%;
+  background: linear-gradient(-158deg, transparent, #666), #333;
+  height: 5%;
+  width: 35%;
+  transform-origin: top left;
+  transform: rotate(58deg);
+}
+
+.truck__body {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.truck__body--top {
+  background: linear-gradient(90deg, #f4f1f1, #bfbfbf 50%), #e8e3e3;
+  height: 33%;
+  width: 100%;
+  top: 0;
+  transform: rotate(3deg);
+  clip-path: polygon(0 100%, 58% 0, 98% 100%);
+}
+
+.truck__body--top:before {
+  --groove: #999;
+  content: "";
+  background: linear-gradient(
+      95deg,
+      transparent,
+      transparent 2%,
+      var(--groove) 2%,
+      var(--groove) 3%,
+      transparent 3%
+    ),
+    linear-gradient(
+      75deg,
+      transparent,
+      transparent 47%,
+      var(--groove) 47%,
+      var(--groove) 48%,
+      transparent 48%
+    ),
+    linear-gradient(
+      78deg,
+      transparent,
+      transparent 95%,
+      var(--groove) 95%,
+      var(--groove) 96%,
+      transparent 96%
+    );
+  position: absolute;
+  height: 55%;
+  width: 40%;
+  left: 36%;
+  bottom: 0;
+  clip-path: polygon(0 100%, 0 0, 100% 58%, 100% 100%);
+}
+
+.truck__body--mid {
+  position: absolute;
+  width: 100%;
+  height: 36%;
+  top: 25%;
+  transform: rotate(3deg);
+  transform-origin: top left;
+  z-index: 2;
+}
+
+.truck__body--mid:after {
+  content: "";
+  position: absolute;
+  background: #1f1f1f;
+  height: 20%;
+  width: 5%;
+  bottom: 20%;
+  right: -0.25%;
+  opacity: 1;
+  border-left: 1px solid #1a1a1a;
+}
+
+.truck__body--mid:before {
+  content: "";
+  position: absolute;
+  background: #0f0f0f;
+  height: 20%;
+  width: 5%;
+  bottom: 5%;
+  right: 0%;
+  border-radius: 0 0 50% 25%;
+  border-left: 1px solid #141414;
+}
+
+.truck__body--bottom {
+  top: 50%;
+  height: 32%;
+}
+
+.truck__rear-bumper {
+  position: absolute;
+  height: 1px;
+  width: 9%;
+  background: #808080;
+  top: 38%;
+  left: 2.5%;
+  transform-origin: top left;
+  transform: rotate(3deg);
+}
+
+.truck__side-skirt {
+  height: 1px;
+  width: 43%;
+  position: absolute;
+  bottom: 19%;
+  left: 32%;
+  transform-origin: top left;
+  transform: rotate(1deg);
+  background: #808080;
+}
+
+.truck__underpanel {
+  background: #080808;
+  height: 65%;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  clip-path: polygon(2% 0, 14% 100%, 88% 100%, 99% 60%, 99% 40%);
+}
+
+.truck__mid-body {
+  --groove: #262626;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(
+      84deg,
+      transparent,
+      transparent 36.75%,
+      var(--groove) 36.75%,
+      var(--groove) 37.25%,
+      transparent 37.25%
+    ),
+    linear-gradient(
+      83deg,
+      transparent,
+      transparent 55.75%,
+      var(--groove) 55.75%,
+      var(--groove) 56.25%,
+      transparent 56.25%
+    ),
+    linear-gradient(
+      88deg,
+      transparent,
+      transparent 75%,
+      var(--groove) 75%,
+      var(--groove) 75.5%,
+      transparent 75.5%
+    ),
+    linear-gradient(90deg, transparent, transparent 96%, #1f1f1f 96%),
+    linear-gradient(90deg, transparent, #262626), #333;
+  clip-path: polygon(0 0, 3% 100%, 80% 84%, 99.5% 78%, 100% 10%, 98% 0);
+}
+
+.truck__mid-body:after,
+.truck__mid-body:before {
+  content: "";
+  position: absolute;
+  width: 4%;
+  height: 4%;
+  left: 38%;
+  top: 6%;
+  border: 1px solid #4d4d4d;
+  border-radius: 25%;
+}
+
+.truck__mid-body:before {
+  left: 58%;
+}
+
+.truck__window {
+  --window-black: rgba(0, 0, 0, 0.85);
+  --window-white: rgba(255, 255, 255, 0.3);
+  position: absolute;
+  height: 80%;
+  width: 60%;
+  background: #000;
+  left: 37%;
+  transform: skew(-5deg);
+  clip-path: polygon(0 100%, 0 55%, 34.5% 11%, 85% 108%);
+}
+
+.truck__window-glass {
+  background: linear-gradient(
+      0deg,
+      var(--window-black) 0,
+      var(--window-black) 15%,
+      transparent 15%
+    ),
+    linear-gradient(90deg, transparent, var(--window-black) 90%),
+    linear-gradient(90deg, var(--window-white), transparent 80%),
+    linear-gradient(
+      68deg,
+      transparent,
+      transparent 30%,
+      var(--window-black) 30%,
+      var(--window-black) 31%,
+      transparent 31%,
+      transparent 55%,
+      var(--window-black) 55%,
+      var(--window-black) 56%,
+      transparent 56%
+    ),
+    var(--window-white);
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 88%;
+  width: 98%;
+  clip-path: polygon(0 100%, 0 55%, 34.5% 11%, 85% 105%);
+}
+
+.truck__window:before {
+  content: "";
+  background: #000;
+  position: absolute;
+  height: 10%;
+  width: 100%;
+  bottom: 0;
+  transform: rotate(2deg);
+  z-index: -1;
+  clip-path: polygon(40% 100%, 100% -100%, 100% 100%);
+}
