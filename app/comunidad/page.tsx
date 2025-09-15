@@ -13,7 +13,7 @@ export default function ComunidadPage() {
   const [isLoaded, setIsLoaded] = useState(false)
 
   useEffect(() => {
-    // Simular tiempo de carga para las animaciones
+    // Simular tiempo de carga para las 
     const timer = setTimeout(() => {
       setIsLoaded(true)
     }, 300)
