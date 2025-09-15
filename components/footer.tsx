@@ -25,7 +25,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
           <div className="md:col-span-4">
             <Link href="/" className="inline-block mb-4">
-              <Image src="/logoUniclick.png" alt="Uniclick Logo" width={120} height={30} />
+              <Image src="/logoUniclick.png" alt="Daniel D Toro Logo" width={120} height={30} />
             </Link>
             <p className="text-sm text-gray-300 leading-relaxed max-w-sm mb-6">{t.description}</p>
             <div className="flex justify-start">

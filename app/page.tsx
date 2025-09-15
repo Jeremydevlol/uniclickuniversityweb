@@ -90,43 +90,43 @@ export default function Home() {
       createAccount: "Crear cuenta",
 
       // Hero Section
-      heroSpan: "✨ Elige tu ruta de aprendizaje",
-      heroTitle1: "Conoce a tu",
-      heroTitle2: "mentor digital",
-      heroSubtitle: "Selecciona la ruta que mejor impulsa tu crecimiento",
+      heroSpan: "🔥 Deja de ser vago, conviértete en triunfador",
+      heroTitle1: "DANIEL D TORO",
+      heroTitle2: "FORMACIÓN QUE TE CAMBIA LA VIDA",
+      heroSubtitle: "Aprende a vender, ganar dinero y ser el mejor. Sin excusas, solo resultados.",
 
       // Features Section
-      featuresSpan: "Únete a la comunidad",
-      featuresTitle1: "Aprendices y profesionales",
-      featuresTitle2: "inteligentes",
+      featuresSpan: "🔥 Únete a los triunfadores",
+      featuresTitle1: "VENDEDORES Y EMPRENDEDORES",
+      featuresTitle2: "QUE CAMBIAN SU VIDA",
       featuresSubtitle:
-        "Gestiona tu negocio de principio a fin. Yo te guío paso a paso para que transformes tus resultados. En University, conviertes conocimiento en acción con clases prácticas, plantillas y acompañamiento real.",
+        "Estrategias que funcionan para vender más y ser triunfador. Daniel D Toro te enseña a convertir cada conversación en dinero.",
 
       // Cards
-      whatsappTitle: "Libertad",
-      whatsappDesc: "Expansión sin límites",
+      whatsappTitle: "DINERO",
+      whatsappDesc: "Gana sin límites",
 
-      businessTitle: "Comunicación",
-      businessDesc: "Conexión instantánea",
+      businessTitle: "VENTAS",
+      businessDesc: "Cierra todo lo que tocas",
 
-      callsTitle: "Rapidez",
-      callsDesc: "Respuestas ágiles",
+      callsTitle: "VELOCIDAD",
+      callsDesc: "Resultados inmediatos",
 
-      support247Title: "Innovación",
-      support247Desc: "Futuro inteligente",
+      support247Title: "DOMINIO",
+      support247Desc: "Controla tu mercado",
 
-      scalabilityTitle: "Eficiencia",
-      scalabilityDesc: "Optimización total",
+      scalabilityTitle: "PODER",
+      scalabilityDesc: "Escala brutalmente",
 
-      aiTitle: "Mentor \"Yes Sir\"",
-      aiDesc: "Tu instructor directo y sin rodeos: claridad, disciplina y resultados medibles.",
+      aiTitle: "DANIEL D TORO",
+      aiDesc: "Tu mentor que te convierte en un triunfador de ventas. Sin excusas, solo resultados excepcionales.",
 
       // Banner
-      bannerSpan: "✨ Tu próximo nivel empieza hoy",
-      bannerTitle1: "Aprende sin",
-      bannerTitle2: "fricciones",
+      bannerSpan: "🔥 Tu transformación empieza AHORA",
+      bannerTitle1: "DEJA DE SER",
+      bannerTitle2: "UN VAGO",
       bannerDesc:
-        "Con University, tu formación es fluida: lecciones cortas, ejemplos reales, proyectos guiados y resultados que se ven en tus métricas.",
+        "Estrategias poderosas, técnicas que funcionan, resultados inmediatos. Conviértete en triunfador de ventas.",
 
       // Rutas y cursos estrella
       routesSpan: "Rutas y cursos estrella",
@@ -153,37 +153,37 @@ export default function Home() {
       benefitsAiDesc: "Aplica IA a tu operación diaria: desde respuestas automáticas hasta análisis de conversaciones y toma de decisiones.",
 
       // Pricing Section
-      pricingHeader: "SOLO PODEMOS MOSTRARTE LA PUERTA",
-      pricingTitle: "LA DECISIÓN ES TUYA",
+      pricingHeader: "DANIEL D TORO TE MUESTRA EL CAMINO",
+      pricingTitle: "AHORA DECIDE: ¿VAGO O TRIUNFADOR?",
       
       // DO NOTHING Card
-      doNothingTitle: "NO HACER NADA",
-      doNothingSubtitle: "Ver Netflix",
-      doNothingHeader: "Desperdicia 8 horas al día",
-      doNothingPoint1: "Trabajar para alguien más (8h al día)",
-      doNothingPoint2: "Quedarte en tu zona de confort",
-      doNothingPoint3: "Trabajar de 9 a 5",
-      doNothingPoint4: "Pagar $35,000 por la Universidad",
-      doNothingPoint5: "Permanecer insatisfecho",
-      doNothingPoint6: "Rodeado de personas sin motivación",
-      doNothingButton: "Seguir siendo Empleado",
+      doNothingTitle: "SEGUIR SIENDO UN VAGO",
+      doNothingSubtitle: "Ver Netflix y quejarse",
+      doNothingHeader: "Desperdicia tu vida siendo mediocre",
+      doNothingPoint1: "Trabajar para otros por migajas (8h al día)",
+      doNothingPoint2: "Quedarte en tu zona de confort de mierda",
+      doNothingPoint3: "Ser esclavo de un horario de 9 a 5",
+      doNothingPoint4: "Pagar $35,000 por una universidad que no te sirve",
+      doNothingPoint5: "Seguir siendo un perdedor insatisfecho",
+      doNothingPoint6: "Rodeado de gente mediocre como tú",
+      doNothingButton: "Seguir siendo un Vago",
       
       // TAKE ACTION Card
-      takeActionTitle: "TOMAR ACCIÓN",
-      takeActionSubtitle: "Comienza a Construir Hoy",
-      takeActionOldPrice: "€147",
+      takeActionTitle: "CONVERTIRTE EN TRIUNFADOR",
+      takeActionSubtitle: "Empieza a Cambiar Tu Vida YA",
+      takeActionOldPrice: "€500",
       takeActionNewPrice: "€50",
-      takeActionPoint1: "Aprender de coches",
-      takeActionPoint2: "Aprender a vender",
-      takeActionPoint3: "Aprender a ganar personal",
-      takeActionPoint4: "Cursos especializados",
-      takeActionPoint5: "Sorteos exclusivos",
-      takeActionPoint6: "Mentorías privadas todos los fines de semana",
-      takeActionPoint7: "Eventos exclusivos",
-      takeActionCancel: "Cancela cuando quieras, sin complicaciones",
+      takeActionPoint1: "Aprender a vender como un triunfador",
+      takeActionPoint2: "Estrategias poderosas para cerrar ventas",
+      takeActionPoint3: "Técnicas para ganar dinero real",
+      takeActionPoint4: "Cursos que te convierten en líder",
+      takeActionPoint5: "Software de IA para vender",
+      takeActionPoint6: "Mentorías directas con Daniel D Toro",
+      takeActionPoint7: "Eventos VIP para triunfadores",
+      takeActionCancel: "Cancela cuando quieras, sin excusas",
       takeActionPrice: "€50/mes para siempre",
-      takeActionSecure: "Asegura tu precio de membresía hoy",
-      takeActionButton: "ÚNETE AL MUNDO REAL",
+      takeActionSecure: "Asegura tu transformación AHORA",
+      takeActionButton: "CONVIÉRTETE EN TRIUNFADOR",
 
       // Multiplataforma Section
       multiplatformTitle: "Multiplataforma para todas las redes sociales",

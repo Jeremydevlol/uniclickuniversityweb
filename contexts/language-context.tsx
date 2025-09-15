@@ -13,39 +13,39 @@ interface LanguageContextType {
 
 const translations = {
   es: {
-    uniclick: "UNIVERSITY",
+    uniclick: "DANIEL D TORO",
     description:
-      "Potencia tus habilidades con formación práctica y enfocada en negocio. Automatiza, optimiza y crece con University.",
+      "La formación que te convierte en un triunfador de ventas y cambia tu vida. Deja de ser vago, empieza a ser el rey.",
     section1: {
-      title: "Nota para estudiantes, emprendedores y equipos de trabajo",
+      title: "Para vendedores, emprendedores y triunfadores",
       content:
-        "Revisa nuestras recomendaciones y advertencias sobre el uso de University y sus integraciones en entornos profesionales. Para utilizar la plataforma, necesitas crear una cuenta y cumplir los requisitos técnicos y legales aplicables. Parte del contenido avanzado puede estar dirigido a usuarios profesionales o mayores de edad. Consulta el centro de soporte para más detalles.",
+        "Daniel D Toro te enseña estrategias poderosas para vender más y ganar dinero real. No hay teoría innecesaria, solo técnicas que funcionan. Para acceder, necesitas determinación y querer cambiar tu vida. El contenido está dirigido a personas que quieren ser triunfadores en ventas.",
     },
     section2: {
-      title: "Aviso sobre contenidos y servicios de University",
+      title: "Contenido que te convierte en triunfador",
       content:
-        "Los cursos, recursos, integraciones y herramientas de University pueden cambiar, mejorar o retirarse en cualquier momento. Algunas funciones pueden no estar disponibles en todas las regiones o idiomas, requerir activación específica o estar sujetas a restricciones del proveedor o de la legislación local. Se pueden aplicar condiciones, tarifas adicionales o requisitos técnicos.",
+        "Los cursos, estrategias y técnicas de Daniel D Toro están diseñados para convertirte en un triunfador de ventas. El contenido puede actualizarse con nuevas estrategias poderosas. Algunas funciones pueden requerir activación específica. Se aplican condiciones para mantener la calidad de los ganadores.",
     },
     section3: {
-      title: "Software e integraciones utilizadas en el aprendizaje",
+      title: "Herramientas para vender como triunfador",
       content:
-        "University facilita el uso de plataformas como WhatsApp, email, formularios, calendarios y chatbots con IA durante el proceso formativo. La disponibilidad de estas integraciones depende del país, sistema operativo y proveedor. Es posible que necesites software adicional, configuración manual o permisos administrativos para su activación. Licencias de terceros no están incluidas salvo que se indique lo contrario.",
+        "Daniel D Toro te enseña a usar WhatsApp, email, formularios, calendarios y chatbots con IA para vender más y ganar dinero. La disponibilidad depende de tu país y sistema. Puedes necesitar software adicional para activar todas las funciones. Licencias de terceros no están incluidas.",
     },
     section4: {
-      title: "Requisitos técnicos y buenas prácticas de privacidad",
+      title: "Requisitos para ser un triunfador",
       content:
-        "University está diseñada para uso profesional. Te recomendamos revisar políticas de privacidad, seguridad y uso ético de datos al implementar mensajería, redes sociales o canales de atención. El rendimiento puede variar según tu red, hardware y la infraestructura de tu empresa.",
+        "Daniel D Toro está diseñado para convertirte en un triunfador de ventas. Revisa las políticas de privacidad y seguridad. El rendimiento puede variar según tu conexión y hardware. Pero si tienes determinación, esto no será problema.",
     },
     section5: {
-      title: "Información de contacto",
-      content: "Atención al estudiante: soporte@uniclick.io",
+      title: "Contacto para triunfadores",
+      content: "Soporte para triunfadores: support@uniclick.io",
     },
     section6: {
-      title: "Financiación y planes de suscripción",
+      title: "Inversión en tu transformación",
       content:
-        "University puede ofrecer opciones de pago flexibles a través de proveedores autorizados. La financiación está sujeta a verificación y no está disponible en todas las regiones. Revisa nuestras condiciones para más información.",
+        "Daniel D Toro ofrece opciones de pago flexibles para que puedas invertir en convertirte en un triunfador. La financiación está sujeta a verificación. Revisa nuestras condiciones para más información sobre cómo empezar a ganar dinero.",
     },
-    copyright: "©2025 University. La plataforma inteligente de formación para profesionales y empresas.",
+    copyright: "©2025 Daniel D Toro. La formación que te convierte en un triunfador de ventas y cambia tu vida.",
   },
   en: {
     uniclick: "UNIVERSITY",
