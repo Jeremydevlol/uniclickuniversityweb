@@ -10,7 +10,7 @@ interface VideoShowcaseProps {
 export default function VideoShowcase({ videoUrl, className = "" }: VideoShowcaseProps) {
   const videoRef = useRef<HTMLVideoElement>(null)
   const [isHovered, setIsHovered] = useState(false)
-  const [isMuted, setIsMuted] = useState(false)
+  const [isMuted, setIsMuted] = useState(true)
   const [isPlaying, setIsPlaying] = useState(false)
 
   useEffect(() => {
@@ -21,8 +21,17 @@ export default function VideoShowcase({ videoUrl, className = "" }: VideoShowcas
       video.muted = isMuted
       video.playsInline = true
       video.volume = 0.7
-      video.autoplay = false // No autoplay, requiere click
+      video.autoplay = true // Autoplay habilitado
       video.preload = "auto"
+      
+      // Intentar reproducir automáticamente
+      video.play().catch((error) => {
+        console.log("Error al reproducir automáticamente:", error)
+        // Si falla el autoplay, intentar después de una interacción del usuario
+        document.addEventListener('click', () => {
+          video.play().catch(() => {})
+        }, { once: true })
+      })
       
       // Event listeners para el bucle
       video.addEventListener('ended', () => {
@@ -44,18 +53,6 @@ export default function VideoShowcase({ videoUrl, className = "" }: VideoShowcas
     setIsHovered(false)
   }
 
-  const handleVideoClick = () => {
-    const video = videoRef.current
-    if (video) {
-      if (video.paused) {
-        video.play()
-        setIsPlaying(true)
-      } else {
-        video.pause()
-        setIsPlaying(false)
-      }
-    }
-  }
 
   const toggleMute = (e: React.MouseEvent) => {
     e.stopPropagation()
@@ -66,10 +63,9 @@ export default function VideoShowcase({ videoUrl, className = "" }: VideoShowcas
     <div className={`relative ${className}`}>
       {/* Contenedor del video con bordes animados */}
       <div 
-        className="relative group cursor-pointer"
+        className="relative group"
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
-        onClick={handleVideoClick}
       >
         {/* Borde exterior animado - más grueso */}
         <div className="absolute -inset-4 rounded-3xl bg-gradient-to-r from-green-500 via-orange-500 to-blue-500 opacity-80 group-hover:opacity-100 transition-opacity duration-300 animate-border-rotate animate-border-glow"></div>
@@ -97,29 +93,35 @@ export default function VideoShowcase({ videoUrl, className = "" }: VideoShowcas
             Tu navegador no soporta el elemento de video.
           </video>
 
-          {/* Overlay con botón de play central */}
-          <div className="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            {/* Botón de play/pause central */}
-            <div className="w-20 h-20 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center border-2 border-white/30 shadow-xl">
-              {isPlaying ? (
+          {/* Botón de audio en la esquina superior derecha */}
+          <div className="absolute top-4 right-4 z-10">
+            <button
+              onClick={toggleMute}
+              className="w-12 h-12 rounded-full bg-black/50 backdrop-blur-md flex items-center justify-center border border-white/30 shadow-xl hover:bg-black/70 transition-all duration-300 hover:scale-110"
+            >
+              {isMuted ? (
                 <svg
-                  className="w-8 h-8 text-white ml-1"
-                  fill="currentColor"
+                  className="w-6 h-6 text-white"
+                  fill="none"
+                  stroke="currentColor"
                   viewBox="0 0 24 24"
                 >
-                  <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" />
                 </svg>
               ) : (
                 <svg
-                  className="w-8 h-8 text-white ml-1"
-                  fill="currentColor"
+                  className="w-6 h-6 text-white"
+                  fill="none"
+                  stroke="currentColor"
                   viewBox="0 0 24 24"
                 >
-                  <path d="M8 5v14l11-7z"/>
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
                 </svg>
               )}
-            </div>
+            </button>
           </div>
+
 
           {/* Efectos de brillo en las esquinas - más grandes y prominentes */}
           <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-br from-green-400/50 to-transparent rounded-br-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-corner-glow"></div>

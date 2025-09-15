@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import { Heart, ThumbsUp, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import Image from "next/image"
 
 const TEAM_MEMBERS = [
   {
@@ -145,12 +146,12 @@ export default function PersonalitySelector() {
 <div className="absolute top-1/2 left-1/4 w-64 h-64 bg-gradient-to-r from-green-400 to-emerald-400 rounded-full blur-3xl opacity-15 animate-pulse animation-delay-2000"></div>
 <div className="absolute bottom-1/4 right-1/3 w-80 h-80 bg-gradient-to-r from-red-400 to-orange-400 rounded-full blur-3xl opacity-15 animate-pulse animation-delay-6000"></div> */}
 
-      <div className="max-w-7xl mx-auto px-4 z-10">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12 lg:px-16 z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-0 sm:mb-20"
+          className="text-center mb-0 sm:mb-8 -mt-4"
         >
           {/* <h2 className="text-5xl md:text-7xl font-black text-white mb-4 tracking-tight leading-tight">
 Conoce a tu
@@ -173,11 +174,11 @@ Selecciona la personalidad que mejor represente a tu empresa.
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.6, staggerChildren: 0.1 }}
-            className="flex justify-center items-end gap-3 sm:gap-6 md:gap-8 mb-8"
+            className="flex justify-center items-end gap-4 sm:gap-6 md:gap-8 lg:gap-10 mb-4 sm:mb-8"
           >
-            <Card member={TEAM_MEMBERS[0]} sizeClass="w-32 h-40 sm:w-40 sm:h-52 md:w-52 md:h-64 lg:w-60 lg:h-72" />
-            <Card member={TEAM_MEMBERS[1]} sizeClass="w-36 h-48 sm:w-44 sm:h-60 md:w-56 md:h-72 lg:w-64 lg:h-80" />
-            <Card member={TEAM_MEMBERS[2]} sizeClass="w-32 h-40 sm:w-40 sm:h-52 md:w-52 md:h-64 lg:w-60 lg:h-72" />
+            <Card member={TEAM_MEMBERS[0]} sizeClass="w-40 h-52 sm:w-40 sm:h-52 md:w-52 md:h-64 lg:w-60 lg:h-72" />
+            <Card member={TEAM_MEMBERS[1]} sizeClass="w-44 h-60 sm:w-44 sm:h-60 md:w-56 md:h-72 lg:w-64 lg:h-80" />
+            <Card member={TEAM_MEMBERS[2]} sizeClass="w-40 h-52 sm:w-40 sm:h-52 md:w-52 md:h-64 lg:w-60 lg:h-72" />
           </motion.div>
 
           {/* Middle Row - 2 containers with floating buttons */}
@@ -208,10 +209,10 @@ Selecciona la personalidad que mejor represente a tu empresa.
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.6, staggerChildren: 0.1 }}
-              className="flex justify-center gap-4 sm:gap-8 md:gap-12 mb-8"
+              className="flex justify-center gap-6 sm:gap-8 md:gap-12 lg:gap-16 mb-1 sm:mb-8"
             >
-              <Card member={TEAM_MEMBERS[3]} sizeClass="w-36 h-48 sm:w-44 sm:h-60 md:w-56 md:h-72 lg:w-64 lg:h-80" />
-              <Card member={TEAM_MEMBERS[4]} sizeClass="w-36 h-48 sm:w-44 sm:h-60 md:w-56 md:h-72 lg:w-64 lg:h-80" />
+              <Card member={TEAM_MEMBERS[3]} sizeClass="w-44 h-60 sm:w-44 sm:h-60 md:w-56 md:h-72 lg:w-64 lg:h-80" />
+              <Card member={TEAM_MEMBERS[4]} sizeClass="w-44 h-60 sm:w-44 sm:h-60 md:w-56 md:h-72 lg:w-64 lg:h-80" />
             </motion.div>
           </div>
 
@@ -222,15 +223,21 @@ Selecciona la personalidad que mejor represente a tu empresa.
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.2, duration: 0.8 }}
-          className="text-center mt-24"
+          className="flex justify-center mt-28 sm:mt-36 md:mt-44"
         >
-          <Link href="https://www.instagram.com/uniclick.io?igsh=NTNxbmc5cmFzam5n">
+          <Link href="https://t.me/uniclickuniversitygroup">
             <Button
               size="lg"
-              className="bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-600 hover:from-purple-700 hover:via-blue-700 hover:to-cyan-700 text-white font-bold rounded-full px-8 py-5 text-base sm:px-10 sm:py-7 sm:text-lg shadow-2xl shadow-purple-500/30 hover:shadow-purple-500/50 transition-all duration-300 group hover:scale-105"
+              className="bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-600 hover:from-purple-700 hover:via-blue-700 hover:to-cyan-700 text-white font-bold rounded-full px-8 py-6 text-base sm:px-10 sm:py-7 sm:text-lg shadow-2xl shadow-purple-500/30 hover:shadow-purple-500/50 transition-all duration-300 group hover:scale-105 flex items-center justify-between gap-4 w-full max-w-md"
             >
-              Unete a la comunidad
-              <ArrowRight className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" />
+              <span className="flex-1 text-center">Únete a la comunidad de Telegram</span>
+              <Image 
+                src="/Telegram.gif" 
+                alt="Telegram" 
+                width={48} 
+                height={48} 
+                className="w-12 h-12"
+              />
             </Button>
           </Link>
         </motion.div>

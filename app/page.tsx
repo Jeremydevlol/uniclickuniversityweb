@@ -433,13 +433,13 @@ export default function Home() {
                     </span>
                   </h1>
 
-                  <p className="text-lg sm:text-xl md:text-2xl text-gray-300 font-light max-w-xs sm:max-w-xl md:max-w-3xl mx-auto leading-relaxed mb-8 md:mb-16 line-clamp-3 sm:line-clamp-none">
+                  <p className="text-lg sm:text-xl md:text-2xl text-gray-300 font-light max-w-sm sm:max-w-2xl md:max-w-4xl mx-auto leading-relaxed mb-8 md:mb-16 line-clamp-3 sm:line-clamp-none px-4">
                     {t.heroSubtitle}
                   </p>
                 </div>
 
                 {/* Video showcase con bordes animados */}
-                <div className="mt-8 mb-8 px-4">
+                <div className="mt-8 mb-8 px-6 sm:px-8 md:px-12 lg:px-16">
                   <VideoShowcase 
                     videoUrl="https://jnzsabhbfnivdiceoefg.supabase.co/storage/v1/object/sign/login/uniclick%20(2160p).mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNGNiMTczNS02NDVkLTQ2OWEtOTdjOS01Y2QzZDMzMWY2M2IiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJsb2dpbi91bmljbGljayAoMjE2MHApLm1wNCIsImlhdCI6MTc1Mjk1NjczMCwiZXhwIjo0OTA2NTU2NzMwfQ.zdjgq0uB-NKxuc7aXVHyiuQ_Y6aqocLbTlAkH3fduFQ"
                     className="max-w-7xl mx-auto"
@@ -454,11 +454,11 @@ export default function Home() {
         </main>
 
         {/* Sección de precios */}
-        <section className="py-12 relative overflow-hidden">
+        <section className="pt-2 pb-12 relative overflow-hidden">
           {/* Fondo 100% transparente */}
           <div className="absolute inset-0 bg-transparent"></div>
           
-          <div className="container mx-auto px-6 relative z-10">
+          <div className="container mx-auto px-6 sm:px-8 md:px-12 lg:px-16 relative z-10">
             {/* Header */}
             <div className="text-center mb-12">
               <p className="text-sm text-gray-400 uppercase tracking-[0.2em] mb-4 font-medium">{t.pricingHeader}</p>
@@ -471,9 +471,9 @@ export default function Home() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-5xl mx-auto">
               {/* DO NOTHING Card */}
               <div className="group relative h-full">
-                <div className="relative bg-transparent backdrop-blur-xl rounded-2xl p-6 border border-white/20 shadow-xl hover:shadow-white/10 transition-all duration-500 hover:scale-[1.02] h-full flex flex-col">
-                  {/* Badge */}
-                  <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                <div className="relative bg-black/40 backdrop-blur-xl rounded-2xl p-6 border border-white/20 shadow-xl hover:shadow-white/10 transition-all duration-500 hover:scale-[1.02] h-full flex flex-col">
+                  {/* Badge dentro del contenedor */}
+                  <div className="flex justify-center mb-4">
                     <div className="bg-white/20 backdrop-blur-sm px-4 py-1 rounded-full border border-white/30">
                       <span className="text-white text-xs font-medium">Estándar</span>
                     </div>
@@ -513,24 +513,29 @@ export default function Home() {
                     </ul>
                   </div>
                   
-                  <button className="w-full bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white font-bold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg text-sm border border-white/30">
+                  <a 
+                    href="https://empleo.mcdonalds.es/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="w-full bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white font-bold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg text-sm border border-white/30 text-center block"
+                  >
                     {t.doNothingButton}
-                  </button>
+                  </a>
                 </div>
               </div>
 
               {/* TAKE ACTION Card */}
               <div className="group relative h-full">
-                <div className="relative bg-transparent backdrop-blur-xl rounded-2xl p-6 border-2 border-orange-500/30 shadow-xl hover:shadow-orange-500/20 transition-all duration-500 hover:scale-[1.02] h-full flex flex-col">
-                  {/* Badge Premium */}
-                  <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                    <div className="bg-gradient-to-r from-orange-500/80 to-blue-500/80 backdrop-blur-sm px-5 py-1 rounded-full border border-orange-400/50 shadow-lg">
+                <div className="relative bg-gradient-to-br from-purple-600/20 via-blue-600/20 to-cyan-600/20 backdrop-blur-xl rounded-2xl p-6 border-2 border-purple-500/30 shadow-xl hover:shadow-purple-500/20 transition-all duration-500 hover:scale-[1.02] h-full flex flex-col">
+                  {/* Badge Premium dentro del contenedor */}
+                  <div className="flex justify-center mb-4">
+                    <div className="bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-600 backdrop-blur-sm px-5 py-1 rounded-full border border-purple-400/50 shadow-lg">
                       <span className="text-white text-xs font-bold">PREMIUM</span>
                     </div>
                   </div>
                   
                   <div className="text-center mb-6">
-                    <div className="w-12 h-12 bg-gradient-to-br from-orange-500/80 to-blue-500/80 backdrop-blur-sm rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg shadow-orange-500/25">
+                    <div className="w-12 h-12 bg-gradient-to-br from-purple-600/80 via-blue-600/80 to-cyan-600/80 backdrop-blur-sm rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg shadow-purple-500/25">
                       <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z"/>
                       </svg>
@@ -589,7 +594,7 @@ export default function Home() {
                     <p className="text-gray-400 text-xs text-center">{t.takeActionSecure}</p>
                   </div>
                   
-                  <button className="w-full bg-gradient-to-r from-orange-500/80 to-blue-500/80 backdrop-blur-sm hover:from-orange-500 hover:to-blue-500 text-white font-black py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg shadow-orange-500/25 text-sm tracking-wide border border-orange-400/30">
+                  <button className="w-full bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-600 backdrop-blur-sm hover:from-purple-700 hover:via-blue-700 hover:to-cyan-700 text-white font-black py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg shadow-purple-500/25 text-sm tracking-wide border border-purple-400/30">
                     {t.takeActionButton}
                   </button>
                 </div>

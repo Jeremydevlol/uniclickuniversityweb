@@ -5,6 +5,7 @@ import Image from "next/image"
 import { useLanguage } from "@/contexts/language-context"
 import PrivacySettingsButton from "@/components/privacy-settings-button"
 import TruckAnimation from "@/components/truck-animation"
+import SocialMediaButtons from "@/components/social-media-buttons"
 
 export default function Footer() {
   const { currentLanguage, translations } = useLanguage()
@@ -26,7 +27,10 @@ export default function Footer() {
             <Link href="/" className="inline-block mb-4">
               <Image src="/logoUniclick.png" alt="Uniclick Logo" width={120} height={30} />
             </Link>
-            <p className="text-sm text-gray-300 leading-relaxed max-w-sm">{t.description}</p>
+            <p className="text-sm text-gray-300 leading-relaxed max-w-sm mb-6">{t.description}</p>
+            <div className="flex justify-start">
+              <SocialMediaButtons />
+            </div>
           </div>
 
           <div className="md:col-span-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-6 text-left">
