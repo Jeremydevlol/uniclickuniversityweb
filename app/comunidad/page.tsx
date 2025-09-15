@@ -134,7 +134,7 @@ export default function ComunidadPage() {
     {
       id: 2,
       titulo: "Biblioteca de plantillas",
-      descripcion: "Accede a más de 50 plantillas prediseñadas para diferentes sectore",
+      descripcion: "Accede a más de 50 plantillas prediseñadas para diferentes sectores",
       icono: <MessageSquare className="w-6 h-6" />,
       color: "from-[#4a7bff] to-[#3a5fd0]",
     },
