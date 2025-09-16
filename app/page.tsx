@@ -302,61 +302,7 @@ export default function Home() {
   ]
 
   return (
-    <>
-      <Head>
-        <title>Daniel D Toro - Formación que te cambia la vida</title>
-        <meta name="description" content="🔥 Deja de ser vago, conviértete en triunfador. Aprende a vender, ganar dinero y ser el mejor. Sin excusas, solo resultados." />
-        <meta name="keywords" content="Daniel D Toro, formación ventas, vendedores, emprendedores, triunfadores, WhatsApp empresarial, automatización, IA, mentor, cursos ventas" />
-        <meta name="robots" content="index, follow" />
-        
-        {/* Open Graph */}
-        <meta property="og:title" content="Daniel D Toro - Formación que te cambia la vida" />
-        <meta property="og:description" content="🔥 Deja de ser vago, conviértete en triunfador. Aprende a vender, ganar dinero y ser el mejor. Sin excusas, solo resultados." />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://danieldtoro.com/" />
-        <meta property="og:site_name" content="Daniel D Toro" />
-        <meta property="og:locale" content="es_ES" />
-        
-        {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Daniel D Toro - Formación que te cambia la vida" />
-        <meta name="twitter:description" content="🔥 Deja de ser vago, conviértete en triunfador. Aprende a vender, ganar dinero y ser el mejor." />
-        <meta name="twitter:creator" content="@danieldtoro" />
-        
-        {/* Canonical */}
-        <link rel="canonical" href="https://danieldtoro.com/" />
-        
-        {/* Schema.org JSON-LD */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Person",
-              "name": "Daniel D Toro",
-              "description": "Formación que te cambia la vida - Deja de ser vago, conviértete en triunfador",
-              "url": "https://danieldtoro.com/",
-              "jobTitle": "Mentor de Ventas y Emprendimiento",
-              "knowsAbout": ["Ventas", "Emprendimiento", "WhatsApp Business", "Automatización", "Inteligencia Artificial"],
-              "alumniOf": "Formación en Ventas y Liderazgo",
-              "hasOccupation": {
-                "@type": "Occupation",
-                "name": "Mentor de Ventas",
-                "description": "Ayuda a vendedores y emprendedores a convertirse en triunfadores"
-              },
-              "offers": {
-                "@type": "Offer",
-                "name": "Formación en Ventas",
-                "description": "Cursos y mentorías para vendedores y emprendedores",
-                "price": "50",
-                "priceCurrency": "EUR"
-              }
-            })
-          }}
-        />
-      </Head>
-      
-      <div ref={containerRef} className="relative min-h-screen overflow-hidden font-sans flex flex-col bg-black">
+    <div ref={containerRef} className="relative min-h-screen overflow-hidden font-sans flex flex-col bg-black">
       {/* Efectos de fondo con colores vibrantes */}
       <div className="fixed inset-0 pointer-events-none z-0">
         <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-green-400 to-emerald-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
@@ -1015,7 +961,6 @@ export default function Home() {
 
         <Footer />
       </div>
-      </div>
-    </>
+    </div>
   )
 }
