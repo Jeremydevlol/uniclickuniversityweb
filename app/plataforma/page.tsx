@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
+import Head from "next/head"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import {
@@ -170,7 +171,58 @@ export default function PlataformaPage() {
   ]
 
   return (
-    <div className="relative min-h-screen overflow-hidden font-sans flex flex-col bg-white">
+    <>
+      <Head>
+        <title>Plataforma Daniel D Toro - Herramientas para triunfadores</title>
+        <meta name="description" content="Descubre la plataforma completa de Daniel D Toro. WhatsApp empresarial, gestión de redes sociales, integraciones y dashboard analítico para vendedores y emprendedores." />
+        <meta name="keywords" content="plataforma Daniel D Toro, WhatsApp empresarial, automatización, IA, vendedores, emprendedores, dashboard analítico, integraciones" />
+        <meta name="robots" content="index, follow" />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content="Plataforma Daniel D Toro - Herramientas para triunfadores" />
+        <meta property="og:description" content="Descubre la plataforma completa de Daniel D Toro. WhatsApp empresarial, gestión de redes sociales, integraciones y dashboard analítico." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://danieldtoro.com/plataforma" />
+        <meta property="og:site_name" content="Daniel D Toro" />
+        <meta property="og:locale" content="es_ES" />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Plataforma Daniel D Toro - Herramientas para triunfadores" />
+        <meta name="twitter:description" content="Descubre la plataforma completa de Daniel D Toro. WhatsApp empresarial, gestión de redes sociales, integraciones y dashboard analítico." />
+        <meta name="twitter:creator" content="@danieldtoro" />
+        
+        {/* Canonical */}
+        <link rel="canonical" href="https://danieldtoro.com/plataforma" />
+        
+        {/* Schema.org JSON-LD */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebPage",
+              "name": "Plataforma Daniel D Toro",
+              "description": "Descubre la plataforma completa de Daniel D Toro. Herramientas para vendedores y emprendedores.",
+              "url": "https://danieldtoro.com/plataforma",
+              "mainEntity": {
+                "@type": "SoftwareApplication",
+                "name": "Plataforma Daniel D Toro",
+                "description": "Plataforma todo en uno para automatización empresarial con IA",
+                "applicationCategory": "BusinessApplication",
+                "operatingSystem": "Web",
+                "offers": {
+                  "@type": "Offer",
+                  "price": "49",
+                  "priceCurrency": "EUR"
+                }
+              }
+            })
+          }}
+        />
+      </Head>
+      
+      <div className="relative min-h-screen overflow-hidden font-sans flex flex-col bg-white">
       {/* Video de fondo con efecto parallax - REMOVED */}
       {/* <div className="fixed inset-0 w-full h-full z-0">
       <video
@@ -849,6 +901,7 @@ export default function PlataformaPage() {
           </div>
         </footer>
       </div>
-    </div>
+      </div>
+    </>
   )
 }

@@ -75,6 +75,28 @@ export default function PoliticasPrivacidad() {
   return (
     <>
       <Head>
+        <title>Políticas de Privacidad - Daniel D Toro</title>
+        <meta name="description" content="Políticas de privacidad de Daniel D Toro. Protegemos tu privacidad mientras te ayudamos a crecer profesionalmente. Conoce cómo manejamos tus datos." />
+        <meta name="keywords" content="políticas privacidad Daniel D Toro, protección datos, RGPD, privacidad, términos uso" />
+        <meta name="robots" content="index, follow" />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content="Políticas de Privacidad - Daniel D Toro" />
+        <meta property="og:description" content="Políticas de privacidad de Daniel D Toro. Protegemos tu privacidad mientras te ayudamos a crecer profesionalmente." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://danieldtoro.com/politicas-privacidad" />
+        <meta property="og:site_name" content="Daniel D Toro" />
+        <meta property="og:locale" content="es_ES" />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="Políticas de Privacidad - Daniel D Toro" />
+        <meta name="twitter:description" content="Políticas de privacidad de Daniel D Toro. Protegemos tu privacidad mientras te ayudamos a crecer profesionalmente." />
+        <meta name="twitter:creator" content="@danieldtoro" />
+        
+        {/* Canonical */}
+        <link rel="canonical" href="https://danieldtoro.com/politicas-privacidad" />
+        
         <style dangerouslySetInnerHTML={{
           __html: `
           /* Estilos específicos para la página de políticas de privacidad - Dark Mode */

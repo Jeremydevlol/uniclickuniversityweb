@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
+import Head from "next/head"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Menu, X, Users, Calendar, MessageSquare, BookOpen, Award, ArrowRight, ChevronRight } from "lucide-react"
@@ -155,7 +156,55 @@ export default function ComunidadPage() {
   ]
 
   return (
-    <div className="relative min-h-screen overflow-hidden font-sans flex flex-col bg-white">
+    <>
+      <Head>
+        <title>Comunidad Daniel D Toro - Conecta con triunfadores</title>
+        <meta name="description" content="Únete a la comunidad de Daniel D Toro. Conecta con vendedores y emprendedores que están transformando su vida. Eventos, recursos y mentorías exclusivas." />
+        <meta name="keywords" content="comunidad Daniel D Toro, vendedores, emprendedores, triunfadores, eventos, mentorías, formación ventas, networking" />
+        <meta name="robots" content="index, follow" />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content="Comunidad Daniel D Toro - Conecta con triunfadores" />
+        <meta property="og:description" content="Únete a la comunidad de Daniel D Toro. Conecta con vendedores y emprendedores que están transformando su vida." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://danieldtoro.com/comunidad" />
+        <meta property="og:site_name" content="Daniel D Toro" />
+        <meta property="og:locale" content="es_ES" />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Comunidad Daniel D Toro - Conecta con triunfadores" />
+        <meta name="twitter:description" content="Únete a la comunidad de Daniel D Toro. Conecta con vendedores y emprendedores que están transformando su vida." />
+        <meta name="twitter:creator" content="@danieldtoro" />
+        
+        {/* Canonical */}
+        <link rel="canonical" href="https://danieldtoro.com/comunidad" />
+        
+        {/* Schema.org JSON-LD */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebPage",
+              "name": "Comunidad Daniel D Toro",
+              "description": "Únete a la comunidad de Daniel D Toro. Conecta con vendedores y emprendedores que están transformando su vida.",
+              "url": "https://danieldtoro.com/comunidad",
+              "mainEntity": {
+                "@type": "Organization",
+                "name": "Daniel D Toro",
+                "description": "Formación que te cambia la vida - Deja de ser vago, conviértete en triunfador",
+                "founder": {
+                  "@type": "Person",
+                  "name": "Daniel D Toro"
+                }
+              }
+            })
+          }}
+        />
+      </Head>
+      
+      <div className="relative min-h-screen overflow-hidden font-sans flex flex-col bg-white">
       {/* Video de fondo con efecto parallax - REMOVED */}
       {/* <div className="fixed inset-0 w-full h-full z-0">
       <video
@@ -795,6 +844,7 @@ export default function ComunidadPage() {
           </div>
         </footer>
       </div>
-    </div>
+      </div>
+    </>
   )
 }
