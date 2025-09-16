@@ -11,30 +11,8 @@ export default function PoliticasPrivacidad() {
   const [currentLang, setCurrentLang] = useState("ES")
 
   useEffect(() => {
-    // Forzar la carga del contenido de políticas de privacidad
-    const loadPrivacyPolicy = () => {
-      // Verificar si ya existe el script
-      const existingScript = document.querySelector('#usercentrics-ppg-page');
-      if (!existingScript) {
-        // Crear y agregar el script específico para esta página
-        const script = document.createElement('script');
-        script.src = 'https://policygenerator.usercentrics.eu/api/privacy-policy';
-        script.setAttribute('privacy-policy-id', '60a024d4-abff-4896-9523-ed5aa485c83f');
-        script.id = 'usercentrics-ppg-page';
-        script.async = true;
-        document.head.appendChild(script);
-      }
-    };
-
-    // Cargar inmediatamente
-    loadPrivacyPolicy();
-
-    // También intentar después de un pequeño delay para asegurar que el DOM esté listo
-    const timer = setTimeout(() => {
-      loadPrivacyPolicy();
-    }, 1000);
-
-    return () => clearTimeout(timer);
+    // Cargar políticas de privacidad personalizadas
+    console.log('Políticas de privacidad de Daniel D Toro cargadas');
   }, []);
 
   const translations: { [key: string]: any } = {
@@ -42,7 +20,7 @@ export default function PoliticasPrivacidad() {
       login: "Iniciar sesión",
       createAccount: "Crear cuenta",
       title: "Políticas de Privacidad",
-      subtitle: "Uniclear University - Protegemos tu privacidad mientras te ayudamos a crecer profesionalmente.",
+      subtitle: "Daniel D Toro - Protegemos tu privacidad mientras te ayudamos a convertirte en triunfador.",
       privacyBadge: "🔒 Privacidad y Protección de Datos",
       spanish: "Español",
       english: "English",
@@ -52,7 +30,7 @@ export default function PoliticasPrivacidad() {
       login: "Log in",
       createAccount: "Create account",
       title: "Privacy Policy",
-      subtitle: "Uniclear University - We protect your privacy while helping you grow professionally.",
+      subtitle: "Daniel D Toro - We protect your privacy while helping you become a winner.",
       privacyBadge: "🔒 Privacy and Data Protection",
       spanish: "Español",
       english: "English",
@@ -62,7 +40,7 @@ export default function PoliticasPrivacidad() {
       login: "登录",
       createAccount: "创建账户",
       title: "隐私政策",
-      subtitle: "Uniclear University - 在帮助您专业成长的同时保护您的隐私。",
+      subtitle: "Daniel D Toro - 在帮助您成为赢家的同时保护您的隐私。",
       privacyBadge: "🔒 隐私和数据保护",
       spanish: "Español",
       english: "English",
@@ -393,8 +371,90 @@ export default function PoliticasPrivacidad() {
         {/* Contenido de políticas de privacidad - Dark Mode */}
         <div className="container mx-auto px-6 pb-16">
           <div className="max-w-6xl mx-auto">
-            {/* El div de Usercentrics con ID único para esta página */}
-            <div className="uc-privacy-policy" id="privacy-policy-content"></div>
+            <div className="bg-white rounded-2xl p-8 shadow-lg">
+              <h1 className="text-4xl font-bold text-gray-800 mb-8 text-center">Políticas de Privacidad</h1>
+              
+              <div className="prose prose-lg max-w-none">
+                <h2 className="text-2xl font-semibold text-gray-800 mb-4">1. Información que recopilamos</h2>
+                <p className="text-gray-700 mb-6">
+                  En Daniel D Toro, recopilamos información que nos proporcionas directamente cuando:
+                </p>
+                <ul className="list-disc pl-6 text-gray-700 mb-6">
+                  <li>Te registras en nuestros cursos de formación en ventas</li>
+                  <li>Participas en nuestras mentorías y eventos</li>
+                  <li>Te suscribes a nuestro boletín informativo</li>
+                  <li>Utilizas nuestra plataforma de WhatsApp empresarial</li>
+                  <li>Te comunicas con nosotros a través de nuestros canales</li>
+                </ul>
+
+                <h2 className="text-2xl font-semibold text-gray-800 mb-4">2. Cómo utilizamos tu información</h2>
+                <p className="text-gray-700 mb-4">
+                  Utilizamos la información recopilada para:
+                </p>
+                <ul className="list-disc pl-6 text-gray-700 mb-6">
+                  <li>Proporcionarte acceso a nuestros cursos de formación en ventas</li>
+                  <li>Personalizar tu experiencia de aprendizaje</li>
+                  <li>Enviarte contenido relevante sobre técnicas de ventas y emprendimiento</li>
+                  <li>Gestionar tu participación en eventos y mentorías</li>
+                  <li>Mejorar nuestros servicios y plataforma</li>
+                  <li>Comunicarnos contigo sobre actualizaciones y novedades</li>
+                </ul>
+
+                <h2 className="text-2xl font-semibold text-gray-800 mb-4">3. Compartir información</h2>
+                <p className="text-gray-700 mb-6">
+                  No vendemos, alquilamos ni compartimos tu información personal con terceros, excepto:
+                </p>
+                <ul className="list-disc pl-6 text-gray-700 mb-6">
+                  <li>Cuando sea necesario para proporcionar nuestros servicios</li>
+                  <li>Con tu consentimiento explícito</li>
+                  <li>Para cumplir con obligaciones legales</li>
+                  <li>Para proteger nuestros derechos y la seguridad de nuestros usuarios</li>
+                </ul>
+
+                <h2 className="text-2xl font-semibold text-gray-800 mb-4">4. Seguridad de datos</h2>
+                <p className="text-gray-700 mb-6">
+                  Implementamos medidas de seguridad técnicas y organizativas para proteger tu información personal contra acceso no autorizado, alteración, divulgación o destrucción.
+                </p>
+
+                <h2 className="text-2xl font-semibold text-gray-800 mb-4">5. Tus derechos</h2>
+                <p className="text-gray-700 mb-4">
+                  Tienes derecho a:
+                </p>
+                <ul className="list-disc pl-6 text-gray-700 mb-6">
+                  <li>Acceder a tu información personal</li>
+                  <li>Rectificar datos inexactos</li>
+                  <li>Solicitar la eliminación de tus datos</li>
+                  <li>Limitar el procesamiento de tu información</li>
+                  <li>Portabilidad de datos</li>
+                  <li>Oponerte al procesamiento</li>
+                </ul>
+
+                <h2 className="text-2xl font-semibold text-gray-800 mb-4">6. Cookies y tecnologías similares</h2>
+                <p className="text-gray-700 mb-6">
+                  Utilizamos cookies y tecnologías similares para mejorar tu experiencia en nuestro sitio web, analizar el tráfico y personalizar el contenido. Puedes gestionar tus preferencias de cookies en cualquier momento.
+                </p>
+
+                <h2 className="text-2xl font-semibold text-gray-800 mb-4">7. Retención de datos</h2>
+                <p className="text-gray-700 mb-6">
+                  Conservamos tu información personal durante el tiempo necesario para cumplir con los propósitos descritos en esta política, a menos que la ley requiera un período de retención más largo.
+                </p>
+
+                <h2 className="text-2xl font-semibold text-gray-800 mb-4">8. Cambios en esta política</h2>
+                <p className="text-gray-700 mb-6">
+                  Podemos actualizar esta política de privacidad ocasionalmente. Te notificaremos sobre cambios significativos a través de nuestro sitio web o por correo electrónico.
+                </p>
+
+                <h2 className="text-2xl font-semibold text-gray-800 mb-4">9. Contacto</h2>
+                <p className="text-gray-700 mb-6">
+                  Si tienes preguntas sobre esta política de privacidad o sobre cómo manejamos tu información personal, puedes contactarnos en:
+                </p>
+                <div className="bg-gray-100 p-4 rounded-lg">
+                  <p className="text-gray-700 mb-2"><strong>Email:</strong> privacidad@danieldtoro.com</p>
+                  <p className="text-gray-700 mb-2"><strong>Sitio web:</strong> danieldtoro.com</p>
+                  <p className="text-gray-700"><strong>Última actualización:</strong> {new Date().toLocaleDateString('es-ES')}</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
