@@ -302,7 +302,61 @@ export default function Home() {
   ]
 
   return (
-    <div ref={containerRef} className="relative min-h-screen overflow-hidden font-sans flex flex-col bg-black">
+    <>
+      <Head>
+        <title>Daniel D Toro - Formación que te cambia la vida</title>
+        <meta name="description" content="🔥 Deja de ser vago, conviértete en triunfador. Aprende a vender, ganar dinero y ser el mejor. Sin excusas, solo resultados." />
+        <meta name="keywords" content="Daniel D Toro, formación ventas, vendedores, emprendedores, triunfadores, WhatsApp empresarial, automatización, IA, mentor, cursos ventas" />
+        <meta name="robots" content="index, follow" />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content="Daniel D Toro - Formación que te cambia la vida" />
+        <meta property="og:description" content="🔥 Deja de ser vago, conviértete en triunfador. Aprende a vender, ganar dinero y ser el mejor. Sin excusas, solo resultados." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://danieldtoro.com/" />
+        <meta property="og:site_name" content="Daniel D Toro" />
+        <meta property="og:locale" content="es_ES" />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Daniel D Toro - Formación que te cambia la vida" />
+        <meta name="twitter:description" content="🔥 Deja de ser vago, conviértete en triunfador. Aprende a vender, ganar dinero y ser el mejor." />
+        <meta name="twitter:creator" content="@danieldtoro" />
+        
+        {/* Canonical */}
+        <link rel="canonical" href="https://danieldtoro.com/" />
+        
+        {/* Schema.org JSON-LD */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "name": "Daniel D Toro",
+              "description": "Formación que te cambia la vida - Deja de ser vago, conviértete en triunfador",
+              "url": "https://danieldtoro.com/",
+              "jobTitle": "Mentor de Ventas y Emprendimiento",
+              "knowsAbout": ["Ventas", "Emprendimiento", "WhatsApp Business", "Automatización", "Inteligencia Artificial"],
+              "alumniOf": "Formación en Ventas y Liderazgo",
+              "hasOccupation": {
+                "@type": "Occupation",
+                "name": "Mentor de Ventas",
+                "description": "Ayuda a vendedores y emprendedores a convertirse en triunfadores"
+              },
+              "offers": {
+                "@type": "Offer",
+                "name": "Formación en Ventas",
+                "description": "Cursos y mentorías para vendedores y emprendedores",
+                "price": "50",
+                "priceCurrency": "EUR"
+              }
+            })
+          }}
+        />
+      </Head>
+      
+      <div ref={containerRef} className="relative min-h-screen overflow-hidden font-sans flex flex-col bg-black">
       {/* Efectos de fondo con colores vibrantes */}
       <div className="fixed inset-0 pointer-events-none z-0">
         <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-green-400 to-emerald-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
@@ -624,7 +678,7 @@ export default function Home() {
             </div>
 
             {/* Grid mejorado con efectos de color */}
-            <div className="max-w-7xl mx-auto px-5 md:px-0 relative">
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-5 md:gap-8 max-w-7xl mx-auto px-5 md:px-0 relative">
               {/* GIF posicionado detrás del contenedor */}
               <div className="absolute top-[-100px] md:top-[-120px] left-2 md:left-0 z-0 w-36 h-36 md:w-40 md:h-40">
                 <img
@@ -634,190 +688,96 @@ export default function Home() {
                 />
               </div>
 
-              {/* Carrusel para móvil - Solo las tres primeras tarjetas */}
-              <div className="md:hidden mb-8">
-                <div className="flex overflow-x-auto gap-4 pb-4 scrollbar-hide" style={{scrollSnapType: 'x mandatory'}}>
-                  {/* WhatsApp Empresarial - Tarjeta principal */}
-                  <div
-                    className="flex-shrink-0 w-80 bg-gradient-to-br from-green-400 via-green-500 to-green-600 rounded-xl overflow-hidden relative min-h-[300px] cursor-pointer group shadow-2xl hover:shadow-green-500/50 transition-all duration-500 hover:scale-105"
-                    onClick={() => handleVideoClick(bubbleVideoRef)}
-                    style={{scrollSnapAlign: 'start'}}
-                  >
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent z-10"></div>
-                    <div className="absolute inset-0 w-full h-full">
-                      <div className="w-full h-full">
-                        <iframe 
-                          src="https://player.vimeo.com/video/1117419422?badge=0&autopause=0&player_id=0&app_id=58479&loop=1&autoplay=1&muted=1&controls=0&title=0&byline=0&portrait=0&background=1" 
-                          frameBorder="0" 
-                          allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
-                          referrerPolicy="strict-origin-when-cross-origin" 
-                          className="w-full h-full object-cover" 
-                          title="ssstik.io_@danieldtoro_1757505858710"
-                        />
-                      </div>
-                    </div>
-                    <div className="p-8 h-full flex flex-col justify-end relative z-20">
-                      <h3 className="text-3xl font-black text-white mb-3 leading-tight drop-shadow-lg whitespace-pre-line">
-                        {t.whatsappTitle}
-                      </h3>
-                      <p className="text-white/90 text-base max-w-lg leading-relaxed drop-shadow-md">
-                        {t.whatsappDesc}
-                      </p>
-                    </div>
+              {/* WhatsApp Empresarial - Tarjeta principal */}
+              <div
+                className="md:col-span-6 bg-gradient-to-br from-green-400 via-green-500 to-green-600 rounded-xl md:rounded-3xl overflow-hidden relative min-h-[400px] sm:min-h-[500px] md:min-h-[600px] cursor-pointer group shadow-2xl hover:shadow-green-500/50 transition-all duration-500 hover:scale-105"
+                onClick={() => handleVideoClick(bubbleVideoRef)}
+              >
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent z-10"></div>
+                <div className="absolute inset-0 w-full h-full">
+                  <div style={{padding:"177.78% 0 0 0",position:"relative"}}>
+                    <iframe 
+                      src="https://player.vimeo.com/video/1117419422?badge=0&autopause=0&player_id=0&app_id=58479&loop=1&autoplay=1&muted=1&controls=0&title=0&byline=0&portrait=0&background=1" 
+                      frameBorder="0" 
+                      allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
+                      referrerPolicy="strict-origin-when-cross-origin" 
+                      style={{position:"absolute",top:0,left:0,width:"100%",height:"100%"}} 
+                      title="ssstik.io_@danieldtoro_1757505858710"
+                    />
                   </div>
-
-                  {/* Gestión empresarial */}
-                  <div
-                    className="flex-shrink-0 w-80 bg-gradient-to-br from-green-400 via-green-500 to-green-600 rounded-xl overflow-hidden relative min-h-[300px] cursor-pointer group shadow-2xl hover:shadow-green-500/50 transition-all duration-500 hover:scale-105"
-                    onClick={() => handleVideoClick(heartVideoRef)}
-                    style={{scrollSnapAlign: 'start'}}
-                  >
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent z-10"></div>
-                    <div className="absolute inset-0 w-full h-full">
-                      <div className="w-full h-full">
-                        <iframe 
-                          src="https://player.vimeo.com/video/1117411477?badge=0&autopause=0&player_id=0&app_id=58479&loop=1&autoplay=1&muted=1&controls=0&title=0&byline=0&portrait=0&background=1" 
-                          frameBorder="0" 
-                          allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
-                          referrerPolicy="strict-origin-when-cross-origin" 
-                          className="w-full h-full object-cover" 
-                          title="C5453"
-                        />
-                      </div>
-                    </div>
-                    <div className="p-8 h-full flex flex-col justify-end relative z-20">
-                      <h3 className="text-3xl font-black text-white mb-3 leading-tight drop-shadow-lg">
-                        {t.businessTitle}
-                      </h3>
-                      <p className="text-white/90 text-base leading-relaxed drop-shadow-md">
-                        {t.businessDesc}
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Sistema de llamadas */}
-                  <div
-                    className="flex-shrink-0 w-80 bg-gradient-to-br from-orange-400 via-orange-500 to-orange-600 rounded-xl overflow-hidden relative min-h-[300px] cursor-pointer group shadow-2xl hover:shadow-orange-500/50 transition-all duration-500 hover:scale-105"
-                    onClick={() => handleVideoClick(arVideoRef)}
-                    style={{scrollSnapAlign: 'start'}}
-                  >
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent z-10"></div>
-                    <div className="absolute inset-0 w-full h-full">
-                      <div className="w-full h-full">
-                        <iframe 
-                          src="https://player.vimeo.com/video/1117420652?badge=0&autopause=0&player_id=0&app_id=58479&loop=1&autoplay=1&muted=1&controls=0&title=0&byline=0&portrait=0&background=1" 
-                          frameBorder="0" 
-                          allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
-                          referrerPolicy="strict-origin-when-cross-origin" 
-                          className="w-full h-full object-cover" 
-                          title="C5434"
-                        />
-                      </div>
-                    </div>
-                    <div className="p-8 h-full flex flex-col justify-end relative z-20">
-                      <h3 className="text-3xl font-black text-white mb-3 leading-tight drop-shadow-lg">
-                        {t.callsTitle}
-                      </h3>
-                      <p className="text-white/90 text-base leading-relaxed drop-shadow-md">{t.callsDesc}</p>
-                    </div>
-                  </div>
+                </div>
+                <div className="p-12 h-full flex flex-col justify-end relative z-20">
+                  <h3 className="text-4xl md:text-6xl font-black text-white mb-4 leading-tight drop-shadow-lg whitespace-pre-line">
+                    {t.whatsappTitle}
+                  </h3>
+                  <p className="text-white/90 text-lg md:text-xl max-w-lg leading-relaxed drop-shadow-md">
+                    {t.whatsappDesc}
+                  </p>
                 </div>
               </div>
 
-              {/* Grid original para desktop */}
-              <div className="hidden md:grid md:grid-cols-12 gap-5 md:gap-8">
-                {/* WhatsApp Empresarial - Tarjeta principal */}
+              {/* Columna derecha */}
+              <div className="md:col-span-6 grid grid-cols-1 gap-8">
+                {/* Gestión empresarial */}
                 <div
-                  className="md:col-span-6 bg-gradient-to-br from-green-400 via-green-500 to-green-600 rounded-xl md:rounded-3xl overflow-hidden relative min-h-[400px] sm:min-h-[500px] md:min-h-[600px] cursor-pointer group shadow-2xl hover:shadow-green-500/50 transition-all duration-500 hover:scale-105"
-                  onClick={() => handleVideoClick(bubbleVideoRef)}
+                  className="bg-gradient-to-br from-green-400 via-green-500 to-green-600 rounded-xl md:rounded-3xl overflow-hidden relative min-h-[300px] sm:min-h-[350px] md:min-h-[280px] cursor-pointer group shadow-2xl hover:shadow-green-500/50 transition-all duration-500 hover:scale-105"
+                  onClick={() => handleVideoClick(heartVideoRef)}
                 >
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent z-10"></div>
                   <div className="absolute inset-0 w-full h-full">
-                    <div className="w-full h-full">
+                    <div style={{padding:"56.25% 0 0 0",position:"relative"}}>
                       <iframe 
-                        src="https://player.vimeo.com/video/1117419422?badge=0&autopause=0&player_id=0&app_id=58479&loop=1&autoplay=1&muted=1&controls=0&title=0&byline=0&portrait=0&background=1" 
+                        src="https://player.vimeo.com/video/1117411477?badge=0&autopause=0&player_id=0&app_id=58479&loop=1&autoplay=1&muted=1&controls=0&title=0&byline=0&portrait=0&background=1" 
                         frameBorder="0" 
                         allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
                         referrerPolicy="strict-origin-when-cross-origin" 
-                        className="w-full h-full object-cover" 
-                        title="ssstik.io_@danieldtoro_1757505858710"
+                        style={{position:"absolute",top:0,left:0,width:"100%",height:"100%"}} 
+                        title="C5453"
                       />
                     </div>
                   </div>
-                  <div className="p-12 h-full flex flex-col justify-end relative z-20">
-                    <h3 className="text-4xl md:text-6xl font-black text-white mb-4 leading-tight drop-shadow-lg whitespace-pre-line">
-                      {t.whatsappTitle}
+                  <div className="p-10 h-full flex flex-col justify-end relative z-20">
+                    <h3 className="text-3xl md:text-4xl font-black text-white mb-3 leading-tight drop-shadow-lg">
+                      {t.businessTitle}
                     </h3>
-                    <p className="text-white/90 text-lg md:text-xl max-w-lg leading-relaxed drop-shadow-md">
-                      {t.whatsappDesc}
+                    <p className="text-white/90 text-base md:text-lg leading-relaxed drop-shadow-md">
+                      {t.businessDesc}
                     </p>
                   </div>
                 </div>
 
-                {/* Columna derecha */}
-                <div className="md:col-span-6 grid grid-cols-1 gap-8">
-                  {/* Gestión empresarial */}
-                  <div
-                    className="bg-gradient-to-br from-green-400 via-green-500 to-green-600 rounded-xl md:rounded-3xl overflow-hidden relative min-h-[200px] sm:min-h-[250px] md:min-h-[280px] cursor-pointer group shadow-2xl hover:shadow-green-500/50 transition-all duration-500 hover:scale-105"
-                    onClick={() => handleVideoClick(heartVideoRef)}
-                  >
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent z-10"></div>
-                    <div className="absolute inset-0 w-full h-full">
-                      <div className="w-full h-full">
-                        <iframe 
-                          src="https://player.vimeo.com/video/1117411477?badge=0&autopause=0&player_id=0&app_id=58479&loop=1&autoplay=1&muted=1&controls=0&title=0&byline=0&portrait=0&background=1" 
-                          frameBorder="0" 
-                          allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
-                          referrerPolicy="strict-origin-when-cross-origin" 
-                          className="w-full h-full object-cover" 
-                          title="C5453"
-                        />
-                      </div>
-                    </div>
-                    <div className="p-10 h-full flex flex-col justify-end relative z-20">
-                      <h3 className="text-3xl md:text-4xl font-black text-white mb-3 leading-tight drop-shadow-lg">
-                        {t.businessTitle}
-                      </h3>
-                      <p className="text-white/90 text-base md:text-lg leading-relaxed drop-shadow-md">
-                        {t.businessDesc}
-                      </p>
+                {/* Sistema de llamadas */}
+                <div
+                  className="bg-gradient-to-br from-orange-400 via-orange-500 to-orange-600 rounded-xl md:rounded-3xl overflow-hidden relative min-h-[300px] sm:min-h-[350px] md:min-h-[280px] cursor-pointer group shadow-2xl hover:shadow-orange-500/50 transition-all duration-500 hover:scale-105"
+                  onClick={() => handleVideoClick(arVideoRef)}
+                >
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent z-10"></div>
+                  <div className="absolute inset-0 w-full h-full">
+                    <div style={{padding:"56.25% 0 0 0",position:"relative"}}>
+                      <iframe 
+                        src="https://player.vimeo.com/video/1117420652?badge=0&autopause=0&player_id=0&app_id=58479&loop=1&autoplay=1&muted=1&controls=0&title=0&byline=0&portrait=0&background=1" 
+                        frameBorder="0" 
+                        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
+                        referrerPolicy="strict-origin-when-cross-origin" 
+                        style={{position:"absolute",top:0,left:0,width:"100%",height:"100%"}} 
+                        title="C5434"
+                      />
                     </div>
                   </div>
-
-                  {/* Sistema de llamadas */}
-                  <div
-                    className="bg-gradient-to-br from-orange-400 via-orange-500 to-orange-600 rounded-xl md:rounded-3xl overflow-hidden relative min-h-[200px] sm:min-h-[250px] md:min-h-[280px] cursor-pointer group shadow-2xl hover:shadow-orange-500/50 transition-all duration-500 hover:scale-105"
-                    onClick={() => handleVideoClick(arVideoRef)}
-                  >
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent z-10"></div>
-                    <div className="absolute inset-0 w-full h-full">
-                      <div className="w-full h-full">
-                        <iframe 
-                          src="https://player.vimeo.com/video/1117420652?badge=0&autopause=0&player_id=0&app_id=58479&loop=1&autoplay=1&muted=1&controls=0&title=0&byline=0&portrait=0&background=1" 
-                          frameBorder="0" 
-                          allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
-                          referrerPolicy="strict-origin-when-cross-origin" 
-                          className="w-full h-full object-cover" 
-                          title="C5434"
-                        />
-                      </div>
-                    </div>
-                    <div className="p-10 h-full flex flex-col justify-end relative z-20">
-                      <h3 className="text-3xl md:text-4xl font-black text-white mb-3 leading-tight drop-shadow-lg">
-                        {t.callsTitle}
-                      </h3>
-                      <p className="text-white/90 text-base md:text-lg leading-relaxed drop-shadow-md">{t.callsDesc}</p>
-                    </div>
+                  <div className="p-10 h-full flex flex-col justify-end relative z-20">
+                    <h3 className="text-3xl md:text-4xl font-black text-white mb-3 leading-tight drop-shadow-lg">
+                      {t.callsTitle}
+                    </h3>
+                    <p className="text-white/90 text-base md:text-lg leading-relaxed drop-shadow-md">{t.callsDesc}</p>
                   </div>
                 </div>
               </div>
 
               {/* Fila inferior con tarjetas mejoradas */}
-              <div className="grid grid-cols-1 md:grid-cols-12 gap-5 md:gap-8 mt-8">
-                <div
-                  className="md:col-span-6 lg:col-span-4 bg-gradient-to-br from-emerald-400 via-emerald-500 to-emerald-600 rounded-xl md:rounded-3xl overflow-hidden relative min-h-[250px] sm:min-h-[280px] md:min-h-[300px] cursor-pointer group shadow-2xl hover:shadow-emerald-500/50 transition-all duration-500 hover:scale-105"
-                  onClick={() => handleVideoClick(voiceVideoRef)}
-                >
+              <div
+                className="md:col-span-6 lg:col-span-4 bg-gradient-to-br from-emerald-400 via-emerald-500 to-emerald-600 rounded-xl md:rounded-3xl overflow-hidden relative min-h-[300px] sm:min-h-[350px] md:min-h-[300px] cursor-pointer group shadow-2xl hover:shadow-emerald-500/50 transition-all duration-500 hover:scale-105"
+                onClick={() => handleVideoClick(voiceVideoRef)}
+              >
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent z-10"></div>
                 <img
                   src="/photo_2025-09-10 14.17.28.jpeg"
@@ -846,11 +806,12 @@ export default function Home() {
                   <h3 className="text-2xl font-black text-white mb-3 drop-shadow-lg">{t.support247Title}</h3>
                   <p className="text-white/90 text-sm leading-relaxed drop-shadow-md">{t.support247Desc}</p>
                 </div>
+              </div>
 
-                <div
-                  className="md:col-span-6 lg:col-span-4 bg-gradient-to-br from-sky-400 via-sky-500 to-sky-600 rounded-xl md:rounded-3xl overflow-hidden relative min-h-[250px] sm:min-h-[280px] md:min-h-[300px] cursor-pointer group shadow-2xl hover:shadow-sky-500/50 transition-all duration-500 hover:scale-105"
-                  onClick={() => handleVideoClick(ladderVideoRef)}
-                >
+              <div
+                className="md:col-span-6 lg:col-span-4 bg-gradient-to-br from-sky-400 via-sky-500 to-sky-600 rounded-xl md:rounded-3xl overflow-hidden relative min-h-[300px] sm:min-h-[350px] md:min-h-[300px] cursor-pointer group shadow-2xl hover:shadow-sky-500/50 transition-all duration-500 hover:scale-105"
+                onClick={() => handleVideoClick(ladderVideoRef)}
+              >
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent z-10"></div>
                 <img
                   src="/photo_2025-09-10 14.17.35.jpeg"
@@ -879,12 +840,12 @@ export default function Home() {
                   <h3 className="text-2xl font-black text-white mb-3 drop-shadow-lg">{t.scalabilityTitle}</h3>
                   <p className="text-white/90 text-sm leading-relaxed drop-shadow-md">{t.scalabilityDesc}</p>
                 </div>
-                </div>
+              </div>
 
-                <div
-                  className="md:col-span-6 lg:col-span-4 bg-gradient-to-br from-indigo-400 via-indigo-500 to-indigo-600 rounded-xl md:rounded-3xl overflow-hidden relative min-h-[250px] sm:min-h-[280px] md:min-h-[300px] cursor-pointer group shadow-2xl hover:shadow-indigo-500/50 transition-all duration-500 hover:scale-105"
-                  onClick={() => handleVideoClick(brainVideoRef)}
-                >
+              <div
+                className="md:col-span-6 lg:col-span-4 bg-gradient-to-br from-indigo-400 via-indigo-500 to-indigo-600 rounded-xl md:rounded-3xl overflow-hidden relative min-h-[300px] sm:min-h-[350px] md:min-h-[300px] cursor-pointer group shadow-2xl hover:shadow-indigo-500/50 transition-all duration-500 hover:scale-105"
+                onClick={() => handleVideoClick(brainVideoRef)}
+              >
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent z-10"></div>
                 <img
                   src="/photo_2025-09-10 14.17.43.jpeg"
@@ -910,7 +871,6 @@ export default function Home() {
                   </div>
                   <h3 className="text-2xl font-black text-white mb-3 drop-shadow-lg">{t.aiTitle}</h3>
                   <p className="text-white/90 text-sm leading-relaxed drop-shadow-md">{t.aiDesc}</p>
-                </div>
                 </div>
               </div>
             </div>
@@ -961,6 +921,7 @@ export default function Home() {
 
         <Footer />
       </div>
-    </div>
+      </div>
+    </>
   )
 }

@@ -31,15 +31,10 @@ export default function ComunidadPage() {
 
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },
-    visible: (i: number) => ({
-      opacity: 1,
+    visible: { 
+      opacity: 1, 
       y: 0,
-      transition: {
-        delay: 0.2 + i * 0.1,
-        duration: 0.8,
-        ease: "easeOut",
-      },
-    }),
+    },
   }
 
   const staggerContainer = {
@@ -378,10 +373,10 @@ export default function ComunidadPage() {
                 </motion.div>
 
                 <motion.h1
-                  custom={0}
                   initial="hidden"
                   animate="visible"
                   variants={fadeIn}
+                  transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
                   className="text-4xl sm:text-5xl md:text-7xl font-bold text-gray-800 mb-6 tracking-tight leading-tight text-center"
                 >
                   Conecta, aprende y
@@ -392,10 +387,10 @@ export default function ComunidadPage() {
                 </motion.h1>
 
                 <motion.p
-                  custom={1}
                   initial="hidden"
                   animate="visible"
                   variants={fadeIn}
+                  transition={{ delay: 0.3, duration: 0.8, ease: "easeOut" }}
                   className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-12 font-light max-w-3xl mx-auto text-center"
                 >
                   Forma parte de una comunidad vibrante de empresarios, desarrolladores y entusiastas que están
@@ -403,10 +398,10 @@ export default function ComunidadPage() {
                 </motion.p>
 
                 <motion.div
-                  custom={2}
                   initial="hidden"
                   animate="visible"
                   variants={fadeIn}
+                  transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
                   className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20 flex-wrap"
                 >
                   <Button className="bg-[#9133e8] hover:bg-[#9133e8]/90 text-white rounded-full px-6 py-4 text-base sm:px-8 sm:py-7 sm:text-lg font-medium transition-all hover:shadow-[0_0_25px_rgba(145,51,232,0.4)] w-full sm:w-auto">
