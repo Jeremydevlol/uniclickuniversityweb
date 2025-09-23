@@ -1,6 +1,7 @@
 "use client"
 
 import type React from "react"
+import Head from "next/head"
 
 import { useEffect, useRef, useState } from "react"
 import Link from "next/link"
@@ -289,7 +290,7 @@ export default function Home() {
   // Configuración de las burbujas flotantes con iconos de redes sociales
   const floatingBubbles = [
     { icon: "📱", name: "WhatsApp", delay: 0, x: -200, y: -100 },
-    { icon: "✈️", name: "Telegram", delay: 0.2, x: 200, y: -80 },
+    { icon: "💬", name: "WhatsApp", delay: 0.2, x: 200, y: -80 },
     { icon: "📘", name: "Facebook", delay: 0.4, x: -180, y: 120 },
     { icon: "📷", name: "Instagram", delay: 0.6, x: 180, y: 100 },
     { icon: "🐦", name: "Twitter", delay: 0.8, x: -120, y: -150 },
@@ -301,7 +302,61 @@ export default function Home() {
   ]
 
   return (
-    <div ref={containerRef} className="relative min-h-screen overflow-hidden font-sans flex flex-col bg-black">
+    <>
+      <Head>
+        <title>Daniel D Toro - Formación que te cambia la vida</title>
+        <meta name="description" content="🔥 Deja de ser vago, conviértete en triunfador. Aprende a vender, ganar dinero y ser el mejor. Sin excusas, solo resultados." />
+        <meta name="keywords" content="Daniel D Toro, formación ventas, vendedores, emprendedores, triunfadores, WhatsApp empresarial, automatización, IA, mentor, cursos ventas" />
+        <meta name="robots" content="index, follow" />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content="Daniel D Toro - Formación que te cambia la vida" />
+        <meta property="og:description" content="🔥 Deja de ser vago, conviértete en triunfador. Aprende a vender, ganar dinero y ser el mejor. Sin excusas, solo resultados." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://danieldtoro.com/" />
+        <meta property="og:site_name" content="Daniel D Toro" />
+        <meta property="og:locale" content="es_ES" />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Daniel D Toro - Formación que te cambia la vida" />
+        <meta name="twitter:description" content="🔥 Deja de ser vago, conviértete en triunfador. Aprende a vender, ganar dinero y ser el mejor." />
+        <meta name="twitter:creator" content="@danieldtoro" />
+        
+        {/* Canonical */}
+        <link rel="canonical" href="https://danieldtoro.com/" />
+        
+        {/* Schema.org JSON-LD */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "name": "Daniel D Toro",
+              "description": "Formación que te cambia la vida - Deja de ser vago, conviértete en triunfador",
+              "url": "https://danieldtoro.com/",
+              "jobTitle": "Mentor de Ventas y Emprendimiento",
+              "knowsAbout": ["Ventas", "Emprendimiento", "WhatsApp Business", "Automatización", "Inteligencia Artificial"],
+              "alumniOf": "Formación en Ventas y Liderazgo",
+              "hasOccupation": {
+                "@type": "Occupation",
+                "name": "Mentor de Ventas",
+                "description": "Ayuda a vendedores y emprendedores a convertirse en triunfadores"
+              },
+              "offers": {
+                "@type": "Offer",
+                "name": "Formación en Ventas",
+                "description": "Cursos y mentorías para vendedores y emprendedores",
+                "price": "50",
+                "priceCurrency": "EUR"
+              }
+            })
+          }}
+        />
+      </Head>
+      
+      <div ref={containerRef} className="relative min-h-screen overflow-hidden font-sans flex flex-col bg-black">
       {/* Efectos de fondo con colores vibrantes */}
       <div className="fixed inset-0 pointer-events-none z-0">
         <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-green-400 to-emerald-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
@@ -318,7 +373,7 @@ export default function Home() {
             {/* Logo */}
             <div className="flex items-center">
               <Link href="/">
-                <Image src="/logoUniclick.png" alt="Uniclick Logo" width={120} height={30} className="mr-2" />
+                <Image src="/logoUniclick.png" alt="Daniel D Toro - Logo de formación en ventas y emprendimiento" width={120} height={30} className="mr-2" />
               </Link>
             </div>
 
@@ -633,7 +688,7 @@ export default function Home() {
               <div className="absolute top-[-100px] md:top-[-120px] left-2 md:left-0 z-0 w-36 h-36 md:w-40 md:h-40">
                 <img
                   src="/Yes Sir.gif"
-                  alt="Yes Sir character"
+                  alt="Daniel D Toro - Personaje motivacional Yes Sir para formación en ventas"
                   className="w-full h-full object-contain"
                 />
               </div>
@@ -670,7 +725,7 @@ export default function Home() {
               <div className="md:col-span-6 grid grid-cols-1 gap-8">
                 {/* Gestión empresarial */}
                 <div
-                  className="bg-gradient-to-br from-green-400 via-green-500 to-green-600 rounded-xl md:rounded-3xl overflow-hidden relative min-h-[200px] sm:min-h-[250px] md:min-h-[280px] cursor-pointer group shadow-2xl hover:shadow-green-500/50 transition-all duration-500 hover:scale-105"
+                  className="bg-gradient-to-br from-green-400 via-green-500 to-green-600 rounded-xl md:rounded-3xl overflow-hidden relative min-h-[300px] sm:min-h-[350px] md:min-h-[280px] cursor-pointer group shadow-2xl hover:shadow-green-500/50 transition-all duration-500 hover:scale-105"
                   onClick={() => handleVideoClick(heartVideoRef)}
                 >
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent z-10"></div>
@@ -698,7 +753,7 @@ export default function Home() {
 
                 {/* Sistema de llamadas */}
                 <div
-                  className="bg-gradient-to-br from-orange-400 via-orange-500 to-orange-600 rounded-xl md:rounded-3xl overflow-hidden relative min-h-[200px] sm:min-h-[250px] md:min-h-[280px] cursor-pointer group shadow-2xl hover:shadow-orange-500/50 transition-all duration-500 hover:scale-105"
+                  className="bg-gradient-to-br from-orange-400 via-orange-500 to-orange-600 rounded-xl md:rounded-3xl overflow-hidden relative min-h-[300px] sm:min-h-[350px] md:min-h-[280px] cursor-pointer group shadow-2xl hover:shadow-orange-500/50 transition-all duration-500 hover:scale-105"
                   onClick={() => handleVideoClick(arVideoRef)}
                 >
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent z-10"></div>
@@ -725,13 +780,13 @@ export default function Home() {
 
               {/* Fila inferior con tarjetas mejoradas */}
               <div
-                className="md:col-span-6 lg:col-span-4 bg-gradient-to-br from-emerald-400 via-emerald-500 to-emerald-600 rounded-xl md:rounded-3xl overflow-hidden relative min-h-[250px] sm:min-h-[280px] md:min-h-[300px] cursor-pointer group shadow-2xl hover:shadow-emerald-500/50 transition-all duration-500 hover:scale-105"
+                className="md:col-span-6 lg:col-span-4 bg-gradient-to-br from-emerald-400 via-emerald-500 to-emerald-600 rounded-xl md:rounded-3xl overflow-hidden relative min-h-[300px] sm:min-h-[350px] md:min-h-[300px] cursor-pointer group shadow-2xl hover:shadow-emerald-500/50 transition-all duration-500 hover:scale-105"
                 onClick={() => handleVideoClick(voiceVideoRef)}
               >
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent z-10"></div>
                 <img
                   src="/photo_2025-09-10 14.17.28.jpeg"
-                  alt="Soporte 24/7"
+                  alt="Soporte 24/7 - Daniel D Toro formación en ventas y emprendimiento"
                   className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000"
                 />
                 <div className="p-10 h-full flex flex-col justify-center items-center text-center relative z-20">
@@ -759,13 +814,13 @@ export default function Home() {
               </div>
 
               <div
-                className="md:col-span-6 lg:col-span-4 bg-gradient-to-br from-sky-400 via-sky-500 to-sky-600 rounded-xl md:rounded-3xl overflow-hidden relative min-h-[250px] sm:min-h-[280px] md:min-h-[300px] cursor-pointer group shadow-2xl hover:shadow-sky-500/50 transition-all duration-500 hover:scale-105"
+                className="md:col-span-6 lg:col-span-4 bg-gradient-to-br from-sky-400 via-sky-500 to-sky-600 rounded-xl md:rounded-3xl overflow-hidden relative min-h-[300px] sm:min-h-[350px] md:min-h-[300px] cursor-pointer group shadow-2xl hover:shadow-sky-500/50 transition-all duration-500 hover:scale-105"
                 onClick={() => handleVideoClick(ladderVideoRef)}
               >
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent z-10"></div>
                 <img
                   src="/photo_2025-09-10 14.17.35.jpeg"
-                  alt="Escalabilidad"
+                  alt="Escalabilidad empresarial - Daniel D Toro formación en ventas"
                   className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000"
                 />
                 <div className="p-10 h-full flex flex-col justify-center items-center text-center relative z-20">
@@ -793,13 +848,13 @@ export default function Home() {
               </div>
 
               <div
-                className="md:col-span-6 lg:col-span-4 bg-gradient-to-br from-indigo-400 via-indigo-500 to-indigo-600 rounded-xl md:rounded-3xl overflow-hidden relative min-h-[250px] sm:min-h-[280px] md:min-h-[300px] cursor-pointer group shadow-2xl hover:shadow-indigo-500/50 transition-all duration-500 hover:scale-105"
+                className="md:col-span-6 lg:col-span-4 bg-gradient-to-br from-indigo-400 via-indigo-500 to-indigo-600 rounded-xl md:rounded-3xl overflow-hidden relative min-h-[300px] sm:min-h-[350px] md:min-h-[300px] cursor-pointer group shadow-2xl hover:shadow-indigo-500/50 transition-all duration-500 hover:scale-105"
                 onClick={() => handleVideoClick(brainVideoRef)}
               >
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent z-10"></div>
                 <img
                   src="/photo_2025-09-10 14.17.43.jpeg"
-                  alt="Inteligencia Artificial"
+                  alt="Inteligencia Artificial - Daniel D Toro formación en automatización empresarial"
                   className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000"
                 />
                 <div className="p-10 h-full flex flex-col justify-center items-center text-center relative z-20">
@@ -871,6 +926,7 @@ export default function Home() {
 
         <Footer />
       </div>
-    </div>
+      </div>
+    </>
   )
 }

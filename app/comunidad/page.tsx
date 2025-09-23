@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
+import Head from "next/head"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Menu, X, Users, Calendar, MessageSquare, BookOpen, Award, ArrowRight, ChevronRight } from "lucide-react"
@@ -13,7 +14,7 @@ export default function ComunidadPage() {
   const [isLoaded, setIsLoaded] = useState(false)
 
   useEffect(() => {
-    // Simular tiempo de carga para las animaciones
+    // Simular tiempo de carga para las 
     const timer = setTimeout(() => {
       setIsLoaded(true)
     }, 300)
@@ -30,15 +31,10 @@ export default function ComunidadPage() {
 
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },
-    visible: (i: number) => ({
-      opacity: 1,
+    visible: { 
+      opacity: 1, 
       y: 0,
-      transition: {
-        delay: 0.2 + i * 0.1,
-        duration: 0.8,
-        ease: "easeOut",
-      },
-    }),
+    },
   }
 
   const staggerContainer = {
@@ -155,7 +151,55 @@ export default function ComunidadPage() {
   ]
 
   return (
-    <div className="relative min-h-screen overflow-hidden font-sans flex flex-col bg-white">
+    <>
+      <Head>
+        <title>Comunidad Daniel D Toro - Conecta con triunfadores</title>
+        <meta name="description" content="Únete a la comunidad de Daniel D Toro. Conecta con vendedores y emprendedores que están transformando su vida. Eventos, recursos y mentorías exclusivas." />
+        <meta name="keywords" content="comunidad Daniel D Toro, vendedores, emprendedores, triunfadores, eventos, mentorías, formación ventas, networking" />
+        <meta name="robots" content="index, follow" />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content="Comunidad Daniel D Toro - Conecta con triunfadores" />
+        <meta property="og:description" content="Únete a la comunidad de Daniel D Toro. Conecta con vendedores y emprendedores que están transformando su vida." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://danieldtoro.com/comunidad" />
+        <meta property="og:site_name" content="Daniel D Toro" />
+        <meta property="og:locale" content="es_ES" />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Comunidad Daniel D Toro - Conecta con triunfadores" />
+        <meta name="twitter:description" content="Únete a la comunidad de Daniel D Toro. Conecta con vendedores y emprendedores que están transformando su vida." />
+        <meta name="twitter:creator" content="@danieldtoro" />
+        
+        {/* Canonical */}
+        <link rel="canonical" href="https://danieldtoro.com/comunidad" />
+        
+        {/* Schema.org JSON-LD */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebPage",
+              "name": "Comunidad Daniel D Toro",
+              "description": "Únete a la comunidad de Daniel D Toro. Conecta con vendedores y emprendedores que están transformando su vida.",
+              "url": "https://danieldtoro.com/comunidad",
+              "mainEntity": {
+                "@type": "Organization",
+                "name": "Daniel D Toro",
+                "description": "Formación que te cambia la vida - Deja de ser vago, conviértete en triunfador",
+                "founder": {
+                  "@type": "Person",
+                  "name": "Daniel D Toro"
+                }
+              }
+            })
+          }}
+        />
+      </Head>
+      
+      <div className="relative min-h-screen overflow-hidden font-sans flex flex-col bg-white">
       {/* Video de fondo con efecto parallax - REMOVED */}
       {/* <div className="fixed inset-0 w-full h-full z-0">
       <video
@@ -329,10 +373,10 @@ export default function ComunidadPage() {
                 </motion.div>
 
                 <motion.h1
-                  custom={0}
                   initial="hidden"
                   animate="visible"
                   variants={fadeIn}
+                  transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
                   className="text-4xl sm:text-5xl md:text-7xl font-bold text-gray-800 mb-6 tracking-tight leading-tight text-center"
                 >
                   Conecta, aprende y
@@ -343,10 +387,10 @@ export default function ComunidadPage() {
                 </motion.h1>
 
                 <motion.p
-                  custom={1}
                   initial="hidden"
                   animate="visible"
                   variants={fadeIn}
+                  transition={{ delay: 0.3, duration: 0.8, ease: "easeOut" }}
                   className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-12 font-light max-w-3xl mx-auto text-center"
                 >
                   Forma parte de una comunidad vibrante de empresarios, desarrolladores y entusiastas que están
@@ -354,10 +398,10 @@ export default function ComunidadPage() {
                 </motion.p>
 
                 <motion.div
-                  custom={2}
                   initial="hidden"
                   animate="visible"
                   variants={fadeIn}
+                  transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
                   className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20 flex-wrap"
                 >
                   <Button className="bg-[#9133e8] hover:bg-[#9133e8]/90 text-white rounded-full px-6 py-4 text-base sm:px-8 sm:py-7 sm:text-lg font-medium transition-all hover:shadow-[0_0_25px_rgba(145,51,232,0.4)] w-full sm:w-auto">
@@ -795,6 +839,7 @@ export default function ComunidadPage() {
           </div>
         </footer>
       </div>
-    </div>
+      </div>
+    </>
   )
 }

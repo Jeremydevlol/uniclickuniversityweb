@@ -9,12 +9,30 @@ import UniclickChatScript from "@/components/uniclick-chat-script" // Import the
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "DanielDToro-Triunfadores",
-  description: "La formación que te convierte en un triunfador de ventas. Aprende a vender, ganar dinero y ser el mejor con Daniel D Toro.",
+  title: "Daniel D Toro - Formación que te cambia la vida",
+  description: "🔥 Deja de ser vago, conviértete en triunfador. Aprende a vender, ganar dinero y ser el mejor. Sin excusas, solo resultados.",
+  keywords: "Daniel D Toro, formación ventas, vendedores, emprendedores, triunfadores, WhatsApp empresarial, automatización, IA, mentor",
+  authors: [{ name: "Daniel D Toro" }],
+  creator: "Daniel D Toro",
+  publisher: "Daniel D Toro",
+  robots: "index, follow",
+  openGraph: {
+    title: "Daniel D Toro - Formación que te cambia la vida",
+    description: "🔥 Deja de ser vago, conviértete en triunfador. Aprende a vender, ganar dinero y ser el mejor. Sin excusas, solo resultados.",
+    type: "website",
+    locale: "es_ES",
+    siteName: "Daniel D Toro",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Daniel D Toro - Formación que te cambia la vida",
+    description: "🔥 Deja de ser vago, conviértete en triunfador. Aprende a vender, ganar dinero y ser el mejor.",
+    creator: "@danieldtoro",
+  },
   icons: {
     icon: "/favicon.ico",
   },
-    generator: 'Uniclick.dev'
+  generator: 'Daniel D Toro'
 }
 
 export default function RootLayout({
