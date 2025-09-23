@@ -9,8 +9,8 @@ import UniclickChatScript from "@/components/uniclick-chat-script" // Import the
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Uniclick - Agentes Digitales Inteligentes",
-  description: "Conoce a tu agente digital. Selecciona la personalidad que mejor represente a tu empresa.",
+  title: "DanielDToro-Triunfadores",
+  description: "La formación que te convierte en un triunfador de ventas. Aprende a vender, ganar dinero y ser el mejor con Daniel D Toro.",
   icons: {
     icon: "/favicon.ico",
   },

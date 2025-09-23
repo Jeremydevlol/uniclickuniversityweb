@@ -245,7 +245,7 @@ export default function ComunidadPage() {
           <div className="flex items-center space-x-4">
             <div className="hidden md:block">
               <Link
-                href="https://app.uniclick.io"
+                href="https://app.danieldtoro.com/"
                 className="px-6 py-2.5 rounded-full bg-gradient-to-r from-[#9133e8]/80 to-[#7928ca]/80 backdrop-blur-xl border border-purple-200 text-white hover:from-[#9133e8] hover:to-[#7928ca] transition-all flex items-center space-x-2 group shadow-[0_0_15px_rgba(145,51,232,0.3)]"
               >
                 <span>Log in</span>
@@ -302,7 +302,7 @@ export default function ComunidadPage() {
                 Plataforma
               </Link>
               <Link
-                href="https://app.uniclick.io"
+                href="https://app.danieldtoro.com/"
                 className="px-6 py-2.5 rounded-full bg-gradient-to-r from-[#9133e8]/80 to-[#7928ca]/80 backdrop-blur-xl border border-purple-200 text-white hover:from-[#9133e8] hover:to-[#7928ca] transition-all flex items-center justify-center space-x-2 mt-4"
               >
                 <span>Log in</span>

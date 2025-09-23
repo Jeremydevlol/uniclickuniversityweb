@@ -5,6 +5,7 @@ import { Heart, ThumbsUp, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import Image from "next/image"
+import VideoCache from "./video-cache"
 
 const TEAM_MEMBERS = [
   {
@@ -51,54 +52,58 @@ const Card = ({ member, sizeClass }: { member: (typeof TEAM_MEMBERS)[0]; sizeCla
     <div className="relative w-full h-full bg-white rounded-3xl p-1 shadow-xl overflow-hidden border border-purple-200 group-hover:border-purple-300 transition-all">
       {member.id === 1 ? (
         // Video de Vimeo para "Libertad"
-        <div className="w-full h-full rounded-2xl overflow-hidden">
-          <iframe 
-            src="https://player.vimeo.com/video/1117041226?badge=0&autopause=0&player_id=0&app_id=58479&loop=1&autoplay=1&muted=1&controls=0&title=0&byline=0&portrait=0&background=1" 
-            frameBorder="0" 
-            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
-            referrerPolicy="strict-origin-when-cross-origin" 
-            className="w-[120%] h-[200%] object-cover rounded-2xl transform -translate-x-[10%] -translate-y-[10%] group-hover:scale-100 transition-transform duration-700"
-            style={{pointerEvents:"none"}} 
-            title="IMG_5792"
-          />
-        </div>
+          <div className="w-full h-full rounded-2xl overflow-hidden">
+            <VideoCache
+              videoId="1117041226"
+              title="IMG_5792"
+              autoPlay={true}
+              muted={true}
+              loop={true}
+              controls={false}
+              className="w-[120%] h-[200%] object-cover rounded-2xl transform -translate-x-[10%] -translate-y-[10%] group-hover:scale-100 transition-transform duration-700"
+              style={{pointerEvents:"none"}}
+            />
+          </div>
       ) : member.id === 2 ? (
         // Video de Vimeo para "Comunicación"
-        <div className="w-full h-full rounded-2xl overflow-hidden">
-          <iframe 
-            src="https://player.vimeo.com/video/1117039423?badge=0&autopause=0&player_id=0&app_id=58479&loop=1&autoplay=1&muted=1&controls=0&title=0&byline=0&portrait=0&background=1" 
-            frameBorder="0" 
-            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
-            referrerPolicy="strict-origin-when-cross-origin" 
-            className="w-[120%] h-[120%] object-cover rounded-2xl transform -translate-x-[10%] -translate-y-[10%] group-hover:scale-110 transition-transform duration-700"
-            style={{pointerEvents:"none"}} 
-            title="a6ea2565bc5d4a8ea151f3ac45954447"
-          />
-        </div>
+          <div className="w-full h-full rounded-2xl overflow-hidden">
+            <VideoCache
+              videoId="1117039423"
+              title="a6ea2565bc5d4a8ea151f3ac45954447"
+              autoPlay={true}
+              muted={true}
+              loop={true}
+              controls={false}
+              className="w-[120%] h-[120%] object-cover rounded-2xl transform -translate-x-[10%] -translate-y-[10%] group-hover:scale-110 transition-transform duration-700"
+              style={{pointerEvents:"none"}}
+            />
+          </div>
       ) : member.id === 3 ? (
         // Video de Vimeo para "Rapidez"
-        <div className="w-full h-full rounded-2xl overflow-hidden">
-          <iframe 
-            src="https://player.vimeo.com/video/1117045879?badge=0&autopause=0&player_id=0&app_id=58479&loop=1&autoplay=1&muted=1&controls=0&title=0&byline=0&portrait=0&background=1" 
-            frameBorder="0" 
-            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
-            referrerPolicy="strict-origin-when-cross-origin" 
-            className="w-[120%] h-[120%] object-cover rounded-2xl transform -translate-x-[10%] -translate-y-[10%] group-hover:scale-110 transition-transform duration-700"
-            style={{pointerEvents:"none"}} 
-            title="IMG_0667"
-          />
-        </div>
+          <div className="w-full h-full rounded-2xl overflow-hidden">
+            <VideoCache
+              videoId="1117045879"
+              title="IMG_0667"
+              autoPlay={true}
+              muted={true}
+              loop={true}
+              controls={false}
+              className="w-[120%] h-[120%] object-cover rounded-2xl transform -translate-x-[10%] -translate-y-[10%] group-hover:scale-110 transition-transform duration-700"
+              style={{pointerEvents:"none"}}
+            />
+          </div>
       ) : member.id === 4 ? (
         // Video de Vimeo para "Innovación"
         <div className="w-full h-full rounded-2xl overflow-hidden">
           <div style={{padding:"177.78% 0 0 0",position:"relative"}}>
-            <iframe 
-              src="https://player.vimeo.com/video/1117409631?badge=0&autopause=0&player_id=0&app_id=58479&loop=1&autoplay=1&muted=1&controls=0&title=0&byline=0&portrait=0&background=1" 
-              frameBorder="0" 
-              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
-              referrerPolicy="strict-origin-when-cross-origin" 
-              style={{position:"absolute",top:0,left:0,width:"100%",height:"100%",pointerEvents:"none"}} 
+            <VideoCache
+              videoId="1117409631"
               title="ssstik.io_@danieldtoro_1757503454344"
+              autoPlay={true}
+              muted={true}
+              loop={true}
+              controls={false}
+              style={{position:"absolute",top:0,left:0,width:"100%",height:"100%",pointerEvents:"none"}}
             />
           </div>
         </div>
@@ -106,13 +111,14 @@ const Card = ({ member, sizeClass }: { member: (typeof TEAM_MEMBERS)[0]; sizeCla
         // Video de Vimeo para "Eficiencia"
         <div className="w-full h-full rounded-2xl overflow-hidden">
           <div style={{padding:"177.78% 0 0 0",position:"relative"}}>
-            <iframe 
-              src="https://player.vimeo.com/video/1117409661?badge=0&autopause=0&player_id=0&app_id=58479&loop=1&autoplay=1&muted=1&controls=0&title=0&byline=0&portrait=0&background=1" 
-              frameBorder="0" 
-              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
-              referrerPolicy="strict-origin-when-cross-origin" 
-              style={{position:"absolute",top:0,left:0,width:"100%",height:"100%",pointerEvents:"none"}} 
+            <VideoCache
+              videoId="1117409661"
               title="ssstik.io_@danieldtoro_1757503297660"
+              autoPlay={true}
+              muted={true}
+              loop={true}
+              controls={false}
+              style={{position:"absolute",top:0,left:0,width:"100%",height:"100%",pointerEvents:"none"}}
             />
           </div>
         </div>
@@ -225,19 +231,21 @@ Selecciona la personalidad que mejor represente a tu empresa.
           transition={{ delay: 1.2, duration: 0.8 }}
           className="flex justify-center mt-28 sm:mt-36 md:mt-44"
         >
-          <Link href="https://t.me/uniclickuniversitygroup">
+          <Link href="https://chat.whatsapp.com/DLxq74SVodtCO06W452DXQ" target="_blank" rel="noopener noreferrer">
             <Button
               size="lg"
-              className="bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-600 hover:from-purple-700 hover:via-blue-700 hover:to-cyan-700 text-white font-bold rounded-full px-8 py-6 text-base sm:px-10 sm:py-7 sm:text-lg shadow-2xl shadow-purple-500/30 hover:shadow-purple-500/50 transition-all duration-300 group hover:scale-105 flex items-center justify-between gap-4 w-full max-w-md"
+              className="bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-600 hover:from-purple-700 hover:via-blue-700 hover:to-cyan-700 text-white font-bold rounded-full px-8 py-6 text-base sm:px-10 sm:py-7 sm:text-lg shadow-2xl shadow-purple-500/30 hover:shadow-purple-500/50 transition-all duration-300 group hover:scale-105 flex items-center justify-center gap-4 w-full max-w-md relative overflow-hidden"
             >
-              <span className="flex-1 text-center">ÚNETE A LOS TRIUNFADORES</span>
-              <Image 
-                src="/Telegram.gif" 
-                alt="Telegram" 
-                width={48} 
-                height={48} 
-                className="w-12 h-12"
-              />
+              <span className="text-center">ÚNETE A LA COMUNIDAD DE TRIUNFADORES</span>
+               <div className="absolute right-6 top-1/2 transform -translate-y-1/2">
+                <Image 
+                  src="/whatsapp.gif" 
+                  alt="WhatsApp" 
+                  width={40} 
+                  height={40} 
+                  className="w-10 h-10"
+                />
+              </div>
             </Button>
           </Link>
         </motion.div>

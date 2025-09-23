@@ -355,7 +355,7 @@ export default function Home() {
                 </DropdownMenu>
 
                 <a
-                  href="https://app.uniclick.io"
+                  href="https://app.danieldtoro.com/"
                   className="px-4 py-2 md:px-5 md:py-2.5 rounded-full bg-transparent hover:bg-gradient-to-r hover:from-green-900/50 hover:to-emerald-900/50 transition-all flex items-center space-x-2 group border border-green-500 text-xs md:text-sm font-medium text-white hover:border-green-400 hover:shadow-lg hover:shadow-green-500/50"
                 >
                   <span>{t.login}</span>
@@ -363,7 +363,7 @@ export default function Home() {
                 </a>
 
                 <a
-                  href="https://app.uniclick.io"
+                  href="https://app.danieldtoro.com/"
                   className="px-4 py-2 md:px-6 md:py-2.5 rounded-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white transition-all flex items-center space-x-2 group shadow-xl shadow-blue-500/25 hover:shadow-blue-500/40 border border-blue-500/20 text-xs md:text-sm font-medium hover:scale-105"
                 >
                   <span>{t.createAccount}</span>
@@ -402,7 +402,7 @@ export default function Home() {
                 </DropdownMenu>
 
                 <a
-                  href="https://app.uniclick.io"
+                  href="https://app.danieldtoro.com/"
                   className="px-3 py-2 rounded-full bg-transparent hover:bg-gradient-to-r hover:from-green-900/50 hover:to-emerald-900/50 transition-all flex items-center space-x-1 group border border-green-500 text-xs font-medium text-white hover:border-green-400 hover:shadow-lg hover:shadow-green-500/50"
                 >
                   <span>{t.login}</span>
@@ -594,9 +594,14 @@ export default function Home() {
                     <p className="text-gray-400 text-xs text-center">{t.takeActionSecure}</p>
                   </div>
                   
-                  <button className="w-full bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-600 backdrop-blur-sm hover:from-purple-700 hover:via-blue-700 hover:to-cyan-700 text-white font-black py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg shadow-purple-500/25 text-sm tracking-wide border border-purple-400/30">
+                  <a 
+                    href="https://app.danieldtoro.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-600 backdrop-blur-sm hover:from-purple-700 hover:via-blue-700 hover:to-cyan-700 text-white font-black py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg shadow-purple-500/25 text-sm tracking-wide border border-purple-400/30 text-center block"
+                  >
                     {t.takeActionButton}
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>

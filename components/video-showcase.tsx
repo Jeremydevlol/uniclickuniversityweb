@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useRef, useEffect, useState } from "react"
+import VideoCache from "./video-cache"
 
 interface VideoShowcaseProps {
   videoUrl: string
@@ -8,40 +9,35 @@ interface VideoShowcaseProps {
 }
 
 export default function VideoShowcase({ videoUrl, className = "" }: VideoShowcaseProps) {
-  const videoRef = useRef<HTMLVideoElement>(null)
+  const iframeRef = useRef<HTMLIFrameElement>(null)
+  const playerRef = useRef<any>(null)
   const [isHovered, setIsHovered] = useState(false)
-  const [isMuted, setIsMuted] = useState(true)
+  const [isMuted, setIsMuted] = useState(false)
   const [isPlaying, setIsPlaying] = useState(false)
 
   useEffect(() => {
-    const video = videoRef.current
-    if (video) {
-      // Configuración del video
-      video.loop = true
-      video.muted = isMuted
-      video.playsInline = true
-      video.volume = 0.7
-      video.autoplay = true // Autoplay habilitado
-      video.preload = "auto"
-      
-      // Intentar reproducir automáticamente
-      video.play().catch((error) => {
-        console.log("Error al reproducir automáticamente:", error)
-        // Si falla el autoplay, intentar después de una interacción del usuario
-        document.addEventListener('click', () => {
-          video.play().catch(() => {})
-        }, { once: true })
-      })
-      
-      // Event listeners para el bucle
-      video.addEventListener('ended', () => {
-        video.currentTime = 0
-        video.play()
-      })
-      
-      return () => {
-        video.removeEventListener('ended', () => {})
+    // Cargar el script de Vimeo Player API y configurar el player
+    const script = document.createElement('script')
+    script.src = 'https://player.vimeo.com/api/player.js'
+    script.async = true
+    script.onload = () => {
+      if (iframeRef.current && (window as any).Vimeo) {
+        playerRef.current = new (window as any).Vimeo.Player(iframeRef.current)
       }
+    }
+    document.head.appendChild(script)
+
+    return () => {
+      if (document.head.contains(script)) {
+        document.head.removeChild(script)
+      }
+    }
+  }, [])
+
+  useEffect(() => {
+    // Controlar el audio sin reiniciar el video
+    if (playerRef.current) {
+      playerRef.current.setMuted(isMuted)
     }
   }, [isMuted])
 
@@ -82,16 +78,17 @@ export default function VideoShowcase({ videoUrl, className = "" }: VideoShowcas
 
         {/* Contenedor del video */}
         <div className="relative bg-black rounded-xl overflow-hidden shadow-2xl group-hover:shadow-green-500/50 transition-all duration-500 aspect-video">
-          <video
-            ref={videoRef}
-            className="w-full h-full object-cover"
-            poster=""
-            onPlay={() => setIsPlaying(true)}
-            onPause={() => setIsPlaying(false)}
-          >
-            <source src={videoUrl} type="video/mp4" />
-            Tu navegador no soporta el elemento de video.
-          </video>
+          <div style={{padding:"56.25% 0 0 0",position:"relative"}}>
+            <VideoCache
+              videoId="1121135074"
+              title="historia de daniel new video1123456"
+              autoPlay={true}
+              muted={isMuted}
+              loop={true}
+              controls={false}
+              style={{position:"absolute",top:0,left:0,width:"100%",height:"100%"}}
+            />
+          </div>
 
           {/* Botón de audio en la esquina superior derecha */}
           <div className="absolute top-4 right-4 z-10">
