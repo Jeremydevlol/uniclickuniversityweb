@@ -68,8 +68,8 @@ export default function VideoCache({
       setIsLoaded(true)
     })
 
-    // Pause el video inicialmente para precargar
-    iframe.src = iframe.src.replace('autoplay=1', 'autoplay=0')
+    // Mantener autoplay si está habilitado
+    // iframe.src = iframe.src.replace('autoplay=1', 'autoplay=0')
     
     return () => {
       // Limpiar listeners
@@ -84,11 +84,6 @@ export default function VideoCache({
           ref={(el) => {
             if (el && iframeElement && !el.contains(iframeElement)) {
               el.appendChild(iframeElement)
-              // Reanudar autoplay si está habilitado
-              if (autoPlay) {
-                const currentSrc = iframeElement.src
-                iframeElement.src = currentSrc.replace('autoplay=0', 'autoplay=1')
-              }
             }
           }}
           style={{ width: '100%', height: '100%' }}

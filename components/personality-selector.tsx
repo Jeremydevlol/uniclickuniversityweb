@@ -234,16 +234,16 @@ Selecciona la personalidad que mejor represente a tu empresa.
           <Link href="https://chat.whatsapp.com/DLxq74SVodtCO06W452DXQ" target="_blank" rel="noopener noreferrer">
             <Button
               size="lg"
-              className="bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-600 hover:from-purple-700 hover:via-blue-700 hover:to-cyan-700 text-white font-bold rounded-full px-8 py-6 text-base sm:px-10 sm:py-7 sm:text-lg shadow-2xl shadow-purple-500/30 hover:shadow-purple-500/50 transition-all duration-300 group hover:scale-105 flex items-center justify-center gap-4 w-full max-w-md relative overflow-hidden"
+              className="bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-600 hover:from-purple-700 hover:via-blue-700 hover:to-cyan-700 text-white font-bold rounded-full px-8 py-6 text-base sm:px-10 sm:py-7 sm:text-lg shadow-2xl shadow-purple-500/30 hover:shadow-purple-500/50 transition-all duration-300 group hover:scale-105 flex items-center justify-between gap-4 w-full max-w-md relative overflow-hidden"
             >
-              <span className="text-center">ÚNETE A LA COMUNIDAD DE TRIUNFADORES</span>
-              <div className="absolute right-6 top-1/2 transform -translate-y-1/2">
+              <span className="flex-1 text-center">ÚNETE A LA COMUNIDAD DE TRIUNFADORES</span>
+              <div className="flex-shrink-0">
                 <Image 
-                  src="/whatsapp.gif" 
+                  src="/images/whatsapp-3d.png" 
                   alt="WhatsApp" 
-                  width={40} 
-                  height={40} 
-                  className="w-10 h-10"
+                  width={48} 
+                  height={48} 
+                  className="w-12 h-12"
                 />
               </div>
             </Button>
