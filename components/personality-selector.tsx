@@ -225,15 +225,15 @@ Selecciona la personalidad que mejor represente a tu empresa.
           transition={{ delay: 1.2, duration: 0.8 }}
           className="flex justify-center mt-28 sm:mt-36 md:mt-44"
         >
-          <Link href="https://t.me/uniclickuniversitygroup">
+          <Link href="https://chat.whatsapp.com/DS42mjtZDhMBWCVGciYJyv?mode=ems_wa_c">
             <Button
               size="lg"
               className="bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-600 hover:from-purple-700 hover:via-blue-700 hover:to-cyan-700 text-white font-bold rounded-full px-8 py-6 text-base sm:px-10 sm:py-7 sm:text-lg shadow-2xl shadow-purple-500/30 hover:shadow-purple-500/50 transition-all duration-300 group hover:scale-105 flex items-center justify-between gap-4 w-full max-w-md"
             >
               <span className="flex-1 text-center">ÚNETE A LOS TRIUNFADORES</span>
               <Image 
-                src="/Telegram.gif" 
-                alt="Telegram" 
+                src="/images/whatsapp-3d.png" 
+                alt="WhatsApp" 
                 width={48} 
                 height={48} 
                 className="w-12 h-12"

@@ -290,7 +290,7 @@ export default function Home() {
   // Configuración de las burbujas flotantes con iconos de redes sociales
   const floatingBubbles = [
     { icon: "📱", name: "WhatsApp", delay: 0, x: -200, y: -100 },
-    { icon: "✈️", name: "Telegram", delay: 0.2, x: 200, y: -80 },
+    { icon: "💬", name: "WhatsApp", delay: 0.2, x: 200, y: -80 },
     { icon: "📘", name: "Facebook", delay: 0.4, x: -180, y: 120 },
     { icon: "📷", name: "Instagram", delay: 0.6, x: 180, y: 100 },
     { icon: "🐦", name: "Twitter", delay: 0.8, x: -120, y: -150 },
@@ -410,7 +410,7 @@ export default function Home() {
                 </DropdownMenu>
 
                 <a
-                  href="https://app.uniclick.io"
+                  href="https://app.danieldtoro.com/"
                   className="px-4 py-2 md:px-5 md:py-2.5 rounded-full bg-transparent hover:bg-gradient-to-r hover:from-green-900/50 hover:to-emerald-900/50 transition-all flex items-center space-x-2 group border border-green-500 text-xs md:text-sm font-medium text-white hover:border-green-400 hover:shadow-lg hover:shadow-green-500/50"
                 >
                   <span>{t.login}</span>
@@ -418,7 +418,7 @@ export default function Home() {
                 </a>
 
                 <a
-                  href="https://app.uniclick.io"
+                  href="https://app.danieldtoro.com/"
                   className="px-4 py-2 md:px-6 md:py-2.5 rounded-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white transition-all flex items-center space-x-2 group shadow-xl shadow-blue-500/25 hover:shadow-blue-500/40 border border-blue-500/20 text-xs md:text-sm font-medium hover:scale-105"
                 >
                   <span>{t.createAccount}</span>
@@ -457,7 +457,7 @@ export default function Home() {
                 </DropdownMenu>
 
                 <a
-                  href="https://app.uniclick.io"
+                  href="https://app.danieldtoro.com/"
                   className="px-3 py-2 rounded-full bg-transparent hover:bg-gradient-to-r hover:from-green-900/50 hover:to-emerald-900/50 transition-all flex items-center space-x-1 group border border-green-500 text-xs font-medium text-white hover:border-green-400 hover:shadow-lg hover:shadow-green-500/50"
                 >
                   <span>{t.login}</span>
