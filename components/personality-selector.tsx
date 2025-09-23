@@ -4,7 +4,6 @@ import { motion } from "framer-motion"
 import { Heart, ThumbsUp, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import VideoCache from "./video-cache"
 
 const TEAM_MEMBERS = [
   {
@@ -52,13 +51,12 @@ const Card = ({ member, sizeClass }: { member: (typeof TEAM_MEMBERS)[0]; sizeCla
       {member.id === 1 ? (
         // Video de Vimeo para "Libertad"
           <div className="w-full h-full rounded-2xl overflow-hidden">
-            <VideoCache
-              videoId="1117041226"
+            <iframe
+              src="https://player.vimeo.com/video/1117041226?badge=0&autopause=0&player_id=0&app_id=58479&loop=1&autoplay=1&muted=1&controls=0&title=0&byline=0&portrait=0&background=1"
+              frameBorder="0"
+              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
               title="IMG_5792"
-              autoPlay={true}
-              muted={true}
-              loop={true}
-              controls={false}
               className="w-[120%] h-[200%] object-cover rounded-2xl transform -translate-x-[10%] -translate-y-[10%] group-hover:scale-100 transition-transform duration-700"
               style={{pointerEvents:"none"}}
             />
@@ -66,13 +64,12 @@ const Card = ({ member, sizeClass }: { member: (typeof TEAM_MEMBERS)[0]; sizeCla
       ) : member.id === 2 ? (
         // Video de Vimeo para "Comunicación"
           <div className="w-full h-full rounded-2xl overflow-hidden">
-            <VideoCache
-              videoId="1117039423"
+            <iframe
+              src="https://player.vimeo.com/video/1117039423?badge=0&autopause=0&player_id=0&app_id=58479&loop=1&autoplay=1&muted=1&controls=0&title=0&byline=0&portrait=0&background=1"
+              frameBorder="0"
+              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
               title="a6ea2565bc5d4a8ea151f3ac45954447"
-              autoPlay={true}
-              muted={true}
-              loop={true}
-              controls={false}
               className="w-[120%] h-[120%] object-cover rounded-2xl transform -translate-x-[10%] -translate-y-[10%] group-hover:scale-110 transition-transform duration-700"
               style={{pointerEvents:"none"}}
             />
@@ -80,13 +77,12 @@ const Card = ({ member, sizeClass }: { member: (typeof TEAM_MEMBERS)[0]; sizeCla
       ) : member.id === 3 ? (
         // Video de Vimeo para "Rapidez"
           <div className="w-full h-full rounded-2xl overflow-hidden">
-            <VideoCache
-              videoId="1117045879"
+            <iframe
+              src="https://player.vimeo.com/video/1117045879?badge=0&autopause=0&player_id=0&app_id=58479&loop=1&autoplay=1&muted=1&controls=0&title=0&byline=0&portrait=0&background=1"
+              frameBorder="0"
+              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
               title="IMG_0667"
-              autoPlay={true}
-              muted={true}
-              loop={true}
-              controls={false}
               className="w-[120%] h-[120%] object-cover rounded-2xl transform -translate-x-[10%] -translate-y-[10%] group-hover:scale-110 transition-transform duration-700"
               style={{pointerEvents:"none"}}
             />
@@ -95,13 +91,12 @@ const Card = ({ member, sizeClass }: { member: (typeof TEAM_MEMBERS)[0]; sizeCla
         // Video de Vimeo para "Innovación"
         <div className="w-full h-full rounded-2xl overflow-hidden">
           <div style={{padding:"177.78% 0 0 0",position:"relative"}}>
-            <VideoCache
-              videoId="1117409631"
+            <iframe
+              src="https://player.vimeo.com/video/1117409631?badge=0&autopause=0&player_id=0&app_id=58479&loop=1&autoplay=1&muted=1&controls=0&title=0&byline=0&portrait=0&background=1"
+              frameBorder="0"
+              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
               title="ssstik.io_@danieldtoro_1757503454344"
-              autoPlay={true}
-              muted={true}
-              loop={true}
-              controls={false}
               style={{position:"absolute",top:0,left:0,width:"100%",height:"100%",pointerEvents:"none"}}
             />
           </div>
@@ -110,13 +105,12 @@ const Card = ({ member, sizeClass }: { member: (typeof TEAM_MEMBERS)[0]; sizeCla
         // Video de Vimeo para "Eficiencia"
         <div className="w-full h-full rounded-2xl overflow-hidden">
           <div style={{padding:"177.78% 0 0 0",position:"relative"}}>
-            <VideoCache
-              videoId="1117409661"
+            <iframe
+              src="https://player.vimeo.com/video/1117409661?badge=0&autopause=0&player_id=0&app_id=58479&loop=1&autoplay=1&muted=1&controls=0&title=0&byline=0&portrait=0&background=1"
+              frameBorder="0"
+              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
               title="ssstik.io_@danieldtoro_1757503297660"
-              autoPlay={true}
-              muted={true}
-              loop={true}
-              controls={false}
               style={{position:"absolute",top:0,left:0,width:"100%",height:"100%",pointerEvents:"none"}}
             />
           </div>

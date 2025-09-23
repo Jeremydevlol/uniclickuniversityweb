@@ -1,7 +1,6 @@
 "use client"
 
 import React, { useRef, useEffect, useState } from "react"
-import VideoCache from "./video-cache"
 
 interface VideoShowcaseProps {
   videoUrl: string
@@ -79,14 +78,14 @@ export default function VideoShowcase({ videoUrl, className = "" }: VideoShowcas
         {/* Contenedor del video */}
         <div className="relative bg-black rounded-xl overflow-hidden shadow-2xl group-hover:shadow-green-500/50 transition-all duration-500 aspect-video">
           <div style={{padding:"56.25% 0 0 0",position:"relative"}}>
-            <VideoCache
-              videoId="1121135074"
+            <iframe
+              ref={iframeRef}
+              src={`https://player.vimeo.com/video/1121135074?badge=0&autopause=0&player_id=0&app_id=58479&loop=1&autoplay=1&muted=${isMuted ? 1 : 0}&controls=0&title=0&byline=0&portrait=0&background=1`}
+              frameBorder="0"
+              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
               title="historia de daniel new video1123456"
-              autoPlay={true}
-              muted={isMuted}
-              loop={true}
-              controls={false}
-              style={{position:"absolute",top:0,left:0,width:"100%",height:"100%"}}
+              style={{position:"absolute",top:0,left:0,width:"100%",height:"100%",pointerEvents:"none"}}
             />
           </div>
 
