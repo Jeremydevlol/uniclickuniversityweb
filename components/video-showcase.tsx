@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useRef, useEffect, useState } from "react"
-import SimpleVideoCache from "./simple-video-cache"
+import VideoCache from "./video-cache"
 
 interface VideoShowcaseProps {
   videoUrl: string
@@ -79,7 +79,7 @@ export default function VideoShowcase({ videoUrl, className = "" }: VideoShowcas
         {/* Contenedor del video */}
         <div className="relative bg-black rounded-xl overflow-hidden shadow-2xl group-hover:shadow-green-500/50 transition-all duration-500 aspect-video">
           <div style={{padding:"56.25% 0 0 0",position:"relative"}}>
-            <SimpleVideoCache
+            <VideoCache
               videoId="1121135074"
               title="historia de daniel new video1123456"
               autoPlay={true}
