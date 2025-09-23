@@ -27,15 +27,21 @@ export default function VideoCache({
   style = {}
 }: VideoCacheProps) {
   const [isLoaded, setIsLoaded] = useState(false)
+  const [isLoading, setIsLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
   const [iframeElement, setIframeElement] = useState<HTMLIFrameElement | null>(null)
 
   useEffect(() => {
+    setIsLoading(true)
+    setError(null)
+    
     // Verificar si el video ya está en caché
     const cachedVideo = videoCache.get(videoId)
     
     if (cachedVideo) {
       setIframeElement(cachedVideo)
       setIsLoaded(true)
+      setIsLoading(false)
       return
     }
 
@@ -60,25 +66,54 @@ export default function VideoCache({
     
     Object.assign(iframe.style, style)
 
-    // Precargar el video
-    iframe.addEventListener('load', () => {
-      // Guardar en caché
+    // Manejar la carga del video
+    const handleLoad = () => {
       videoCache.set(videoId, iframe)
       setIframeElement(iframe)
       setIsLoaded(true)
-    })
+      setIsLoading(false)
+    }
 
-    // Mantener autoplay si está habilitado
-    // iframe.src = iframe.src.replace('autoplay=1', 'autoplay=0')
+    const handleError = () => {
+      setError('Error al cargar el video')
+      setIsLoading(false)
+    }
+
+    iframe.addEventListener('load', handleLoad)
+    iframe.addEventListener('error', handleError)
     
     return () => {
-      // Limpiar listeners
-      iframe.removeEventListener('load', () => {})
+      iframe.removeEventListener('load', handleLoad)
+      iframe.removeEventListener('error', handleError)
     }
   }, [videoId, autoPlay, muted, loop, controls, title, className, style])
 
   return (
     <div style={{ position: 'relative', width: '100%', height: '100%' }}>
+      {isLoading && (
+        <div className="absolute inset-0 flex items-center justify-center bg-gray-900 rounded-xl">
+          <div className="text-white text-center">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-white mx-auto mb-4"></div>
+            <p>Cargando video...</p>
+          </div>
+        </div>
+      )}
+      
+      {error && (
+        <div className="absolute inset-0 flex items-center justify-center bg-gray-900 rounded-xl">
+          <div className="text-white text-center">
+            <p className="text-red-400 mb-2">⚠️ Error al cargar el video</p>
+            <p className="text-sm text-gray-400">{error}</p>
+            <button 
+              onClick={() => window.location.reload()} 
+              className="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+            >
+              Reintentar
+            </button>
+          </div>
+        </div>
+      )}
+      
       {isLoaded && iframeElement && (
         <div
           ref={(el) => {
