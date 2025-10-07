@@ -21,10 +21,6 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'jnzsabhbfnivdiceoefg.supabase.co',
       },
-      {
-        protocol: 'https',
-        hostname: 'player.vimeo.com',
-      },
     ],
   },
   // Optimizaciones de compilación

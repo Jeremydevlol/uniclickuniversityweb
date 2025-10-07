@@ -32,6 +32,7 @@ export default function Home() {
   const brainVideoRef = useRef<HTMLVideoElement>(null)
   const interestsVideoRef = useRef<HTMLVideoElement>(null)
   const diaryVideoRef = useRef<HTMLVideoElement>(null)
+  const bannerVideoRef = useRef<HTMLVideoElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
   const [isLoaded, setIsLoaded] = useState(false)
   const currentLang = "ES" // Idioma fijo en español
@@ -68,6 +69,7 @@ export default function Home() {
     setupLoopingVideo(brainVideoRef.current)
     setupLoopingVideo(interestsVideoRef.current)
     setupLoopingVideo(diaryVideoRef.current)
+    setupLoopingVideo(bannerVideoRef.current)
 
     const timer = setTimeout(() => {
       setIsLoaded(true)
@@ -737,17 +739,20 @@ export default function Home() {
               >
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent z-10"></div>
                 <div className="absolute inset-0 w-full h-full">
-                  <div style={{padding:"177.78% 0 0 0",position:"relative"}}>
-                    <iframe 
-                      src="https://player.vimeo.com/video/1117419422?badge=0&autopause=0&player_id=0&app_id=58479&loop=1&autoplay=1&muted=1&controls=0&title=0&byline=0&portrait=0&background=1" 
-                      frameBorder="0" 
-                      allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
-                      referrerPolicy="strict-origin-when-cross-origin" 
-                      style={{position:"absolute",top:0,left:0,width:"100%",height:"100%"}} 
-                      title="ssstik.io_@danieldtoro_1757505858710"
-                      loading="lazy"
-                    />
-                  </div>
+                  <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    preload="auto"
+                    className="absolute inset-0 w-full h-full object-cover"
+                    style={{pointerEvents:"none"}}
+                    disablePictureInPicture
+                    controlsList="nodownload nofullscreen noremoteplayback"
+                  >
+                    <source src="https://jnzsabhbfnivdiceoefg.supabase.co/storage/v1/object/sign/danieldtoro/Video%20principal/img_5792%20(2160p).mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNGNiMTczNS02NDVkLTQ2OWEtOTdjOS01Y2QzZDMzMWY2M2IiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJkYW5pZWxkdG9yby9WaWRlbyBwcmluY2lwYWwvaW1nXzU3OTIgKDIxNjBwKS5tcDQiLCJpYXQiOjE3NTk4NDc5MTMsImV4cCI6MTc5MTM4MzkxM30.DTBLQG4slB4cjc-NGJaHktPTcANY98vJBqfYLbvFubg" type="video/mp4" />
+                    Tu navegador no soporta el elemento de video.
+                  </video>
                 </div>
                 <div className="p-12 h-full flex flex-col justify-end relative z-20">
                   <h3 className="text-4xl md:text-6xl font-black text-white mb-4 leading-tight drop-shadow-lg whitespace-pre-line">
@@ -768,17 +773,21 @@ export default function Home() {
                 >
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent z-10"></div>
                   <div className="absolute inset-0 w-full h-full">
-                    <div style={{padding:"56.25% 0 0 0",position:"relative"}}>
-                      <iframe 
-                        src="https://player.vimeo.com/video/1117411477?badge=0&autopause=0&player_id=0&app_id=58479&loop=1&autoplay=1&muted=1&controls=0&title=0&byline=0&portrait=0&background=1" 
-                        frameBorder="0" 
-                        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
-                        referrerPolicy="strict-origin-when-cross-origin" 
-                        style={{position:"absolute",top:0,left:0,width:"100%",height:"100%"}} 
-                        title="C5453"
-                        loading="lazy"
-                      />
-                    </div>
+                    <video
+                      ref={heartVideoRef}
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      preload="auto"
+                      className="absolute inset-0 w-full h-full object-cover"
+                      style={{pointerEvents:"none"}}
+                      disablePictureInPicture
+                      controlsList="nodownload nofullscreen noremoteplayback"
+                    >
+                      <source src="https://jnzsabhbfnivdiceoefg.supabase.co/storage/v1/object/sign/danieldtoro/Video%20principal/img_0667%20(1440p).mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNGNiMTczNS02NDVkLTQ2OWEtOTdjOS01Y2QzZDMzMWY2M2IiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJkYW5pZWxkdG9yby9WaWRlbyBwcmluY2lwYWwvaW1nXzA2NjcgKDE0NDBwKS5tcDQiLCJpYXQiOjE3NTk4NzI0NTgsImV4cCI6MTc5MTQwODQ1OH0.BCMNbJe_Wh-LO1rLqUCmzd25aeXVd5hKblRtDUSucRw" type="video/mp4" />
+                      Tu navegador no soporta el elemento de video.
+                    </video>
                   </div>
                   <div className="p-10 h-full flex flex-col justify-end relative z-20">
                     <h3 className="text-3xl md:text-4xl font-black text-white mb-3 leading-tight drop-shadow-lg">
@@ -797,17 +806,21 @@ export default function Home() {
                 >
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent z-10"></div>
                   <div className="absolute inset-0 w-full h-full">
-                    <div style={{padding:"56.25% 0 0 0",position:"relative"}}>
-                      <iframe 
-                        src="https://player.vimeo.com/video/1117420652?badge=0&autopause=0&player_id=0&app_id=58479&loop=1&autoplay=1&muted=1&controls=0&title=0&byline=0&portrait=0&background=1" 
-                        frameBorder="0" 
-                        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
-                        referrerPolicy="strict-origin-when-cross-origin" 
-                        style={{position:"absolute",top:0,left:0,width:"100%",height:"100%"}} 
-                        title="C5434"
-                        loading="lazy"
-                      />
-                    </div>
+                    <video
+                      ref={arVideoRef}
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      preload="auto"
+                      className="absolute inset-0 w-full h-full object-cover"
+                      style={{pointerEvents:"none"}}
+                      disablePictureInPicture
+                      controlsList="nodownload nofullscreen noremoteplayback"
+                    >
+                      <source src="https://jnzsabhbfnivdiceoefg.supabase.co/storage/v1/object/sign/danieldtoro/Video%20principal/a6ea2565bc5d4a8ea151f3ac45954447.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNGNiMTczNS02NDVkLTQ2OWEtOTdjOS01Y2QzZDMzMWY2M2IiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJkYW5pZWxkdG9yby9WaWRlbyBwcmluY2lwYWwvYTZlYTI1NjViYzVkNGE4ZWExNTFmM2FjNDU5NTQ0NDcubXA0IiwiaWF0IjoxNzU5ODcyNzYxLCJleHAiOjE3OTE0MDg3NjF9.Tj4E6daoYwJ2GEhbKUf36TyfLglcQqg3FOoHnzLj28g" type="video/mp4" />
+                      Tu navegador no soporta el elemento de video.
+                    </video>
                   </div>
                   <div className="p-10 h-full flex flex-col justify-end relative z-20">
                     <h3 className="text-3xl md:text-4xl font-black text-white mb-3 leading-tight drop-shadow-lg">
@@ -940,17 +953,21 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8 max-w-7xl mx-auto">
               <div className="md:col-span-12 bg-gradient-to-br from-blue-400 via-indigo-500 to-blue-600 rounded-3xl overflow-hidden relative min-h-[250px] sm:min-h-[300px] md:min-h-[350px] cursor-pointer group shadow-2xl hover:shadow-blue-500/50 transition-all duration-500 hover:scale-105">
                 <div className="absolute inset-0 z-0">
-                  <div style={{padding:"56.25% 0 0 0",position:"relative"}}>
-                    <iframe 
-                      src="https://player.vimeo.com/video/1117395698?badge=0&autopause=0&player_id=0&app_id=58479&loop=1&autoplay=1&muted=1&controls=0&title=0&byline=0&portrait=0&background=1" 
-                      frameBorder="0" 
-                      allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
-                      referrerPolicy="strict-origin-when-cross-origin" 
-                      className="absolute top-1/2 left-1/2 w-[250%] h-[250%] -translate-x-1/2 -translate-y-1/2 sm:top-[-10%] sm:left-0 sm:w-full sm:h-full sm:translate-x-0 sm:translate-y-0" 
-                      title="Video"
-                      loading="lazy"
-                    />
-                  </div>
+                  <video
+                    ref={bannerVideoRef}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    preload="auto"
+                    className="absolute inset-0 w-full h-full object-cover"
+                    style={{pointerEvents:"none"}}
+                    disablePictureInPicture
+                    controlsList="nodownload nofullscreen noremoteplayback"
+                  >
+                    <source src="https://jnzsabhbfnivdiceoefg.supabase.co/storage/v1/object/sign/danieldtoro/Video%20principal/video%20(1080p).mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNGNiMTczNS02NDVkLTQ2OWEtOTdjOS01Y2QzZDMzMWY2M2IiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJkYW5pZWxkdG9yby9WaWRlbyBwcmluY2lwYWwvdmlkZW8gKDEwODBwKS5tcDQiLCJpYXQiOjE3NTk4NzMwOTksImV4cCI6MTc5MTQwOTA5OX0.hKrARFsm1G8mQjv62T-bIJLmHXq7hIJprrmXeiVzXpo" type="video/mp4" />
+                    Tu navegador no soporta el elemento de video.
+                  </video>
                   {/* Overlay para mejorar la legibilidad */}
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-900/70 via-indigo-800/50 to-blue-900/70 z-10"></div>
                 </div>
