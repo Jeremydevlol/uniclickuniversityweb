@@ -43,6 +43,10 @@ export default function RootLayout({
   return (
     <html lang="es" suppressHydrationWarning>
       <head>
+        {/* DNS Prefetch y Preconnect para carga rápida de videos */}
+        <link rel="dns-prefetch" href="https://jnzsabhbfnivdiceoefg.supabase.co" />
+        <link rel="preconnect" href="https://jnzsabhbfnivdiceoefg.supabase.co" crossOrigin="anonymous" />
+        
         {/* Usercentrics Scripts */}
         <script 
           src="https://web.cmp.usercentrics.eu/modules/autoblocker.js"

@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useRef, useEffect, useState } from "react"
+import React, { useState } from "react"
 
 interface VideoShowcaseProps {
   videoUrl: string
@@ -8,37 +8,9 @@ interface VideoShowcaseProps {
 }
 
 export default function VideoShowcase({ videoUrl, className = "" }: VideoShowcaseProps) {
-  const iframeRef = useRef<HTMLIFrameElement>(null)
-  const playerRef = useRef<any>(null)
   const [isHovered, setIsHovered] = useState(false)
-  const [isMuted, setIsMuted] = useState(false)
+  const [isMuted, setIsMuted] = useState(true)
   const [isPlaying, setIsPlaying] = useState(false)
-
-  useEffect(() => {
-    // Cargar el script de Vimeo Player API y configurar el player
-    const script = document.createElement('script')
-    script.src = 'https://player.vimeo.com/api/player.js'
-    script.async = true
-    script.onload = () => {
-      if (iframeRef.current && (window as any).Vimeo) {
-        playerRef.current = new (window as any).Vimeo.Player(iframeRef.current)
-      }
-    }
-    document.head.appendChild(script)
-
-    return () => {
-      if (document.head.contains(script)) {
-        document.head.removeChild(script)
-      }
-    }
-  }, [])
-
-  useEffect(() => {
-    // Controlar el audio sin reiniciar el video
-    if (playerRef.current) {
-      playerRef.current.setMuted(isMuted)
-    }
-  }, [isMuted])
 
   const handleMouseEnter = () => {
     setIsHovered(true)
@@ -77,17 +49,21 @@ export default function VideoShowcase({ videoUrl, className = "" }: VideoShowcas
 
         {/* Contenedor del video */}
         <div className="relative bg-black rounded-xl overflow-hidden shadow-2xl group-hover:shadow-green-500/50 transition-all duration-500 aspect-video">
-          <div style={{padding:"56.25% 0 0 0",position:"relative"}}>
-            <iframe
-              ref={iframeRef}
-              src={`https://player.vimeo.com/video/1121135074?badge=0&autopause=0&player_id=0&app_id=58479&loop=1&autoplay=1&muted=${isMuted ? 1 : 0}&controls=0&title=0&byline=0&portrait=0&background=1`}
-              frameBorder="0"
-              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              title="historia de daniel new video1123456"
-              style={{position:"absolute",top:0,left:0,width:"100%",height:"100%",pointerEvents:"none"}}
-            />
-          </div>
+          <video
+            autoPlay
+            loop
+            muted={isMuted}
+            playsInline
+            preload="auto"
+            className="w-full h-full object-cover"
+            style={{pointerEvents:"none"}}
+            disablePictureInPicture
+            controlsList="nodownload nofullscreen noremoteplayback"
+            x-webkit-airplay="deny"
+          >
+            <source src={videoUrl} type="video/mp4" />
+            Tu navegador no soporta el elemento de video.
+          </video>
 
           {/* Botón de audio en la esquina superior derecha */}
           <div className="absolute top-4 right-4 z-10">

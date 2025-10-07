@@ -309,6 +309,9 @@ export default function Home() {
         <meta name="keywords" content="Daniel D Toro, formación ventas, vendedores, emprendedores, triunfadores, WhatsApp empresarial, automatización, IA, mentor, cursos ventas" />
         <meta name="robots" content="index, follow" />
         
+        {/* Preload video para carga rápida */}
+        <link rel="preload" as="video" href="https://jnzsabhbfnivdiceoefg.supabase.co/storage/v1/object/sign/danieldtoro/Video%20principal/historia_de_daniel_new_video1123456%20(2160p).mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNGNiMTczNS02NDVkLTQ2OWEtOTdjOS01Y2QzZDMzMWY2M2IiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJkYW5pZWxkdG9yby9WaWRlbyBwcmluY2lwYWwvaGlzdG9yaWFfZGVfZGFuaWVsX25ld192aWRlbzExMjM0NTYgKDIxNjBwKS5tcDQiLCJpYXQiOjE3NTk4NDQ5OTYsImV4cCI6MTc5MTM4MDk5Nn0.4TRwS1VR0cAYp4VK7Nzoytouf1RauZkKVjBB4ykh2zc" type="video/mp4" />
+        
         {/* Open Graph */}
         <meta property="og:title" content="Daniel D Toro - Formación que te cambia la vida" />
         <meta property="og:description" content="🔥 Deja de ser vago, conviértete en triunfador. Aprende a vender, ganar dinero y ser el mejor. Sin excusas, solo resultados." />
@@ -496,7 +499,7 @@ export default function Home() {
                 {/* Video showcase con bordes animados */}
                 <div className="mt-8 mb-8 px-6 sm:px-8 md:px-12 lg:px-16">
                   <VideoShowcase 
-                    videoUrl="https://jnzsabhbfnivdiceoefg.supabase.co/storage/v1/object/sign/login/uniclick%20(2160p).mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNGNiMTczNS02NDVkLTQ2OWEtOTdjOS01Y2QzZDMzMWY2M2IiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJsb2dpbi91bmljbGljayAoMjE2MHApLm1wNCIsImlhdCI6MTc1Mjk1NjczMCwiZXhwIjo0OTA2NTU2NzMwfQ.zdjgq0uB-NKxuc7aXVHyiuQ_Y6aqocLbTlAkH3fduFQ"
+                    videoUrl="https://jnzsabhbfnivdiceoefg.supabase.co/storage/v1/object/sign/danieldtoro/Video%20principal/historia_de_daniel_new_video1123456%20(2160p).mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNGNiMTczNS02NDVkLTQ2OWEtOTdjOS01Y2QzZDMzMWY2M2IiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJkYW5pZWxkdG9yby9WaWRlbyBwcmluY2lwYWwvaGlzdG9yaWFfZGVfZGFuaWVsX25ld192aWRlbzExMjM0NTYgKDIxNjBwKS5tcDQiLCJpYXQiOjE3NTk4NDQ5OTYsImV4cCI6MTc5MTM4MDk5Nn0.4TRwS1VR0cAYp4VK7Nzoytouf1RauZkKVjBB4ykh2zc"
                     className="max-w-7xl mx-auto"
                   />
                 </div>
