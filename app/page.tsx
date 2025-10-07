@@ -395,7 +395,7 @@ export default function Home() {
       {/* Contenido */}
       <div className="relative z-10">
         {/* Barra de Publicidad - Formación Triunfadores */}
-        <div className="w-full fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-blue-700 via-blue-600 to-blue-700 py-1.5 shadow-xl animate-gradient-x">
+        <div className="w-full fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-teal-500 via-cyan-500 to-emerald-500 py-1.5 shadow-xl animate-gradient-x">
           <div className="container mx-auto px-3">
             <a 
               href="https://app.danieldtoro.com/"
