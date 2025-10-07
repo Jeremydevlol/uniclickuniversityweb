@@ -302,3 +302,6 @@ Si tienes preguntas sobre estas optimizaciones o necesitas ajustes adicionales, 
 
 **Todas las optimizaciones mantienen el diseño visual exactamente igual** ✨
 
+
+
+
