@@ -10,37 +10,37 @@ const TEAM_MEMBERS = [
     id: 1,
     name: "Libertad",
     role: "Expansión sin límites",
-    video: "https://videos.pexels.com/video-files/8956152/8956152-uhd_2560_1440_24fps.mp4",
+    video: "https://jnzsabhbfnivdiceoefg.supabase.co/storage/v1/object/sign/danieldtoro/Video%20principal/img_5792%20(2160p).mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNGNiMTczNS02NDVkLTQ2OWEtOTdjOS01Y2QzZDMzMWY2M2IiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJkYW5pZWxkdG9yby9WaWRlbyBwcmluY2lwYWwvaW1nXzU3OTIgKDIxNjBwKS5tcDQiLCJpYXQiOjE3NTk4NDc5MTMsImV4cCI6MTc5MTM4MzkxM30.DTBLQG4slB4cjc-NGJaHktPTcANY98vJBqfYLbvFubg",
   },
   {
     id: 2,
     name: "Comunicación",
     role: "Conexión instantánea",
-    video: "https://player.vimeo.com/video/1117039423",
+    video: "https://jnzsabhbfnivdiceoefg.supabase.co/storage/v1/object/sign/danieldtoro/Video%20principal/a6ea2565bc5d4a8ea151f3ac45954447.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNGNiMTczNS02NDVkLTQ2OWEtOTdjOS01Y2QzZDMzMWY2M2IiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJkYW5pZWxkdG9yby9WaWRlbyBwcmluY2lwYWwvYTZlYTI1NjViYzVkNGE4ZWExNTFmM2FjNDU5NTQ0NDcubXA0IiwiaWF0IjoxNzU5ODQ4NTQwLCJleHAiOjE3OTEzODQ1NDB9.C9r_akpdTr0oyPd1sAQZETM8sFkzkUqyoRDRgK9amW8",
   },
   {
     id: 3,
     name: "Rapidez",
     role: "Respuestas ágiles",
-    video: "https://videos.pexels.com/video-files/7480520/7480520-uhd_2560_1440_25fps.mp4",
+    video: "https://jnzsabhbfnivdiceoefg.supabase.co/storage/v1/object/sign/danieldtoro/Video%20principal/img_0667%20(1440p).mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNGNiMTczNS02NDVkLTQ2OWEtOTdjOS01Y2QzZDMzMWY2M2IiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJkYW5pZWxkdG9yby9WaWRlbyBwcmluY2lwYWwvaW1nXzA2NjcgKDE0NDBwKS5tcDQiLCJpYXQiOjE3NTk4NDg3MDgsImV4cCI6MTc5MTM4NDcwOH0.UZrGodAeYnHkE833fcPK2fS5q0TdMYzD0uWGNNtCu6A",
   },
   {
     id: 4,
     name: "Innovación",
     role: "Futuro inteligente",
-    video: "https://videos.pexels.com/video-files/5592671/5592671-hd_1920_1080_25fps.mp4",
+    video: "https://jnzsabhbfnivdiceoefg.supabase.co/storage/v1/object/sign/danieldtoro/Video%20principal/ssstik.io_@danieldtoro_1757503454344%20(540p).mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNGNiMTczNS02NDVkLTQ2OWEtOTdjOS01Y2QzZDMzMWY2M2IiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJkYW5pZWxkdG9yby9WaWRlbyBwcmluY2lwYWwvc3NzdGlrLmlvX0BkYW5pZWxkdG9yb18xNzU3NTAzNDU0MzQ0ICg1NDBwKS5tcDQiLCJpYXQiOjE3NTk4NDkxNTAsImV4cCI6MTc5MTM4NTE1MH0.7e3h_R-kG9YjpRqXcjNwbhegiPbBnT--ZPNmt05nDwA",
   },
   {
     id: 5,
     name: "Eficiencia",
     role: "Optimización total",
-    video: "https://videos.pexels.com/video-files/4332776/4332776-uhd_2560_1440_25fps.mp4",
+    video: "https://jnzsabhbfnivdiceoefg.supabase.co/storage/v1/object/sign/danieldtoro/Video%20principal/ssstik.io_@danieldtoro_1757503297660%20(540p).mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNGNiMTczNS02NDVkLTQ2OWEtOTdjOS01Y2QzZDMzMWY2M2IiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJkYW5pZWxkdG9yby9WaWRlbyBwcmluY2lwYWwvc3NzdGlrLmlvX0BkYW5pZWxkdG9yb18xNzU3NTAzMjk3NjYwICg1NDBwKS5tcDQiLCJpYXQiOjE3NTk4NDk0MjgsImV4cCI6MTc5MTM4NTQyOH0.b5cKEW_9_tVvd_XjTy6TijRRi8xoVr4ImGxi6_418Mk",
   },
   {
     id: 6,
     name: "Conexión",
     role: "Puentes digitales",
-    video: "https://videos.pexels.com/video-files/7989679/7989679-hd_1920_1080_25fps.mp4",
+    video: "", // URL de Supabase Storage
   },
 ]
 
@@ -48,86 +48,19 @@ const Card = ({ member, sizeClass }: { member: (typeof TEAM_MEMBERS)[0]; sizeCla
   <motion.div whileHover={{ scale: 1.05, y: -10 }} className={`relative group cursor-pointer ${sizeClass}`}>
     <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 rounded-3xl blur-xl opacity-30 group-hover:opacity-60 transition duration-1000 animate-tilt"></div>
     <div className="relative w-full h-full bg-white rounded-3xl p-1 shadow-xl overflow-hidden border border-purple-200 group-hover:border-purple-300 transition-all">
-      {member.id === 1 ? (
-        // Video de Vimeo para "Libertad"
-          <div className="w-full h-full rounded-2xl overflow-hidden">
-            <iframe
-              src="https://player.vimeo.com/video/1117041226?badge=0&autopause=0&player_id=0&app_id=58479&loop=1&autoplay=1&muted=1&controls=0&title=0&byline=0&portrait=0&background=1"
-              frameBorder="0"
-              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              title="IMG_5792"
-              className="w-[120%] h-[200%] object-cover rounded-2xl transform -translate-x-[10%] -translate-y-[10%] group-hover:scale-100 transition-transform duration-700"
-              style={{pointerEvents:"none"}}
-            />
-          </div>
-      ) : member.id === 2 ? (
-        // Video de Vimeo para "Comunicación"
-          <div className="w-full h-full rounded-2xl overflow-hidden">
-            <iframe
-              src="https://player.vimeo.com/video/1117039423?badge=0&autopause=0&player_id=0&app_id=58479&loop=1&autoplay=1&muted=1&controls=0&title=0&byline=0&portrait=0&background=1"
-              frameBorder="0"
-              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              title="a6ea2565bc5d4a8ea151f3ac45954447"
-              className="w-[120%] h-[120%] object-cover rounded-2xl transform -translate-x-[10%] -translate-y-[10%] group-hover:scale-110 transition-transform duration-700"
-              style={{pointerEvents:"none"}}
-            />
-          </div>
-      ) : member.id === 3 ? (
-        // Video de Vimeo para "Rapidez"
-          <div className="w-full h-full rounded-2xl overflow-hidden">
-            <iframe
-              src="https://player.vimeo.com/video/1117045879?badge=0&autopause=0&player_id=0&app_id=58479&loop=1&autoplay=1&muted=1&controls=0&title=0&byline=0&portrait=0&background=1"
-              frameBorder="0"
-              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              title="IMG_0667"
-              className="w-[120%] h-[120%] object-cover rounded-2xl transform -translate-x-[10%] -translate-y-[10%] group-hover:scale-110 transition-transform duration-700"
-              style={{pointerEvents:"none"}}
-            />
-          </div>
-      ) : member.id === 4 ? (
-        // Video de Vimeo para "Innovación"
-        <div className="w-full h-full rounded-2xl overflow-hidden">
-          <div style={{padding:"177.78% 0 0 0",position:"relative"}}>
-            <iframe
-              src="https://player.vimeo.com/video/1117409631?badge=0&autopause=0&player_id=0&app_id=58479&loop=1&autoplay=1&muted=1&controls=0&title=0&byline=0&portrait=0&background=1"
-              frameBorder="0"
-              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              title="ssstik.io_@danieldtoro_1757503454344"
-              style={{position:"absolute",top:0,left:0,width:"100%",height:"100%",pointerEvents:"none"}}
-            />
-          </div>
-        </div>
-      ) : member.id === 5 ? (
-        // Video de Vimeo para "Eficiencia"
-        <div className="w-full h-full rounded-2xl overflow-hidden">
-          <div style={{padding:"177.78% 0 0 0",position:"relative"}}>
-            <iframe
-              src="https://player.vimeo.com/video/1117409661?badge=0&autopause=0&player_id=0&app_id=58479&loop=1&autoplay=1&muted=1&controls=0&title=0&byline=0&portrait=0&background=1"
-              frameBorder="0"
-              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              title="ssstik.io_@danieldtoro_1757503297660"
-              style={{position:"absolute",top:0,left:0,width:"100%",height:"100%",pointerEvents:"none"}}
-            />
-          </div>
-        </div>
-      ) : (
-        // Videos normales para las otras personalidades
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full h-full object-cover rounded-2xl transform group-hover:scale-110 transition-transform duration-700"
-          key={member.video}
-        >
-          <source src={member.video} type="video/mp4" />
-        </video>
-      )}
+      {/* Video desde Supabase Storage */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="none"
+        loading="lazy"
+        className="w-full h-full object-cover rounded-2xl transform group-hover:scale-110 transition-transform duration-700"
+        key={member.video}
+      >
+        {member.video && <source src={member.video} type="video/mp4" />}
+      </video>
       <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/70 to-transparent">
         <h3 className="text-white font-bold text-lg drop-shadow-lg">{member.name}</h3>
         <p className="text-white/70 text-sm drop-shadow-md">{member.role}</p>

@@ -703,16 +703,16 @@ export default function Home() {
               >
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent z-10"></div>
                 <div className="absolute inset-0 w-full h-full">
-                  <div style={{padding:"177.78% 0 0 0",position:"relative"}}>
-                    <iframe 
-                      src="https://player.vimeo.com/video/1117419422?badge=0&autopause=0&player_id=0&app_id=58479&loop=1&autoplay=1&muted=1&controls=0&title=0&byline=0&portrait=0&background=1" 
-                      frameBorder="0" 
-                      allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
-                      referrerPolicy="strict-origin-when-cross-origin" 
-                      style={{position:"absolute",top:0,left:0,width:"100%",height:"100%"}} 
-                      title="ssstik.io_@danieldtoro_1757505858710"
-                    />
-                  </div>
+                  <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    preload="auto"
+                    className="absolute top-0 left-0 w-full h-full object-cover"
+                  >
+                    <source src="https://jnzsabhbfnivdiceoefg.supabase.co/storage/v1/object/sign/danieldtoro/Video%20principal/video%20(1080p).mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNGNiMTczNS02NDVkLTQ2OWEtOTdjOS01Y2QzZDMzMWY2M2IiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJkYW5pZWxkdG9yby9WaWRlbyBwcmluY2lwYWwvdmlkZW8gKDEwODBwKS5tcDQiLCJpYXQiOjE3NTk4NTI3NzQsImV4cCI6MTc5MTM4ODc3NH0.fDtTYI1_pRQ27GpUHNSwxgVXp9Kt6N9hlJZJQQ-8Mqg" type="video/mp4" />
+                  </video>
                 </div>
                 <div className="p-12 h-full flex flex-col justify-end relative z-20">
                   <h3 className="text-4xl md:text-6xl font-black text-white mb-4 leading-tight drop-shadow-lg whitespace-pre-line">
@@ -733,16 +733,17 @@ export default function Home() {
                 >
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent z-10"></div>
                   <div className="absolute inset-0 w-full h-full">
-                    <div style={{padding:"56.25% 0 0 0",position:"relative"}}>
-                      <iframe 
-                        src="https://player.vimeo.com/video/1117411477?badge=0&autopause=0&player_id=0&app_id=58479&loop=1&autoplay=1&muted=1&controls=0&title=0&byline=0&portrait=0&background=1" 
-                        frameBorder="0" 
-                        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
-                        referrerPolicy="strict-origin-when-cross-origin" 
-                        style={{position:"absolute",top:0,left:0,width:"100%",height:"100%"}} 
-                        title="C5453"
-                      />
-                    </div>
+                    <video
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      preload="metadata"
+                      loading="lazy"
+                      className="absolute top-0 left-0 w-full h-full object-cover"
+                    >
+                      <source src="https://jnzsabhbfnivdiceoefg.supabase.co/storage/v1/object/sign/danieldtoro/Video%20principal/c5453%20(2160p).mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNGNiMTczNS02NDVkLTQ2OWEtOTdjOS01Y2QzZDMzMWY2M2IiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJkYW5pZWxkdG9yby9WaWRlbyBwcmluY2lwYWwvYzU0NTMgKDIxNjBwKS5tcDQiLCJpYXQiOjE3NTk4NTExNDgsImV4cCI6MTc5MTM4NzE0OH0.3jOP9Bj_YSmIAEURnyDEpodgeeBaFMty95O01byqUtA" type="video/mp4" />
+                    </video>
                   </div>
                   <div className="p-10 h-full flex flex-col justify-end relative z-20">
                     <h3 className="text-3xl md:text-4xl font-black text-white mb-3 leading-tight drop-shadow-lg">
@@ -761,16 +762,17 @@ export default function Home() {
                 >
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent z-10"></div>
                   <div className="absolute inset-0 w-full h-full">
-                    <div style={{padding:"56.25% 0 0 0",position:"relative"}}>
-                      <iframe 
-                        src="https://player.vimeo.com/video/1117420652?badge=0&autopause=0&player_id=0&app_id=58479&loop=1&autoplay=1&muted=1&controls=0&title=0&byline=0&portrait=0&background=1" 
-                        frameBorder="0" 
-                        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
-                        referrerPolicy="strict-origin-when-cross-origin" 
-                        style={{position:"absolute",top:0,left:0,width:"100%",height:"100%"}} 
-                        title="C5434"
-                      />
-                    </div>
+                    <video
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      preload="metadata"
+                      loading="lazy"
+                      className="absolute top-0 left-0 w-full h-full object-cover"
+                    >
+                      <source src="https://jnzsabhbfnivdiceoefg.supabase.co/storage/v1/object/sign/danieldtoro/Video%20principal/c5434%20(2160p).mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNGNiMTczNS02NDVkLTQ2OWEtOTdjOS01Y2QzZDMzMWY2M2IiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJkYW5pZWxkdG9yby9WaWRlbyBwcmluY2lwYWwvYzU0MzQgKDIxNjBwKS5tcDQiLCJpYXQiOjE3NTk4NDk5MTksImV4cCI6MTc5MTM4NTkxOX0.8er1jo9yj0FYD1yupLvM_-9KsVN7OHzG23i6bx9W30w" type="video/mp4" />
+                    </video>
                   </div>
                   <div className="p-10 h-full flex flex-col justify-end relative z-20">
                     <h3 className="text-3xl md:text-4xl font-black text-white mb-3 leading-tight drop-shadow-lg">
@@ -891,16 +893,17 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8 max-w-7xl mx-auto">
               <div className="md:col-span-12 bg-gradient-to-br from-green-400 via-orange-500 to-blue-600 rounded-3xl overflow-hidden relative min-h-[250px] sm:min-h-[300px] md:min-h-[350px] cursor-pointer group shadow-2xl hover:shadow-green-500/50 transition-all duration-500 hover:scale-105">
                 <div className="absolute inset-0 z-0">
-                  <div style={{padding:"56.25% 0 0 0",position:"relative"}}>
-                    <iframe 
-                      src="https://player.vimeo.com/video/1117395698?badge=0&autopause=0&player_id=0&app_id=58479&loop=1&autoplay=1&muted=1&controls=0&title=0&byline=0&portrait=0&background=1" 
-                      frameBorder="0" 
-                      allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
-                      referrerPolicy="strict-origin-when-cross-origin" 
-                      className="absolute top-1/2 left-1/2 w-[250%] h-[250%] -translate-x-1/2 -translate-y-1/2 sm:top-[-10%] sm:left-0 sm:w-full sm:h-full sm:translate-x-0 sm:translate-y-0" 
-                      title="Video"
-                    />
-                  </div>
+                  <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    preload="none"
+                    loading="lazy"
+                    className="absolute top-0 left-0 w-full h-full object-cover"
+                  >
+                    <source src="https://jnzsabhbfnivdiceoefg.supabase.co/storage/v1/object/sign/danieldtoro/Video%20principal/tecnologia%20(1440p).mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNGNiMTczNS02NDVkLTQ2OWEtOTdjOS01Y2QzZDMzMWY2M2IiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJkYW5pZWxkdG9yby9WaWRlbyBwcmluY2lwYWwvdGVjbm9sb2dpYSAoMTQ0MHApLm1wNCIsImlhdCI6MTc1OTg1MzU3NSwiZXhwIjoxNzkxMzg5NTc1fQ.S6pVRJ_2sctLed_yrfLKdhpbkYiH_Sf9zGEvxplu1zA" type="video/mp4" />
+                  </video>
                   {/* Overlay para mejorar la legibilidad */}
                   <div className="absolute inset-0 bg-gradient-to-r from-green-900/70 via-orange-800/50 to-blue-900/70 z-10"></div>
                 </div>

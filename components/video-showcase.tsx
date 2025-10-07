@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState } from "react"
+import React, { useState, useRef, useEffect } from "react"
 
 interface VideoShowcaseProps {
   videoUrl: string
@@ -11,6 +11,32 @@ export default function VideoShowcase({ videoUrl, className = "" }: VideoShowcas
   const [isHovered, setIsHovered] = useState(false)
   const [isMuted, setIsMuted] = useState(true)
   const [isPlaying, setIsPlaying] = useState(false)
+  const [isInView, setIsInView] = useState(false)
+  const videoRef = useRef<HTMLVideoElement>(null)
+  const containerRef = useRef<HTMLDivElement>(null)
+
+  // Intersection Observer para cargar solo cuando está visible
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsInView(true)
+            if (videoRef.current) {
+              videoRef.current.play().catch(() => {})
+            }
+          }
+        })
+      },
+      { threshold: 0.1, rootMargin: '50px' }
+    )
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current)
+    }
+
+    return () => observer.disconnect()
+  }, [])
 
   const handleMouseEnter = () => {
     setIsHovered(true)
@@ -27,7 +53,7 @@ export default function VideoShowcase({ videoUrl, className = "" }: VideoShowcas
   }
 
   return (
-    <div className={`relative ${className}`}>
+    <div ref={containerRef} className={`relative ${className}`}>
       {/* Contenedor del video con bordes animados */}
       <div 
         className="relative group"
@@ -50,18 +76,19 @@ export default function VideoShowcase({ videoUrl, className = "" }: VideoShowcas
         {/* Contenedor del video */}
         <div className="relative bg-black rounded-xl overflow-hidden shadow-2xl group-hover:shadow-green-500/50 transition-all duration-500 aspect-video">
           <video
+            ref={videoRef}
             autoPlay
             loop
             muted={isMuted}
             playsInline
-            preload="auto"
+            preload="metadata"
             className="w-full h-full object-cover"
             style={{pointerEvents:"none"}}
             disablePictureInPicture
             controlsList="nodownload nofullscreen noremoteplayback"
             x-webkit-airplay="deny"
           >
-            <source src={videoUrl} type="video/mp4" />
+            {isInView && <source src={videoUrl} type="video/mp4" />}
             Tu navegador no soporta el elemento de video.
           </video>
 
