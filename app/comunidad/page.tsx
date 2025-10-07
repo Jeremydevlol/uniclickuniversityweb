@@ -473,6 +473,9 @@ export default function ComunidadPage() {
                       alt={evento.titulo}
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-110"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      loading="lazy"
+                      quality={80}
                     />
                     <div className="absolute top-4 left-4 bg-[#9133e8] text-white text-xs font-medium px-3 py-1 rounded-full">
                       {evento.tipo}
@@ -553,7 +556,14 @@ export default function ComunidadPage() {
                 >
                   <div className="flex items-center mb-6">
                     <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full overflow-hidden bg-gray-200 mr-4 flex items-center justify-center">
-                      <Image src={historia.logo || "/placeholder.svg"} alt={historia.empresa} width={50} height={50} />
+                      <Image 
+                        src={historia.logo || "/placeholder.svg"} 
+                        alt={historia.empresa} 
+                        width={50} 
+                        height={50}
+                        loading="lazy"
+                        quality={80}
+                      />
                     </div>
                     <h3 className="text-lg sm:text-xl font-bold text-gray-800">{historia.empresa}</h3>
                   </div>

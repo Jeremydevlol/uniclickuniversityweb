@@ -6,10 +6,21 @@ import Head from "next/head"
 import { useEffect, useRef, useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import PersonalitySelector from "@/components/personality-selector"
-import VideoShowcase from "@/components/video-showcase"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
-import Footer from "@/components/footer"
+import dynamic from "next/dynamic"
+
+// Lazy load componentes pesados
+const PersonalitySelector = dynamic(() => import("@/components/personality-selector"), {
+  loading: () => <div className="h-96 flex items-center justify-center"><div className="animate-pulse text-white">Cargando...</div></div>,
+  ssr: false
+})
+const VideoShowcase = dynamic(() => import("@/components/video-showcase"), {
+  loading: () => <div className="aspect-video bg-black rounded-xl animate-pulse"></div>,
+  ssr: false
+})
+const Footer = dynamic(() => import("@/components/footer"), {
+  loading: () => <div className="h-64 bg-gray-900"></div>,
+  ssr: true
+})
 
 export default function Home() {
   const videoRef = useRef<HTMLVideoElement>(null)
@@ -23,7 +34,7 @@ export default function Home() {
   const diaryVideoRef = useRef<HTMLVideoElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
   const [isLoaded, setIsLoaded] = useState(false)
-  const [currentLang, setCurrentLang] = useState("ES")
+  const currentLang = "ES" // Idioma fijo en español
 
   useEffect(() => {
     // Función para configurar videos en bucle
@@ -185,6 +196,22 @@ export default function Home() {
       takeActionPrice: "€50/mes para siempre",
       takeActionSecure: "Asegura tu transformación AHORA",
       takeActionButton: "CONVIÉRTETE EN TRIUNFADOR",
+      
+      // VIP ELITE Card
+      vipEliteTitle: "CÍRCULO ÉLITE VIP",
+      vipEliteSubtitle: "Acceso Directo a Daniel",
+      vipElitePrice: "€1,000",
+      vipElitePriceDetail: "Pago único - Acceso de por vida",
+      vipElitePoint1: "Eventos privados en la finca de Daniel D Toro",
+      vipElitePoint2: "Experiencias exclusivas con coches de lujo",
+      vipElitePoint3: "Zooms privados mensuales con Daniel",
+      vipElitePoint4: "Asesorías personales 1 a 1",
+      vipElitePoint5: "Acceso VIP a todos los cursos y contenido",
+      vipElitePoint6: "Red exclusiva de emprendedores élite",
+      vipElitePoint7: "Invitaciones a cenas y eventos secretos",
+      vipElitePoint8: "Mentoría directa para escalar tu negocio",
+      vipEliteExclusive: "Solo 100 plazas disponibles",
+      vipEliteButton: "ÚNETE A LA ÉLITE",
 
       // Multiplataforma Section
       multiplatformTitle: "Multiplataforma para todas las redes sociales",
@@ -359,116 +386,48 @@ export default function Home() {
       <div ref={containerRef} className="relative min-h-screen overflow-hidden font-sans flex flex-col bg-black">
       {/* Efectos de fondo con colores vibrantes */}
       <div className="fixed inset-0 pointer-events-none z-0">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-green-400 to-emerald-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
-        <div className="absolute top-40 right-20 w-96 h-96 bg-gradient-to-r from-orange-400 to-amber-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse animation-delay-2000"></div>
+        <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
+        <div className="absolute top-40 right-20 w-96 h-96 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse animation-delay-2000"></div>
         <div className="absolute bottom-40 left-20 w-80 h-80 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse animation-delay-4000"></div>
-        <div className="absolute bottom-20 right-10 w-64 h-64 bg-gradient-to-r from-green-500 to-teal-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse animation-delay-6000"></div>
+        <div className="absolute bottom-20 right-10 w-64 h-64 bg-gradient-to-r from-blue-600 to-sky-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse animation-delay-6000"></div>
       </div>
 
       {/* Contenido */}
       <div className="relative z-10">
-        {/* Navegación mejorada con efectos de color */}
-        <nav className="z-50 bg-transparent backdrop-blur-xl border-b border-gray-800 w-full fixed top-0 left-0 right-0 transition-all duration-300">
-          <div className="container mx-auto px-6 flex items-center justify-between py-3">
-            {/* Logo */}
-            <div className="flex items-center">
-              <Link href="/">
-                <Image src="/logoUniclick.png" alt="Daniel D Toro - Logo de formación en ventas y emprendimiento" width={120} height={30} className="mr-2" />
-              </Link>
-            </div>
+        {/* Barra de Publicidad - Formación Triunfadores */}
+        <div className="w-full fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-blue-700 via-blue-600 to-blue-700 py-1.5 shadow-xl animate-gradient-x">
+          <div className="container mx-auto px-3">
+            <a 
+              href="https://app.danieldtoro.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block group"
+            >
+              <div className="flex items-center justify-center gap-2 text-center">
+                {/* Icono de fuego animado */}
+                <div className="hidden sm:flex items-center justify-center w-6 h-6 bg-white/20 rounded-full animate-pulse">
+                  <span className="text-sm">🔥</span>
+                </div>
+                
+                {/* Texto principal */}
+                <p className="text-white font-black text-xs sm:text-sm md:text-base tracking-wide leading-tight">
+                  <span className="hidden sm:inline">💰 </span>
+                  <span className="bg-white/20 px-1.5 py-0.5 rounded text-xs sm:text-sm">APRENDE A GANAR</span>
+                  {" "}MÁS DE €10,000 AL MES{" "}
+                  <span className="hidden md:inline text-xs sm:text-sm">- FORMACIÓN TRIUNFADORES</span>
+                </p>
 
-            {/* Botones de acción */}
-            <div className="flex items-center space-x-3">
-              <div className="hidden md:flex items-center space-x-3">
-                {/* Selector de idioma con efecto de color */}
-                <DropdownMenu>
-                  <DropdownMenuTrigger asChild>
-                    <button className="p-2.5 rounded-full hover:bg-gradient-to-r hover:from-green-900/50 hover:to-blue-900/50 transition-all flex items-center space-x-1.5 border border-gray-700 text-gray-300 hover:border-green-500 hover:shadow-lg hover:shadow-green-500/50">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <circle cx="12" cy="12" r="10" />
-                        <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
-                        <path d="M2 12h20" />
-                      </svg>
-                      <span className="text-sm font-medium">{currentLang}</span>
-                    </button>
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent className="w-24">
-                    <DropdownMenuItem onClick={() => setCurrentLang("ES")}>Español</DropdownMenuItem>
-                    <DropdownMenuItem onClick={() => setCurrentLang("EN")}>English</DropdownMenuItem>
-                    <DropdownMenuItem onClick={() => setCurrentLang("ZH")}>中文</DropdownMenuItem>
-                  </DropdownMenuContent>
-                </DropdownMenu>
-
-                <a
-                  href="https://app.danieldtoro.com/"
-                  className="px-4 py-2 md:px-5 md:py-2.5 rounded-full bg-transparent hover:bg-gradient-to-r hover:from-green-900/50 hover:to-emerald-900/50 transition-all flex items-center space-x-2 group border border-green-500 text-xs md:text-sm font-medium text-white hover:border-green-400 hover:shadow-lg hover:shadow-green-500/50"
-                >
-                  <span>{t.login}</span>
-                  <span className="transform group-hover:translate-x-1 transition-transform">→</span>
-                </a>
-
-                <a
-                  href="https://app.danieldtoro.com/"
-                  className="px-4 py-2 md:px-6 md:py-2.5 rounded-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white transition-all flex items-center space-x-2 group shadow-xl shadow-blue-500/25 hover:shadow-blue-500/40 border border-blue-500/20 text-xs md:text-sm font-medium hover:scale-105"
-                >
-                  <span>{t.createAccount}</span>
-                </a>
+                {/* Icono de estrella animado */}
+                <div className="flex sm:hidden items-center justify-center w-5 h-5 bg-white/20 rounded-full">
+                  <span className="text-xs">⭐</span>
+                </div>
               </div>
-
-              {/* Mobile buttons */}
-              <div className="flex md:hidden items-center space-x-2">
-                {/* Selector de idioma móvil */}
-                <DropdownMenu>
-                  <DropdownMenuTrigger asChild>
-                    <button className="p-2 rounded-full hover:bg-gradient-to-r hover:from-green-900/50 hover:to-blue-900/50 transition-all flex items-center space-x-1 border border-gray-700 text-white hover:border-green-500 hover:shadow-lg hover:shadow-green-500/50">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="14"
-                        height="14"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <circle cx="12" cy="12" r="10" />
-                        <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
-                        <path d="M2 12h20" />
-                      </svg>
-                      <span className="text-xs font-medium">{currentLang}</span>
-                    </button>
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent className="w-24">
-                    <DropdownMenuItem onClick={() => setCurrentLang("ES")}>Español</DropdownMenuItem>
-                    <DropdownMenuItem onClick={() => setCurrentLang("EN")}>English</DropdownMenuItem>
-                    <DropdownMenuItem onClick={() => setCurrentLang("ZH")}>中文</DropdownMenuItem>
-                  </DropdownMenuContent>
-                </DropdownMenu>
-
-                <a
-                  href="https://app.danieldtoro.com/"
-                  className="px-3 py-2 rounded-full bg-transparent hover:bg-gradient-to-r hover:from-green-900/50 hover:to-emerald-900/50 transition-all flex items-center space-x-1 group border border-green-500 text-xs font-medium text-white hover:border-green-400 hover:shadow-lg hover:shadow-green-500/50"
-                >
-                  <span>{t.login}</span>
-                </a>
-              </div>
-            </div>
+            </a>
           </div>
-        </nav>
+        </div>
 
-        {/* Espacio para compensar el header fijo */}
-        <div className="h-[60px]"></div>
+        {/* Espacio para compensar la barra fija */}
+        <div className="h-[40px] sm:h-[44px]"></div>
 
         {/* Contenido principal mejorado */}
         <main className="flex flex-col items-center justify-center text-center px-0 pt-6 pb-6 min-h-screen">
@@ -476,14 +435,14 @@ export default function Home() {
             {isLoaded && (
               <>
                 <div className="mb-4 mt-8 sm:mt-16">
-                  <span className="inline-block px-6 py-2.5 rounded-full bg-gradient-to-r from-green-100 via-orange-100 to-blue-100 border border-green-200 text-green-700 text-sm font-semibold mb-4 shadow-lg shadow-green-200/50 hover:shadow-green-300/50 transition-all">
+                  <span className="inline-block px-6 py-2.5 rounded-full bg-gradient-to-r from-blue-100 via-cyan-100 to-indigo-100 border border-blue-200 text-blue-700 text-sm font-semibold mb-4 shadow-lg shadow-blue-200/50 hover:shadow-blue-300/50 transition-all">
                     {t.heroSpan}
                   </span>
 
                   <h1 className="text-4xl sm:text-5xl md:text-7xl font-black text-white mb-4 md:mb-8 tracking-tight leading-[0.95] sm:leading-[0.9]">
                     {t.heroTitle1}
                     <br />
-                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-600 via-orange-600 to-blue-600 animate-pulse">
+                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-cyan-400 to-indigo-500">
                       {t.heroTitle2}
                     </span>
                   </h1>
@@ -523,7 +482,7 @@ export default function Home() {
             </div>
 
             {/* Pricing Cards */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
               {/* DO NOTHING Card */}
               <div className="group relative h-full">
                 <div className="relative bg-black/40 backdrop-blur-xl rounded-2xl p-6 border border-white/20 shadow-xl hover:shadow-white/10 transition-all duration-500 hover:scale-[1.02] h-full flex flex-col">
@@ -603,9 +562,9 @@ export default function Home() {
                   <div className="text-center mb-6">
                     <div className="flex items-center justify-center gap-2 mb-3">
                       <span className="text-gray-500 line-through text-lg font-medium">{t.takeActionOldPrice}</span>
-                      <span className="text-3xl font-black bg-gradient-to-r from-orange-500 to-blue-500 bg-clip-text text-transparent">{t.takeActionNewPrice}</span>
+                      <span className="text-3xl font-black bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent">{t.takeActionNewPrice}</span>
                     </div>
-                    <p className="text-orange-400 font-semibold text-sm">{t.takeActionPrice}</p>
+                    <p className="text-cyan-400 font-semibold text-sm">{t.takeActionPrice}</p>
                   </div>
                   
                   <div className="mb-6 flex-grow">
@@ -620,7 +579,7 @@ export default function Home() {
                         t.takeActionPoint7
                       ].map((point, index) => (
                         <li key={index} className="flex items-start text-gray-300 text-sm">
-                          <div className="w-4 h-4 bg-gradient-to-r from-orange-500/80 to-blue-500/80 backdrop-blur-sm rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
+                          <div className="w-4 h-4 bg-gradient-to-r from-blue-500/80 to-cyan-500/80 backdrop-blur-sm rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
                             <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
                               <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
                             </svg>
@@ -634,13 +593,13 @@ export default function Home() {
                   {/* Información adicional */}
                   <div className="space-y-2 mb-6">
                     <div className="flex items-center text-gray-300 bg-white/10 backdrop-blur-sm rounded-lg p-2 text-xs border border-white/20">
-                      <svg className="w-4 h-4 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-4 h-4 text-blue-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7"/>
                       </svg>
                       {t.takeActionCancel}
                     </div>
-                    <div className="flex items-center text-orange-400 bg-orange-500/20 backdrop-blur-sm rounded-lg p-2 border border-orange-500/30 text-xs">
-                      <svg className="w-4 h-4 text-orange-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <div className="flex items-center text-cyan-400 bg-cyan-500/20 backdrop-blur-sm rounded-lg p-2 border border-cyan-500/30 text-xs">
+                      <svg className="w-4 h-4 text-cyan-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
                         <path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z"/>
                         <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z" clipRule="evenodd"/>
                       </svg>
@@ -659,6 +618,79 @@ export default function Home() {
                   </a>
                 </div>
               </div>
+
+              {/* VIP ELITE Card */}
+              <div className="group relative h-full">
+                <div className="relative bg-gradient-to-br from-yellow-600/20 via-amber-600/20 to-orange-600/20 backdrop-blur-xl rounded-2xl p-6 border-2 border-yellow-500/40 shadow-2xl hover:shadow-yellow-500/30 transition-all duration-500 hover:scale-[1.02] h-full flex flex-col">
+                  {/* Badge ÉLITE dentro del contenedor */}
+                  <div className="flex justify-center mb-4">
+                    <div className="bg-gradient-to-r from-yellow-500 via-amber-500 to-orange-500 backdrop-blur-sm px-5 py-1 rounded-full border border-yellow-400/50 shadow-lg">
+                      <span className="text-white text-xs font-black tracking-wider">⭐ ÉLITE VIP ⭐</span>
+                    </div>
+                  </div>
+                  
+                  <div className="text-center mb-6">
+                    <div className="w-14 h-14 bg-gradient-to-br from-yellow-600/80 via-amber-600/80 to-orange-600/80 backdrop-blur-sm rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg shadow-yellow-500/25">
+                      <svg className="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                      </svg>
+                    </div>
+                    <h3 className="text-xl font-black text-white mb-2 tracking-tight">{t.vipEliteTitle}</h3>
+                    <p className="text-yellow-300 text-sm font-semibold">{t.vipEliteSubtitle}</p>
+                  </div>
+                  
+                  {/* Precio destacado */}
+                  <div className="text-center mb-6">
+                    <div className="flex items-center justify-center gap-2 mb-3">
+                      <span className="text-4xl font-black bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">{t.vipElitePrice}</span>
+                    </div>
+                    <p className="text-yellow-400 font-bold text-sm">{t.vipElitePriceDetail}</p>
+                  </div>
+                  
+                  <div className="mb-6 flex-grow">
+                    <ul className="space-y-2">
+                      {[
+                        t.vipElitePoint1,
+                        t.vipElitePoint2,
+                        t.vipElitePoint3,
+                        t.vipElitePoint4,
+                        t.vipElitePoint5,
+                        t.vipElitePoint6,
+                        t.vipElitePoint7,
+                        t.vipElitePoint8
+                      ].map((point, index) => (
+                        <li key={index} className="flex items-start text-gray-300 text-sm">
+                          <div className="w-4 h-4 bg-gradient-to-r from-yellow-500/80 to-orange-500/80 backdrop-blur-sm rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
+                            <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+                            </svg>
+                          </div>
+                          <span className="text-gray-200 leading-relaxed font-medium">{point}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  
+                  {/* Información exclusiva */}
+                  <div className="space-y-2 mb-6">
+                    <div className="flex items-center justify-center text-yellow-300 bg-yellow-500/20 backdrop-blur-sm rounded-lg p-3 border border-yellow-500/40 text-xs">
+                      <svg className="w-5 h-5 text-yellow-400 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
+                      </svg>
+                      <span className="font-bold">{t.vipEliteExclusive}</span>
+                    </div>
+                  </div>
+                  
+                  <a 
+                    href="https://app.danieldtoro.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full bg-gradient-to-r from-yellow-600 via-amber-600 to-orange-600 backdrop-blur-sm hover:from-yellow-700 hover:via-amber-700 hover:to-orange-700 text-white font-black py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg shadow-yellow-500/25 text-sm tracking-wider border border-yellow-400/30 text-center block"
+                  >
+                    {t.vipEliteButton}
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -667,13 +699,13 @@ export default function Home() {
         <section className="py-12 relative">
           <div className="container mx-auto px-0 md:px-6 relative z-10">
             <div className="text-center mb-40 sm:mb-20">
-              <span className="inline-block px-6 py-2.5 rounded-full bg-gradient-to-r from-green-100 via-orange-100 to-blue-100 text-green-700 border border-green-200 text-sm font-semibold mb-6 shadow-lg shadow-green-200/50">
+              <span className="inline-block px-6 py-2.5 rounded-full bg-gradient-to-r from-blue-100 via-cyan-100 to-indigo-100 text-blue-700 border border-blue-200 text-sm font-semibold mb-6 shadow-lg shadow-blue-200/50">
                 {t.featuresSpan}
               </span>
               <h2 className="text-4xl sm:text-5xl md:text-7xl font-black text-white mb-6 md:mb-8 tracking-tight leading-tight">
                 {t.featuresTitle1}
                 <br />
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-600 via-orange-600 to-blue-600">
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-cyan-400 to-indigo-500">
                   {t.featuresTitle2}
                 </span>
               </h2>
@@ -686,16 +718,21 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-12 gap-5 md:gap-8 max-w-7xl mx-auto px-5 md:px-0 relative">
               {/* GIF posicionado detrás del contenedor */}
               <div className="absolute top-[-100px] md:top-[-120px] left-2 md:left-0 z-0 w-36 h-36 md:w-40 md:h-40">
-                <img
+                <Image
                   src="/Yes Sir.gif"
                   alt="Daniel D Toro - Personaje motivacional Yes Sir para formación en ventas"
                   className="w-full h-full object-contain"
+                  width={160}
+                  height={160}
+                  loading="lazy"
+                  unoptimized
+                  quality={75}
                 />
               </div>
 
               {/* WhatsApp Empresarial - Tarjeta principal */}
               <div
-                className="md:col-span-6 bg-gradient-to-br from-green-400 via-green-500 to-green-600 rounded-xl md:rounded-3xl overflow-hidden relative min-h-[400px] sm:min-h-[500px] md:min-h-[600px] cursor-pointer group shadow-2xl hover:shadow-green-500/50 transition-all duration-500 hover:scale-105"
+                className="md:col-span-6 bg-gradient-to-br from-blue-400 via-blue-500 to-blue-600 rounded-xl md:rounded-3xl overflow-hidden relative min-h-[400px] sm:min-h-[500px] md:min-h-[600px] cursor-pointer group shadow-2xl hover:shadow-blue-500/50 transition-all duration-500 hover:scale-105"
                 onClick={() => handleVideoClick(bubbleVideoRef)}
               >
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent z-10"></div>
@@ -708,6 +745,7 @@ export default function Home() {
                       referrerPolicy="strict-origin-when-cross-origin" 
                       style={{position:"absolute",top:0,left:0,width:"100%",height:"100%"}} 
                       title="ssstik.io_@danieldtoro_1757505858710"
+                      loading="lazy"
                     />
                   </div>
                 </div>
@@ -725,7 +763,7 @@ export default function Home() {
               <div className="md:col-span-6 grid grid-cols-1 gap-8">
                 {/* Gestión empresarial */}
                 <div
-                  className="bg-gradient-to-br from-green-400 via-green-500 to-green-600 rounded-xl md:rounded-3xl overflow-hidden relative min-h-[300px] sm:min-h-[350px] md:min-h-[280px] cursor-pointer group shadow-2xl hover:shadow-green-500/50 transition-all duration-500 hover:scale-105"
+                  className="bg-gradient-to-br from-blue-400 via-cyan-500 to-blue-600 rounded-xl md:rounded-3xl overflow-hidden relative min-h-[300px] sm:min-h-[350px] md:min-h-[280px] cursor-pointer group shadow-2xl hover:shadow-blue-500/50 transition-all duration-500 hover:scale-105"
                   onClick={() => handleVideoClick(heartVideoRef)}
                 >
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent z-10"></div>
@@ -738,6 +776,7 @@ export default function Home() {
                         referrerPolicy="strict-origin-when-cross-origin" 
                         style={{position:"absolute",top:0,left:0,width:"100%",height:"100%"}} 
                         title="C5453"
+                        loading="lazy"
                       />
                     </div>
                   </div>
@@ -753,7 +792,7 @@ export default function Home() {
 
                 {/* Sistema de llamadas */}
                 <div
-                  className="bg-gradient-to-br from-orange-400 via-orange-500 to-orange-600 rounded-xl md:rounded-3xl overflow-hidden relative min-h-[300px] sm:min-h-[350px] md:min-h-[280px] cursor-pointer group shadow-2xl hover:shadow-orange-500/50 transition-all duration-500 hover:scale-105"
+                  className="bg-gradient-to-br from-indigo-400 via-indigo-500 to-indigo-600 rounded-xl md:rounded-3xl overflow-hidden relative min-h-[300px] sm:min-h-[350px] md:min-h-[280px] cursor-pointer group shadow-2xl hover:shadow-indigo-500/50 transition-all duration-500 hover:scale-105"
                   onClick={() => handleVideoClick(arVideoRef)}
                 >
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent z-10"></div>
@@ -766,6 +805,7 @@ export default function Home() {
                         referrerPolicy="strict-origin-when-cross-origin" 
                         style={{position:"absolute",top:0,left:0,width:"100%",height:"100%"}} 
                         title="C5434"
+                        loading="lazy"
                       />
                     </div>
                   </div>
@@ -780,14 +820,18 @@ export default function Home() {
 
               {/* Fila inferior con tarjetas mejoradas */}
               <div
-                className="md:col-span-6 lg:col-span-4 bg-gradient-to-br from-emerald-400 via-emerald-500 to-emerald-600 rounded-xl md:rounded-3xl overflow-hidden relative min-h-[300px] sm:min-h-[350px] md:min-h-[300px] cursor-pointer group shadow-2xl hover:shadow-emerald-500/50 transition-all duration-500 hover:scale-105"
+                className="md:col-span-6 lg:col-span-4 bg-gradient-to-br from-cyan-400 via-cyan-500 to-cyan-600 rounded-xl md:rounded-3xl overflow-hidden relative min-h-[300px] sm:min-h-[350px] md:min-h-[300px] cursor-pointer group shadow-2xl hover:shadow-cyan-500/50 transition-all duration-500 hover:scale-105"
                 onClick={() => handleVideoClick(voiceVideoRef)}
               >
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent z-10"></div>
-                <img
+                <Image
                   src="/photo_2025-09-10 14.17.28.jpeg"
                   alt="Soporte 24/7 - Daniel D Toro formación en ventas y emprendimiento"
                   className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  loading="lazy"
+                  quality={85}
                 />
                 <div className="p-10 h-full flex flex-col justify-center items-center text-center relative z-20">
                   <div className="w-20 h-20 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center mb-6 shadow-xl border border-white/30">
@@ -818,10 +862,14 @@ export default function Home() {
                 onClick={() => handleVideoClick(ladderVideoRef)}
               >
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent z-10"></div>
-                <img
+                <Image
                   src="/photo_2025-09-10 14.17.35.jpeg"
                   alt="Escalabilidad empresarial - Daniel D Toro formación en ventas"
                   className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  loading="lazy"
+                  quality={85}
                 />
                 <div className="p-10 h-full flex flex-col justify-center items-center text-center relative z-20">
                   <div className="w-20 h-20 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center mb-6 shadow-xl border border-white/30">
@@ -852,10 +900,14 @@ export default function Home() {
                 onClick={() => handleVideoClick(brainVideoRef)}
               >
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent z-10"></div>
-                <img
+                <Image
                   src="/photo_2025-09-10 14.17.43.jpeg"
                   alt="Inteligencia Artificial - Daniel D Toro formación en automatización empresarial"
                   className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  loading="lazy"
+                  quality={85}
                 />
                 <div className="p-10 h-full flex flex-col justify-center items-center text-center relative z-20">
                   <div className="w-20 h-20 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center mb-6 shadow-xl border border-white/30">
@@ -886,7 +938,7 @@ export default function Home() {
         <section className="py-8 relative">
           <div className="container mx-auto px-5 relative z-10">
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8 max-w-7xl mx-auto">
-              <div className="md:col-span-12 bg-gradient-to-br from-green-400 via-orange-500 to-blue-600 rounded-3xl overflow-hidden relative min-h-[250px] sm:min-h-[300px] md:min-h-[350px] cursor-pointer group shadow-2xl hover:shadow-green-500/50 transition-all duration-500 hover:scale-105">
+              <div className="md:col-span-12 bg-gradient-to-br from-blue-400 via-indigo-500 to-blue-600 rounded-3xl overflow-hidden relative min-h-[250px] sm:min-h-[300px] md:min-h-[350px] cursor-pointer group shadow-2xl hover:shadow-blue-500/50 transition-all duration-500 hover:scale-105">
                 <div className="absolute inset-0 z-0">
                   <div style={{padding:"56.25% 0 0 0",position:"relative"}}>
                     <iframe 
@@ -896,21 +948,22 @@ export default function Home() {
                       referrerPolicy="strict-origin-when-cross-origin" 
                       className="absolute top-1/2 left-1/2 w-[250%] h-[250%] -translate-x-1/2 -translate-y-1/2 sm:top-[-10%] sm:left-0 sm:w-full sm:h-full sm:translate-x-0 sm:translate-y-0" 
                       title="Video"
+                      loading="lazy"
                     />
                   </div>
                   {/* Overlay para mejorar la legibilidad */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-green-900/70 via-orange-800/50 to-blue-900/70 z-10"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-900/70 via-indigo-800/50 to-blue-900/70 z-10"></div>
                 </div>
 
                 <div className="p-10 h-full flex flex-col justify-center items-center text-center relative z-20">
-                  <span className="inline-block px-6 py-2.5 rounded-full bg-gradient-to-r from-green-100/20 via-orange-100/20 to-blue-100/20 backdrop-blur-md border border-white/20 text-white/90 text-sm font-semibold mb-6 shadow-lg">
+                  <span className="inline-block px-6 py-2.5 rounded-full bg-gradient-to-r from-blue-100/20 via-cyan-100/20 to-indigo-100/20 backdrop-blur-md border border-white/20 text-white/90 text-sm font-semibold mb-6 shadow-lg">
                     {t.bannerSpan}
                   </span>
 
                   <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-4 leading-tight drop-shadow-lg text-center">
                     {t.bannerTitle1}
                     <br />
-                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-orange-400 to-blue-400">
+                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-cyan-400 to-indigo-400">
                       {t.bannerTitle2}
                     </span>
                   </h3>

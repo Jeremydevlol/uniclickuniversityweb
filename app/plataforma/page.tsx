@@ -523,6 +523,9 @@ export default function PlataformaPage() {
                           alt={feature.title}
                           fill
                           className="object-cover"
+                          sizes="(max-width: 768px) 100vw, 50vw"
+                          loading="lazy"
+                          quality={80}
                         />
                       </div>
                     </div>

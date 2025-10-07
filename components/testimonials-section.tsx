@@ -158,7 +158,9 @@ export default function TestimonialsSection() {
                       alt={testimonial.name}
                       fill
                       className="object-contain drop-shadow-[0_0_15px_rgba(145,51,232,0.5)]"
-                      priority={isCenter} // Fixed position variable usage
+                      priority={isCenter}
+                      sizes="(max-width: 768px) 200px, 300px"
+                      quality={85}
                     />
                   </div>
                   <div className={testimonialPanelClasses} style={isCenter ? {} : { display: "none" }}>
@@ -180,6 +182,8 @@ export default function TestimonialsSection() {
                             width={48}
                             height={48}
                             className="object-cover rounded-full"
+                            loading="lazy"
+                            quality={80}
                           />
                         )}
                         <div className="absolute bottom-0 right-0 w-5 h-5 rounded-full overflow-hidden border-2 border-white/30 bg-white/10 backdrop-blur-md">
@@ -189,6 +193,8 @@ export default function TestimonialsSection() {
                             width={20}
                             height={20}
                             className="object-cover"
+                            loading="lazy"
+                            quality={75}
                           />
                         </div>
                       </div>

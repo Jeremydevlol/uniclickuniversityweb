@@ -6,7 +6,12 @@ import { ThemeProvider } from "@/components/theme-provider"
 import { LanguageProvider } from "@/contexts/language-context"
 import UniclickChatScript from "@/components/uniclick-chat-script" // Import the new component
 
-const inter = Inter({ subsets: ["latin"] })
+const inter = Inter({ 
+  subsets: ["latin"],
+  display: 'swap',
+  preload: true,
+  variable: '--font-inter',
+})
 
 export const metadata: Metadata = {
   title: "Daniel D Toro - Formación que te cambia la vida",
@@ -43,6 +48,14 @@ export default function RootLayout({
   return (
     <html lang="es" suppressHydrationWarning>
       <head>
+        {/* Preconnect a dominios externos para mejorar velocidad */}
+        <link rel="preconnect" href="https://player.vimeo.com" />
+        <link rel="preconnect" href="https://f.vimeocdn.com" />
+        <link rel="preconnect" href="https://i.vimeocdn.com" />
+        <link rel="preconnect" href="https://web.cmp.usercentrics.eu" />
+        <link rel="dns-prefetch" href="https://player.vimeo.com" />
+        <link rel="dns-prefetch" href="https://jnzsabhbfnivdiceoefg.supabase.co" />
+        
         {/* Usercentrics Scripts */}
         <script 
           src="https://web.cmp.usercentrics.eu/modules/autoblocker.js"
