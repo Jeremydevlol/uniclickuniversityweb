@@ -13,18 +13,39 @@ export default function VideoShowcase({ videoUrl, className = "" }: VideoShowcas
   const videoRef = useRef<HTMLVideoElement>(null)
 
   useEffect(() => {
-    // Forzar la reproducción del video cuando el componente se monta
+    // Intersection Observer para cargar y reproducir el video solo cuando sea visible
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && videoRef.current) {
+            // Cargar el video cuando sea visible
+            videoRef.current.load()
+            
+            // Intentar reproducir cuando esté listo
+            const playVideo = () => {
+              if (videoRef.current) {
+                videoRef.current.play().catch((error) => {
+                  console.log("Error al reproducir el video:", error)
+                })
+              }
+            }
+            
+            videoRef.current.addEventListener('loadeddata', playVideo, { once: true })
+          } else if (!entry.isIntersecting && videoRef.current) {
+            // Pausar el video cuando no sea visible para ahorrar recursos
+            videoRef.current.pause()
+          }
+        })
+      },
+      { threshold: 0.25, rootMargin: '50px' }
+    )
+
     if (videoRef.current) {
-      videoRef.current.play().catch((error) => {
-        console.log("Error al reproducir el video:", error)
-        // Si falla, intentar con muted
-        if (videoRef.current) {
-          videoRef.current.muted = true
-          videoRef.current.play().catch((err) => {
-            console.log("Error al reproducir el video incluso con muted:", err)
-          })
-        }
-      })
+      observer.observe(videoRef.current)
+    }
+
+    return () => {
+      observer.disconnect()
     }
   }, [])
 
@@ -56,11 +77,10 @@ export default function VideoShowcase({ videoUrl, className = "" }: VideoShowcas
         <div className="relative bg-black rounded-xl overflow-hidden shadow-2xl group-hover:shadow-blue-500/50 transition-all duration-500 aspect-video">
           <video
             ref={videoRef}
-            autoPlay
             loop
             muted={isMuted}
             playsInline
-            preload="auto"
+            preload="metadata"
             className="w-full h-full object-cover"
             style={{pointerEvents:"none"}}
             disablePictureInPicture

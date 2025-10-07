@@ -17,83 +17,27 @@ const VideoShowcase = dynamic(() => import("@/components/video-showcase"), {
   loading: () => <div className="aspect-video bg-black rounded-xl animate-pulse"></div>,
   ssr: false
 })
+const LazyVideo = dynamic(() => import("@/components/lazy-video"), {
+  loading: () => <div className="w-full h-full bg-black/50 animate-pulse"></div>,
+  ssr: false
+})
 const Footer = dynamic(() => import("@/components/footer"), {
   loading: () => <div className="h-64 bg-gray-900"></div>,
   ssr: true
 })
 
 export default function Home() {
-  const videoRef = useRef<HTMLVideoElement>(null)
-  const bubbleVideoRef = useRef<HTMLVideoElement>(null)
-  const heartVideoRef = useRef<HTMLVideoElement>(null)
-  const arVideoRef = useRef<HTMLVideoElement>(null)
-  const ladderVideoRef = useRef<HTMLVideoElement>(null)
-  const voiceVideoRef = useRef<HTMLVideoElement>(null)
-  const brainVideoRef = useRef<HTMLVideoElement>(null)
-  const interestsVideoRef = useRef<HTMLVideoElement>(null)
-  const diaryVideoRef = useRef<HTMLVideoElement>(null)
-  const bannerVideoRef = useRef<HTMLVideoElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
   const [isLoaded, setIsLoaded] = useState(false)
   const currentLang = "ES" // Idioma fijo en español
 
   useEffect(() => {
-    // Función para configurar videos en bucle
-    const setupLoopingVideo = (videoElement: HTMLVideoElement | null) => {
-      if (videoElement) {
-        videoElement.loop = true
-        videoElement.play().catch((error) => {
-          console.log("Error al reproducir el video:", error)
-          document.addEventListener(
-            "click",
-            () => {
-              videoElement.play()
-            },
-            { once: true },
-          )
-        })
-
-        videoElement.addEventListener("ended", () => {
-          videoElement.currentTime = 0
-          videoElement.play()
-        })
-      }
-    }
-
-    // Configurar todos los videos
-    setupLoopingVideo(bubbleVideoRef.current)
-    setupLoopingVideo(heartVideoRef.current)
-    setupLoopingVideo(arVideoRef.current)
-    setupLoopingVideo(ladderVideoRef.current)
-    setupLoopingVideo(voiceVideoRef.current)
-    setupLoopingVideo(brainVideoRef.current)
-    setupLoopingVideo(interestsVideoRef.current)
-    setupLoopingVideo(diaryVideoRef.current)
-    setupLoopingVideo(bannerVideoRef.current)
-
     const timer = setTimeout(() => {
       setIsLoaded(true)
     }, 300)
 
     return () => clearTimeout(timer)
   }, [])
-
-  const handleVideoClick = (videoRef: React.RefObject<HTMLVideoElement>) => {
-    if (videoRef.current) {
-      if (videoRef.current.paused) {
-        videoRef.current
-          .play()
-          .then(() => {
-            videoRef.current!.loop = true
-          })
-          .catch((error) => {
-            console.log("Error al reproducir el video:", error)
-          })
-      } else {
-        videoRef.current.pause()
-      }
-    }
-  }
 
   // Objeto completo de traducciones
   const translations: { [key: string]: any } = {
@@ -454,7 +398,7 @@ export default function Home() {
                   </p>
                 </div>
 
-                {/* Video showcase con bordes animados */}
+                {/* Video showcase con bordes animados - Video PRINCIPAL (loop infinito) */}
                 <div className="mt-8 mb-8 px-6 sm:px-8 md:px-12 lg:px-16">
                   <VideoShowcase 
                     videoUrl="https://jnzsabhbfnivdiceoefg.supabase.co/storage/v1/object/sign/login/uniclick%20(2160p).mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNGNiMTczNS02NDVkLTQ2OWEtOTdjOS01Y2QzZDMzMWY2M2IiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJsb2dpbi91bmljbGljayAoMjE2MHApLm1wNCIsImlhdCI6MTc1Mjk1NjczMCwiZXhwIjo0OTA2NTU2NzMwfQ.zdjgq0uB-NKxuc7aXVHyiuQ_Y6aqocLbTlAkH3fduFQ"
@@ -732,27 +676,18 @@ export default function Home() {
                 />
               </div>
 
-              {/* WhatsApp Empresarial - Tarjeta principal */}
+              {/* WhatsApp Empresarial - Tarjeta secundaria (2 loops, luego pausa) */}
               <div
                 className="md:col-span-6 bg-gradient-to-br from-blue-400 via-blue-500 to-blue-600 rounded-xl md:rounded-3xl overflow-hidden relative min-h-[400px] sm:min-h-[500px] md:min-h-[600px] cursor-pointer group shadow-2xl hover:shadow-blue-500/50 transition-all duration-500 hover:scale-105"
-                onClick={() => handleVideoClick(bubbleVideoRef)}
               >
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent z-10"></div>
                 <div className="absolute inset-0 w-full h-full">
-                  <video
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    preload="auto"
+                  <LazyVideo
+                    src="https://jnzsabhbfnivdiceoefg.supabase.co/storage/v1/object/sign/danieldtoro/Video%20principal/img_5792%20(2160p).mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNGNiMTczNS02NDVkLTQ2OWEtOTdjOS01Y2QzZDMzMWY2M2IiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJkYW5pZWxkdG9yby9WaWRlbyBwcmluY2lwYWwvaW1nXzU3OTIgKDIxNjBwKS5tcDQiLCJpYXQiOjE3NTk4NDc5MTMsImV4cCI6MTc5MTM4MzkxM30.DTBLQG4slB4cjc-NGJaHktPTcANY98vJBqfYLbvFubg"
                     className="absolute inset-0 w-full h-full object-cover"
-                    style={{pointerEvents:"none"}}
-                    disablePictureInPicture
-                    controlsList="nodownload nofullscreen noremoteplayback"
-                  >
-                    <source src="https://jnzsabhbfnivdiceoefg.supabase.co/storage/v1/object/sign/danieldtoro/Video%20principal/img_5792%20(2160p).mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNGNiMTczNS02NDVkLTQ2OWEtOTdjOS01Y2QzZDMzMWY2M2IiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJkYW5pZWxkdG9yby9WaWRlbyBwcmluY2lwYWwvaW1nXzU3OTIgKDIxNjBwKS5tcDQiLCJpYXQiOjE3NTk4NDc5MTMsImV4cCI6MTc5MTM4MzkxM30.DTBLQG4slB4cjc-NGJaHktPTcANY98vJBqfYLbvFubg" type="video/mp4" />
-                    Tu navegador no soporta el elemento de video.
-                  </video>
+                    priority={false}
+                    maxLoops={2}
+                  />
                 </div>
                 <div className="p-12 h-full flex flex-col justify-end relative z-20">
                   <h3 className="text-4xl md:text-6xl font-black text-white mb-4 leading-tight drop-shadow-lg whitespace-pre-line">
@@ -766,28 +701,18 @@ export default function Home() {
 
               {/* Columna derecha */}
               <div className="md:col-span-6 grid grid-cols-1 gap-8">
-                {/* Gestión empresarial */}
+                {/* Gestión empresarial - Video secundario (2 loops, luego pausa) */}
                 <div
                   className="bg-gradient-to-br from-blue-400 via-cyan-500 to-blue-600 rounded-xl md:rounded-3xl overflow-hidden relative min-h-[300px] sm:min-h-[350px] md:min-h-[280px] cursor-pointer group shadow-2xl hover:shadow-blue-500/50 transition-all duration-500 hover:scale-105"
-                  onClick={() => handleVideoClick(heartVideoRef)}
                 >
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent z-10"></div>
                   <div className="absolute inset-0 w-full h-full">
-                    <video
-                      ref={heartVideoRef}
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                      preload="auto"
+                    <LazyVideo
+                      src="https://jnzsabhbfnivdiceoefg.supabase.co/storage/v1/object/sign/danieldtoro/Video%20principal/img_0667%20(1440p).mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNGNiMTczNS02NDVkLTQ2OWEtOTdjOS01Y2QzZDMzMWY2M2IiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJkYW5pZWxkdG9yby9WaWRlbyBwcmluY2lwYWwvaW1nXzA2NjcgKDE0NDBwKS5tcDQiLCJpYXQiOjE3NTk4NzI0NTgsImV4cCI6MTc5MTQwODQ1OH0.BCMNbJe_Wh-LO1rLqUCmzd25aeXVd5hKblRtDUSucRw"
                       className="absolute inset-0 w-full h-full object-cover"
-                      style={{pointerEvents:"none"}}
-                      disablePictureInPicture
-                      controlsList="nodownload nofullscreen noremoteplayback"
-                    >
-                      <source src="https://jnzsabhbfnivdiceoefg.supabase.co/storage/v1/object/sign/danieldtoro/Video%20principal/img_0667%20(1440p).mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNGNiMTczNS02NDVkLTQ2OWEtOTdjOS01Y2QzZDMzMWY2M2IiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJkYW5pZWxkdG9yby9WaWRlbyBwcmluY2lwYWwvaW1nXzA2NjcgKDE0NDBwKS5tcDQiLCJpYXQiOjE3NTk4NzI0NTgsImV4cCI6MTc5MTQwODQ1OH0.BCMNbJe_Wh-LO1rLqUCmzd25aeXVd5hKblRtDUSucRw" type="video/mp4" />
-                      Tu navegador no soporta el elemento de video.
-                    </video>
+                      priority={false}
+                      maxLoops={2}
+                    />
                   </div>
                   <div className="p-10 h-full flex flex-col justify-end relative z-20">
                     <h3 className="text-3xl md:text-4xl font-black text-white mb-3 leading-tight drop-shadow-lg">
@@ -799,28 +724,18 @@ export default function Home() {
                   </div>
                 </div>
 
-                {/* Sistema de llamadas */}
+                {/* Sistema de llamadas - Video secundario (2 loops, luego pausa) */}
                 <div
                   className="bg-gradient-to-br from-indigo-400 via-indigo-500 to-indigo-600 rounded-xl md:rounded-3xl overflow-hidden relative min-h-[300px] sm:min-h-[350px] md:min-h-[280px] cursor-pointer group shadow-2xl hover:shadow-indigo-500/50 transition-all duration-500 hover:scale-105"
-                  onClick={() => handleVideoClick(arVideoRef)}
                 >
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent z-10"></div>
                   <div className="absolute inset-0 w-full h-full">
-                    <video
-                      ref={arVideoRef}
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                      preload="auto"
+                    <LazyVideo
+                      src="https://jnzsabhbfnivdiceoefg.supabase.co/storage/v1/object/sign/danieldtoro/Video%20principal/a6ea2565bc5d4a8ea151f3ac45954447.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNGNiMTczNS02NDVkLTQ2OWEtOTdjOS01Y2QzZDMzMWY2M2IiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJkYW5pZWxkdG9yby9WaWRlbyBwcmluY2lwYWwvYTZlYTI1NjViYzVkNGE4ZWExNTFmM2FjNDU5NTQ0NDcubXA0IiwiaWF0IjoxNzU5ODcyNzYxLCJleHAiOjE3OTE0MDg3NjF9.Tj4E6daoYwJ2GEhbKUf36TyfLglcQqg3FOoHnzLj28g"
                       className="absolute inset-0 w-full h-full object-cover"
-                      style={{pointerEvents:"none"}}
-                      disablePictureInPicture
-                      controlsList="nodownload nofullscreen noremoteplayback"
-                    >
-                      <source src="https://jnzsabhbfnivdiceoefg.supabase.co/storage/v1/object/sign/danieldtoro/Video%20principal/a6ea2565bc5d4a8ea151f3ac45954447.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNGNiMTczNS02NDVkLTQ2OWEtOTdjOS01Y2QzZDMzMWY2M2IiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJkYW5pZWxkdG9yby9WaWRlbyBwcmluY2lwYWwvYTZlYTI1NjViYzVkNGE4ZWExNTFmM2FjNDU5NTQ0NDcubXA0IiwiaWF0IjoxNzU5ODcyNzYxLCJleHAiOjE3OTE0MDg3NjF9.Tj4E6daoYwJ2GEhbKUf36TyfLglcQqg3FOoHnzLj28g" type="video/mp4" />
-                      Tu navegador no soporta el elemento de video.
-                    </video>
+                      priority={false}
+                      maxLoops={2}
+                    />
                   </div>
                   <div className="p-10 h-full flex flex-col justify-end relative z-20">
                     <h3 className="text-3xl md:text-4xl font-black text-white mb-3 leading-tight drop-shadow-lg">
@@ -834,7 +749,6 @@ export default function Home() {
               {/* Fila inferior con tarjetas mejoradas */}
               <div
                 className="md:col-span-6 lg:col-span-4 bg-gradient-to-br from-cyan-400 via-cyan-500 to-cyan-600 rounded-xl md:rounded-3xl overflow-hidden relative min-h-[300px] sm:min-h-[350px] md:min-h-[300px] cursor-pointer group shadow-2xl hover:shadow-cyan-500/50 transition-all duration-500 hover:scale-105"
-                onClick={() => handleVideoClick(voiceVideoRef)}
               >
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent z-10"></div>
                 <Image
@@ -872,7 +786,6 @@ export default function Home() {
 
               <div
                 className="md:col-span-6 lg:col-span-4 bg-gradient-to-br from-sky-400 via-sky-500 to-sky-600 rounded-xl md:rounded-3xl overflow-hidden relative min-h-[300px] sm:min-h-[350px] md:min-h-[300px] cursor-pointer group shadow-2xl hover:shadow-sky-500/50 transition-all duration-500 hover:scale-105"
-                onClick={() => handleVideoClick(ladderVideoRef)}
               >
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent z-10"></div>
                 <Image
@@ -910,7 +823,6 @@ export default function Home() {
 
               <div
                 className="md:col-span-6 lg:col-span-4 bg-gradient-to-br from-indigo-400 via-indigo-500 to-indigo-600 rounded-xl md:rounded-3xl overflow-hidden relative min-h-[300px] sm:min-h-[350px] md:min-h-[300px] cursor-pointer group shadow-2xl hover:shadow-indigo-500/50 transition-all duration-500 hover:scale-105"
-                onClick={() => handleVideoClick(brainVideoRef)}
               >
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent z-10"></div>
                 <Image
@@ -951,23 +863,15 @@ export default function Home() {
         <section className="py-8 relative">
           <div className="container mx-auto px-5 relative z-10">
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8 max-w-7xl mx-auto">
+              {/* Banner final - Video secundario (2 loops, luego pausa) */}
               <div className="md:col-span-12 bg-gradient-to-br from-blue-400 via-indigo-500 to-blue-600 rounded-3xl overflow-hidden relative min-h-[250px] sm:min-h-[300px] md:min-h-[350px] cursor-pointer group shadow-2xl hover:shadow-blue-500/50 transition-all duration-500 hover:scale-105">
                 <div className="absolute inset-0 z-0">
-                  <video
-                    ref={bannerVideoRef}
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    preload="auto"
+                  <LazyVideo
+                    src="https://jnzsabhbfnivdiceoefg.supabase.co/storage/v1/object/sign/danieldtoro/Video%20principal/video%20(1080p).mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNGNiMTczNS02NDVkLTQ2OWEtOTdjOS01Y2QzZDMzMWY2M2IiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJkYW5pZWxkdG9yby9WaWRlbyBwcmluY2lwYWwvdmlkZW8gKDEwODBwKS5tcDQiLCJpYXQiOjE3NTk4NzMwOTksImV4cCI6MTc5MTQwOTA5OX0.hKrARFsm1G8mQjv62T-bIJLmHXq7hIJprrmXeiVzXpo"
                     className="absolute inset-0 w-full h-full object-cover"
-                    style={{pointerEvents:"none"}}
-                    disablePictureInPicture
-                    controlsList="nodownload nofullscreen noremoteplayback"
-                  >
-                    <source src="https://jnzsabhbfnivdiceoefg.supabase.co/storage/v1/object/sign/danieldtoro/Video%20principal/video%20(1080p).mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNGNiMTczNS02NDVkLTQ2OWEtOTdjOS01Y2QzZDMzMWY2M2IiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJkYW5pZWxkdG9yby9WaWRlbyBwcmluY2lwYWwvdmlkZW8gKDEwODBwKS5tcDQiLCJpYXQiOjE3NTk4NzMwOTksImV4cCI6MTc5MTQwOTA5OX0.hKrARFsm1G8mQjv62T-bIJLmHXq7hIJprrmXeiVzXpo" type="video/mp4" />
-                    Tu navegador no soporta el elemento de video.
-                  </video>
+                    priority={false}
+                    maxLoops={2}
+                  />
                   {/* Overlay para mejorar la legibilidad */}
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-900/70 via-indigo-800/50 to-blue-900/70 z-10"></div>
                 </div>
